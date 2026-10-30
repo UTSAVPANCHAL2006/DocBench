@@ -1,0 +1,6939 @@
+{
+ "run": {
+  "timestamp": "2026-10-30 20:58",
+  "dataset": "1c772e8262",
+  "model": "gpt-5.4-nano",
+  "effort": "low"
+ },
+ "docs": 96,
+ "headline": [
+  {
+   "pipeline": "ocr_regex",
+   "field_acc": 50.9,
+   "critical_acc": 46.9,
+   "critical_wrong": 40,
+   "critical_silent": 40,
+   "critical_caught": 0,
+   "flags": 0,
+   "false_alarms": 0,
+   "docs_flagged": 0,
+   "hallucinated": 2,
+   "p50_ms": 404,
+   "cost_per_1k": 0.0,
+   "docs": 96
+  },
+  {
+   "pipeline": "ocr_reference",
+   "field_acc": 65.8,
+   "critical_acc": 61.8,
+   "critical_wrong": 22,
+   "critical_silent": 7,
+   "critical_caught": 15,
+   "flags": 117,
+   "false_alarms": 45,
+   "docs_flagged": 47,
+   "hallucinated": 0,
+   "p50_ms": 795,
+   "cost_per_1k": 0.0,
+   "docs": 96
+  },
+  {
+   "pipeline": "ocr_text_llm",
+   "field_acc": 62.8,
+   "critical_acc": 65.0,
+   "critical_wrong": 159,
+   "critical_silent": 159,
+   "critical_caught": 0,
+   "flags": 0,
+   "false_alarms": 0,
+   "docs_flagged": 0,
+   "hallucinated": 65,
+   "p50_ms": 3718,
+   "cost_per_1k": 0.79,
+   "docs": 96
+  },
+  {
+   "pipeline": "vision_llm",
+   "field_acc": 91.9,
+   "critical_acc": 92.9,
+   "critical_wrong": 60,
+   "critical_silent": 60,
+   "critical_caught": 0,
+   "flags": 0,
+   "false_alarms": 0,
+   "docs_flagged": 0,
+   "hallucinated": 0,
+   "p50_ms": 4062,
+   "cost_per_1k": 1.16,
+   "docs": 96
+  },
+  {
+   "pipeline": "vision_verified",
+   "field_acc": 91.9,
+   "critical_acc": 92.9,
+   "critical_wrong": 60,
+   "critical_silent": 6,
+   "critical_caught": 54,
+   "flags": 98,
+   "false_alarms": 28,
+   "docs_flagged": 32,
+   "hallucinated": 0,
+   "p50_ms": 4062,
+   "cost_per_1k": 1.16,
+   "docs": 96
+  }
+ ],
+ "degradations": [
+  "clean",
+  "skew",
+  "blur",
+  "noise",
+  "fax",
+  "low_res"
+ ],
+ "by_degradation": {
+  "ocr_regex": [
+   91.4,
+   77.6,
+   43.2,
+   1.8,
+   25.2,
+   64.9
+  ],
+  "ocr_reference": [
+   93.5,
+   81.8,
+   45.8,
+   60.7,
+   32.2,
+   81.3
+  ],
+  "ocr_text_llm": [
+   86.4,
+   86.2,
+   65.4,
+   14.4,
+   41.7,
+   88.0
+  ],
+  "vision_llm": [
+   97.6,
+   95.0,
+   92.0,
+   95.7,
+   71.8,
+   97.7
+  ],
+  "vision_verified": [
+   97.6,
+   95.0,
+   92.0,
+   95.7,
+   71.8,
+   97.7
+  ]
+ },
+ "styles": [
+  "pad",
+  "emr",
+  "invoice",
+  "claim"
+ ],
+ "by_style": {
+  "ocr_regex": [
+   36.2,
+   70.6,
+   38.0,
+   71.0
+  ],
+  "ocr_reference": [
+   55.4,
+   88.6,
+   48.7,
+   89.5
+  ],
+  "ocr_text_llm": [
+   60.1,
+   84.3,
+   49.0,
+   77.2
+  ],
+  "vision_llm": [
+   85.1,
+   93.9,
+   94.0,
+   89.5
+  ],
+  "vision_verified": [
+   85.1,
+   93.9,
+   94.0,
+   89.5
+  ]
+ },
+ "specimens": [
+  {
+   "id": "rx_pad_007",
+   "style": "pad",
+   "degradation": "clean",
+   "note": "Vision reads “1-2 caps” as “12 caps”. Both are valid sig syntax, so no rule can catch it. This is one of the 6 critical errors that still get through.",
+   "img": "img/rx_pad_007.jpg",
+   "w": 775,
+   "h": 1086,
+   "acc": {
+    "ocr_reference": 33.3,
+    "ocr_text_llm": 55.6,
+    "vision_verified": 77.8
+   },
+   "rows": [
+    {
+     "field": "patient_name",
+     "label": "Patient",
+     "gt": "Ethan Leblanc",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "Ethan Leblane",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "E",
+       "ok": false,
+       "cat": "wrong_value",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Ethan Leblanc",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "date_written",
+     "label": "Date written",
+     "gt": "2026-03-31",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "31/03/2026",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2026-03-31",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "prescriber_name",
+     "label": "Prescriber",
+     "gt": "Dr. Ethan Martin",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "Dr. Ethan Martin",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Dr. Ethan Martin, MD CCFP",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Dr. Ethan Martin, MD CCFP",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "prescriber_license",
+     "label": "CPSO #",
+     "gt": "62743",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "62743",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "62743",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.drug_name",
+     "label": "Drug 1 · Drug",
+     "gt": "Sertraline",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Sertraline",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Sertraline cap",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.strength",
+     "label": "Drug 1 · Strength",
+     "gt": "100 mg",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "100mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.sig",
+     "label": "Drug 1 · Sig",
+     "gt": "1-2 caps PO Q4-6H PRN pain",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "1-2. cap PO Q4-6H PRN pain",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Sig: 12 caps PO Q4-6H PRN pain",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.quantity",
+     "label": "Drug 1 · Quantity",
+     "gt": "90",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "90",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "90",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.refills",
+     "label": "Drug 1 · Refills",
+     "gt": "5",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    }
+   ],
+   "trace": {
+    "ocr": "Dr. Ethan Martin, MD CCFP\nLakeshore Health Group\n425 Bathurst St, Mississauga, ON L5B 1C5\nTel (647) 555-8043 - Fax (905) 555-8618\nCPSO #62743\nName: E\nAddress: 462 akeshore Bi d\nDate: 21/ 3/' ) ( 26\nSertraline (OOmg cap\nSig: |-2. cane PO Q4-6H PRN pain\nM:90__ Refille: 5\n[ ] Do not substitute MV\nPrescriber signature\nThis prescription is void if altered. Not valid if photocopied.",
+    "model": "{\n  \"patient_name\": \"Ethan Leblanc\",\n  \"patient_dob\": \"\",\n  \"health_card\": \"\",\n  \"date_written\": \"2026-03-31\",\n  \"prescriber_name\": \"Dr. Ethan Martin, MD CCFP\",\n  \"prescriber_license\": \"\",\n  \"medications\": [\n    {\n      \"drug_name\": \"Sertraline cap\",\n      \"strength\": \"100mg\",\n      \"sig\": \"Sig: 12 caps PO Q4-6H PRN pain\",\n      \"quantity\": \"90\",\n      \"refills\": \"5\"\n    }\n  ]\n}",
+    "checks": [
+     {
+      "rule": "Drug is in the reference list",
+      "ok": true,
+      "detail": "“Sertraline cap” is Sertraline",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Drug": "Sertraline cap"
+      },
+      "truth": {
+       "Drug 1 · Drug": "Sertraline"
+      },
+      "real": false
+     },
+     {
+      "rule": "Strength is a marketed one",
+      "ok": true,
+      "detail": "Sertraline 100 mg",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Strength": "100mg"
+      },
+      "truth": {
+       "Drug 1 · Strength": "100 mg"
+      },
+      "real": false
+     },
+     {
+      "rule": "Quantity and refills are whole numbers",
+      "ok": true,
+      "detail": "quantity 90, refills 5",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Quantity": "90",
+       "Drug 1 · Refills": "5"
+      },
+      "truth": {
+       "Drug 1 · Quantity": "90",
+       "Drug 1 · Refills": "5"
+      },
+      "real": false
+     },
+     {
+      "rule": "Every sig word is a dose or a known direction",
+      "ok": true,
+      "detail": "all words recognised",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Sig": "Sig: 12 caps PO Q4-6H PRN pain"
+      },
+      "truth": {
+       "Drug 1 · Sig": "1-2 caps PO Q4-6H PRN pain"
+      },
+      "real": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rx_pad_013",
+   "style": "pad",
+   "degradation": "clean",
+   "note": "Vision misreads QHS (at bedtime) on a clean page. “Q4H5” isn’t a word in any sig, so validation flags it for review.",
+   "img": "img/rx_pad_013.jpg",
+   "w": 775,
+   "h": 1086,
+   "acc": {
+    "ocr_reference": 60.0,
+    "ocr_text_llm": 80.0,
+    "vision_verified": 80.0
+   },
+   "rows": [
+    {
+     "field": "patient_name",
+     "label": "Patient",
+     "gt": "Liam Ahmed",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "iam Ahmed",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "iam Ahmed",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Liam Ahmed",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "patient_dob",
+     "label": "Date of birth",
+     "gt": "1995-11-10",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "1995-11-10",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "date_written",
+     "label": "Date written",
+     "gt": "2026-09-13",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2026-09-13",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "prescriber_name",
+     "label": "Prescriber",
+     "gt": "Dr. Olivia Bouchard",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "Dr. Olivia Bouchard",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Dr. Olivia Bouchard, MD CCFP",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Dr. Olivia Bouchard, MD CCFP",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "prescriber_license",
+     "label": "CPSO #",
+     "gt": "52372",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "52372",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "52372",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "523372",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.drug_name",
+     "label": "Drug 1 · Drug",
+     "gt": "Metformin",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Metformin",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Metformin",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Metformin",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.strength",
+     "label": "Drug 1 · Strength",
+     "gt": "500 mg",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "500 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "500 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "500mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.sig",
+     "label": "Drug 1 · Sig",
+     "gt": "1 tab PO QHS",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "1 tab PO QHS",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "1 tab PO QHS",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Sig: 1 tab PO Q4H5",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "med1.quantity",
+     "label": "Drug 1 · Quantity",
+     "gt": "14",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "14",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "14",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.refills",
+     "label": "Drug 1 · Refills",
+     "gt": "5",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.drug_name",
+     "label": "Drug 2 · Drug",
+     "gt": "Metronidazole",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Metronidazole",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Metronidazole",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Metronidazole",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.strength",
+     "label": "Drug 2 · Strength",
+     "gt": "250 mg",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "250 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "250 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "250 mg tab",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.sig",
+     "label": "Drug 2 · Sig",
+     "gt": "1 tab PO QHS",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "1 tab PO QHS",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "1 tab PO QHS",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Sig: 1 tab PO QH5",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "med2.quantity",
+     "label": "Drug 2 · Quantity",
+     "gt": "60",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "60",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "60",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.refills",
+     "label": "Drug 2 · Refills",
+     "gt": "0",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "0",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "0",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    }
+   ],
+   "trace": {
+    "ocr": "Dr. Olivia Bouchard, MD CCFP\nLakeshore Health Group\n788 King St W, Ottawa, ON K1P 4C9\nTel (647) 555-5719 - Fax (613) 555-8941\nCPSO #52372\nName: iam Ahmed\nAddress: 329 akeshore B d\nDate: 2.02.6-09-!2\nRx\nMetformin 500mg tab\nSig: | tab PO QHS\nDigp: 14 Refille: 5\nMetronidazole 250 mg tab\nSig: | tab PO QHS\nDigo: 60 Rpt xO\n[ ] Do not substitute New\nPrescriber signature\nThis prescription is void if altered. Not valid if photocopied.",
+    "model": "{\n  \"patient_name\": \"Liam Ahmed\",\n  \"patient_dob\": \"1995-11-10\",\n  \"health_card\": \"\",\n  \"date_written\": \"2026-09-13\",\n  \"prescriber_name\": \"Dr. Olivia Bouchard, MD CCFP\",\n  \"prescriber_license\": \"523372\",\n  \"medications\": [\n    {\n      \"drug_name\": \"Metformin\",\n      \"strength\": \"500mg\",\n      \"sig\": \"Sig: 1 tab PO Q4H5\",\n      \"quantity\": \"14\",\n      \"refills\": \"5\"\n    },\n    {\n      \"drug_name\": \"Metronidazole\",\n      \"strength\": \"250 mg tab\",\n      \"sig\": \"Sig: 1 tab PO QH5\",\n      \"quantity\": \"60\",\n      \"refills\": \"0\"\n    }\n  ]\n}",
+    "checks": [
+     {
+      "rule": "Drug is in the reference list",
+      "ok": true,
+      "detail": "Metformin is listed",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Drug": "Metformin"
+      },
+      "truth": {
+       "Drug 1 · Drug": "Metformin"
+      },
+      "real": false
+     },
+     {
+      "rule": "Strength is a marketed one",
+      "ok": true,
+      "detail": "Metformin 500 mg",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Strength": "500mg"
+      },
+      "truth": {
+       "Drug 1 · Strength": "500 mg"
+      },
+      "real": false
+     },
+     {
+      "rule": "Quantity and refills are whole numbers",
+      "ok": true,
+      "detail": "quantity 14, refills 5",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Quantity": "14",
+       "Drug 1 · Refills": "5"
+      },
+      "truth": {
+       "Drug 1 · Quantity": "14",
+       "Drug 1 · Refills": "5"
+      },
+      "real": false
+     },
+     {
+      "rule": "Every sig word is a dose or a known direction",
+      "ok": false,
+      "detail": "unknown: “Q4H5”",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Sig": "Sig: 1 tab PO Q4H5"
+      },
+      "truth": {
+       "Drug 1 · Sig": "1 tab PO QHS"
+      },
+      "real": true
+     },
+     {
+      "rule": "Drug is in the reference list",
+      "ok": true,
+      "detail": "Metronidazole is listed",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Drug": "Metronidazole"
+      },
+      "truth": {
+       "Drug 2 · Drug": "Metronidazole"
+      },
+      "real": false
+     },
+     {
+      "rule": "Strength is a marketed one",
+      "ok": true,
+      "detail": "Metronidazole 250 mg",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Strength": "250 mg tab"
+      },
+      "truth": {
+       "Drug 2 · Strength": "250 mg"
+      },
+      "real": false
+     },
+     {
+      "rule": "Quantity and refills are whole numbers",
+      "ok": true,
+      "detail": "quantity 60, refills 0",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Quantity": "60",
+       "Drug 2 · Refills": "0"
+      },
+      "truth": {
+       "Drug 2 · Quantity": "60",
+       "Drug 2 · Refills": "0"
+      },
+      "real": false
+     },
+     {
+      "rule": "Every sig word is a dose or a known direction",
+      "ok": false,
+      "detail": "unknown: “QH5”",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Sig": "Sig: 1 tab PO QH5"
+      },
+      "truth": {
+       "Drug 2 · Sig": "1 tab PO QHS"
+      },
+      "real": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "inv_005",
+   "style": "invoice",
+   "degradation": "fax",
+   "note": "A faxed invoice. The OCR-text LLM invents two lines that aren’t on the page. Vision reads most of it, and validation flags line 3 (doesn’t add up) and line 4 (unknown DIN). It misses line 1’s unit price: the line is backordered, and 0 × any price is still $0.00.",
+   "img": "img/inv_005.jpg",
+   "w": 1000,
+   "h": 1278,
+   "acc": {
+    "ocr_reference": 7.1,
+    "ocr_text_llm": 27.0,
+    "vision_verified": 85.7
+   },
+   "rows": [
+    {
+     "field": "supplier",
+     "label": "Supplier",
+     "gt": "Cedarline Medical Supply",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "Jan 12 2026 17°32 FROM Cedarline Medical Supply FAX (647) $55-3017 Pas.",
+       "ok": false,
+       "cat": "wrong_value",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Cedarline Medical Supply",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Cedarline Medical Supply",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "invoice_number",
+     "label": "Invoice #",
+     "gt": "4763187",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "4763187",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "4763187",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "4763187",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "invoice_date",
+     "label": "Invoice date",
+     "gt": "2026-09-24",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "2026-09-24",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2026-09-24",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "account_number",
+     "label": "Account #",
+     "gt": "710-9587",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "710-9887",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "710-9587",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "710-9587",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "po_number",
+     "label": "PO #",
+     "gt": "PO-54280",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "PO-54280",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "PO-54280",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "PO-54280",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "subtotal",
+     "label": "Subtotal",
+     "gt": "771.73",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "771.73",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "771.73",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "hst",
+     "label": "HST",
+     "gt": "15.99",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "15.99",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "15.99",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "total",
+     "label": "Total",
+     "gt": "787.72",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "787.72",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "787.72",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.din",
+     "label": "Line 1 · DIN",
+     "gt": "08780650",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "08780650",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.qty_ordered",
+     "label": "Line 1 · Ordered",
+     "gt": "5",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.qty_shipped",
+     "label": "Line 1 · Shipped",
+     "gt": "0",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.unit_cost",
+     "label": "Line 1 · Unit price",
+     "gt": "214.51",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "21.51",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.line_total",
+     "label": "Line 1 · Extension",
+     "gt": "0.00",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0.00",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.din",
+     "label": "Line 2 · DIN",
+     "gt": "08172805",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "08172805",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.qty_ordered",
+     "label": "Line 2 · Ordered",
+     "gt": "7",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "7",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.qty_shipped",
+     "label": "Line 2 · Shipped",
+     "gt": "7",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "7",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.unit_cost",
+     "label": "Line 2 · Unit price",
+     "gt": "17.57",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "17.57",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.line_total",
+     "label": "Line 2 · Extension",
+     "gt": "122.99",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "122.99",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line3.din",
+     "label": "Line 3 · DIN",
+     "gt": "03579246",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "O87 E0850",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "08579245",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "line3.qty_ordered",
+     "label": "Line 3 · Ordered",
+     "gt": "5",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "500",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "line3.qty_shipped",
+     "label": "Line 3 · Shipped",
+     "gt": "5",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "line3.unit_cost",
+     "label": "Line 3 · Unit price",
+     "gt": "94.46",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "214.81",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "84.46",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "line3.line_total",
+     "label": "Line 3 · Extension",
+     "gt": "472.30",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "0.09",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "472.30",
+       "ok": true,
+       "cat": null,
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "line4.din",
+     "label": "Line 4 · DIN",
+     "gt": "01220544",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "OV220544",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "01220444",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "line4.qty_ordered",
+     "label": "Line 4 · Ordered",
+     "gt": "1",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "100",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "1",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line4.qty_shipped",
+     "label": "Line 4 · Shipped",
+     "gt": "1",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "1",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "1",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line4.unit_cost",
+     "label": "Line 4 · Unit price",
+     "gt": "176.44",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "176.04",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "176.44",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line4.line_total",
+     "label": "Line 4 · Extension",
+     "gt": "176.44",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "176.44",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line5.din",
+     "label": "Line 5 · DIN",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "OB 172805",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line5.qty_ordered",
+     "label": "Line 5 · Ordered",
+     "gt": "",
+     "critical": false,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "100",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line5.qty_shipped",
+     "label": "Line 5 · Shipped",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "17",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line5.unit_cost",
+     "label": "Line 5 · Unit price",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "122.98",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line6.din",
+     "label": "Line 6 · DIN",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "O38 79288",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line6.qty_ordered",
+     "label": "Line 6 · Ordered",
+     "gt": "",
+     "critical": false,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "500",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line6.qty_shipped",
+     "label": "Line 6 · Shipped",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "5",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line6.unit_cost",
+     "label": "Line 6 · Unit price",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "45",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line6.line_total",
+     "label": "Line 6 · Extension",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "872.40",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    }
+   ],
+   "trace": {
+    "ocr": "Jan 12 2026 17:32 FROM: Ceclarline Medical Supply FAK (647) 555-3017 P.L/1\nCedarline Medical Supply INVOICE\n2250 Masdowpna Blvd. Mississeuge. ON LEN 652\nCustomer Service (613) 855-2192 - GSTIHST Reg. No. $4927 9031 RTOODI\nShip Ta: Invoice Ma: 4763187\nHarbourview Pharmacy Invoice Dale: 24/09/2026\n(78 Dundes $1. Hamihon. ON LBP 1B Account No: 710-9587\nPO No: PO-54280\nPage: 1 of 1\nItem # DIN Gescription Orn Ship BO Unit Price Extension\nBe2d91 O87 E0850 LISINOPRIL 20MG TAB S00 5 a 5 214.81 0.09\n2m7879 OB 172805 ACETAMINOPHEN S00MG CAPLET 100 T ¥ a 17 SF 122.98 T\na2iddg O38 79288 MYLAN-METRONIDAZOLE S00MG TAB 500 5 5 a a4 45 a72.40\nSaar 35 OV220544 TEVA-AMLOOIPINE 10MG TAB 100 1 1 a 1Té.dd 176.04\nTe tenable tem Presenpion drugs are rend-reted Rx (zer-rated) 648 74\nTaxable dams 122 99\nSubtotal 771 73\nHST 13% 15 99\nTotal Due: § 787.72",
+    "model": "{\n  \"supplier\": \"Cedarline Medical Supply\",\n  \"invoice_number\": \"4763187\",\n  \"invoice_date\": \"2026-09-24\",\n  \"account_number\": \"710-9587\",\n  \"po_number\": \"PO-54280\",\n  \"subtotal\": \"771.73\",\n  \"hst\": \"15.99\",\n  \"total\": \"787.72\",\n  \"line_items\": [\n    {\n      \"din\": \"08780650\",\n      \"description\": \"LISINOPRIL 20MG TAB 500\",\n      \"qty_ordered\": \"5\",\n      \"qty_shipped\": \"0\",\n      \"unit_cost\": \"21.51\",\n      \"line_total\": \"0.00\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"08172805\",\n      \"description\": \"ACETAMINOPHEN 500MG CAPLET 100\",\n      \"qty_ordered\": \"7\",\n      \"qty_shipped\": \"7\",\n      \"unit_cost\": \"17.57\",\n      \"line_total\": \"122.99\",\n      \"taxable\": \"T\"\n    },\n    {\n      \"din\": \"08579245\",\n      \"description\": \"MY LAN-METRONIDAZOLE 500MG TAB 500\",\n      \"qty_ordered\": \"5\",\n      \"qty_shipped\": \"5\",\n      \"unit_cost\": \"84.46\",\n      \"line_total\": \"472.30\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"01220444\",\n      \"description\": \"TEVA-AMILLOUPINE 10MG TAB 100\",\n      \"qty_ordered\": \"1\",\n      \"qty_shipped\": \"1\",\n      \"unit_cost\": \"176.44\",\n      \"line_total\": \"176.44\",\n      \"taxable\": \"\"\n    }\n  ]\n}",
+    "checks": [
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": true,
+      "detail": "08780650 found",
+      "where": "Line 1",
+      "read": {
+       "Line 1 · DIN": "08780650"
+      },
+      "truth": {
+       "Line 1 · DIN": "08780650"
+      },
+      "real": false
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "0 × 21.51 = 0.00",
+      "where": "Line 1",
+      "read": {
+       "Line 1 · Ordered": "5",
+       "Line 1 · Shipped": "0",
+       "Line 1 · Unit price": "21.51",
+       "Line 1 · Extension": "0.00"
+      },
+      "truth": {
+       "Line 1 · Ordered": "5",
+       "Line 1 · Shipped": "0",
+       "Line 1 · Unit price": "214.51",
+       "Line 1 · Extension": "0.00"
+      },
+      "real": true
+     },
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": true,
+      "detail": "08172805 found",
+      "where": "Line 2",
+      "read": {
+       "Line 2 · DIN": "08172805"
+      },
+      "truth": {
+       "Line 2 · DIN": "08172805"
+      },
+      "real": false
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "7 × 17.57 = 122.99",
+      "where": "Line 2",
+      "read": {
+       "Line 2 · Ordered": "7",
+       "Line 2 · Shipped": "7",
+       "Line 2 · Unit price": "17.57",
+       "Line 2 · Extension": "122.99"
+      },
+      "truth": {
+       "Line 2 · Ordered": "7",
+       "Line 2 · Shipped": "7",
+       "Line 2 · Unit price": "17.57",
+       "Line 2 · Extension": "122.99"
+      },
+      "real": false
+     },
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": false,
+      "detail": "08579245 not found",
+      "where": "Line 3",
+      "read": {
+       "Line 3 · DIN": "08579245"
+      },
+      "truth": {
+       "Line 3 · DIN": "03579246"
+      },
+      "real": true
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": false,
+      "detail": "5 × 84.46 = 422.30, page says 472.30",
+      "where": "Line 3",
+      "read": {
+       "Line 3 · Ordered": "5",
+       "Line 3 · Shipped": "5",
+       "Line 3 · Unit price": "84.46",
+       "Line 3 · Extension": "472.30"
+      },
+      "truth": {
+       "Line 3 · Ordered": "5",
+       "Line 3 · Shipped": "5",
+       "Line 3 · Unit price": "94.46",
+       "Line 3 · Extension": "472.30"
+      },
+      "real": true
+     },
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": false,
+      "detail": "01220444 not found",
+      "where": "Line 4",
+      "read": {
+       "Line 4 · DIN": "01220444"
+      },
+      "truth": {
+       "Line 4 · DIN": "01220544"
+      },
+      "real": true
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "1 × 176.44 = 176.44",
+      "where": "Line 4",
+      "read": {
+       "Line 4 · Ordered": "1",
+       "Line 4 · Shipped": "1",
+       "Line 4 · Unit price": "176.44",
+       "Line 4 · Extension": "176.44"
+      },
+      "truth": {
+       "Line 4 · Ordered": "1",
+       "Line 4 · Shipped": "1",
+       "Line 4 · Unit price": "176.44",
+       "Line 4 · Extension": "176.44"
+      },
+      "real": false
+     },
+     {
+      "rule": "Lines add up to the subtotal",
+      "ok": true,
+      "detail": "lines sum to 771.73, subtotal 771.73",
+      "where": "",
+      "read": {
+       "Subtotal": "771.73"
+      },
+      "truth": {
+       "Subtotal": "771.73"
+      },
+      "real": false
+     },
+     {
+      "rule": "HST is 13% of taxable lines",
+      "ok": true,
+      "detail": "13% of 122.99 = 15.99, HST 15.99",
+      "where": "",
+      "read": {
+       "HST": "15.99"
+      },
+      "truth": {
+       "HST": "15.99"
+      },
+      "real": false
+     },
+     {
+      "rule": "Total = subtotal + HST",
+      "ok": true,
+      "detail": "771.73 + 15.99 = 787.72, total 787.72",
+      "where": "",
+      "read": {
+       "Total": "787.72"
+      },
+      "truth": {
+       "Total": "787.72"
+      },
+      "real": false
+     }
+    ]
+   }
+  },
+  {
+   "id": "inv_003",
+   "style": "invoice",
+   "degradation": "blur",
+   "note": "A blurred invoice. OCR recovers almost nothing; vision reads every field correctly.",
+   "img": "img/inv_003.jpg",
+   "w": 1000,
+   "h": 1275,
+   "acc": {
+    "ocr_reference": 14.3,
+    "ocr_text_llm": 32.6,
+    "vision_verified": 100.0
+   },
+   "rows": [
+    {
+     "field": "supplier",
+     "label": "Supplier",
+     "gt": "Cedarline Medical Supply",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "Cedarline Medical Supply",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Cedarline Medical Supply",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Cedarline Medical Supply",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "invoice_number",
+     "label": "Invoice #",
+     "gt": "4772519",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "4772519",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "4772519",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "4772519",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "invoice_date",
+     "label": "Invoice date",
+     "gt": "2026-01-19",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "2026-01-19",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2026-01-19",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "account_number",
+     "label": "Account #",
+     "gt": "697-4111",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "697-4111",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "697-4111",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "697-4111",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "po_number",
+     "label": "PO #",
+     "gt": "PO-54979",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "PO-54979",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "PO-54979",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "PO-54979",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "subtotal",
+     "label": "Subtotal",
+     "gt": "3885.71",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "3685.71",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "3685.71",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "3885.71",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "hst",
+     "label": "HST",
+     "gt": "4.67",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "4.67",
+       "ok": true,
+       "cat": null,
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "4.67",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "4.67",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "total",
+     "label": "Total",
+     "gt": "3890.38",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "3890.38",
+       "ok": true,
+       "cat": null,
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "3890.38",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "3890.38",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.din",
+     "label": "Line 1 · DIN",
+     "gt": "01220544",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "289934",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "01220544",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.qty_ordered",
+     "label": "Line 1 · Ordered",
+     "gt": "4",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "100",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "4",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.qty_shipped",
+     "label": "Line 1 · Shipped",
+     "gt": "0",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "4",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.unit_cost",
+     "label": "Line 1 · Unit price",
+     "gt": "163.82",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "163.82",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "163.82",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line1.line_total",
+     "label": "Line 1 · Extension",
+     "gt": "0.00",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "000",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0.00",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.din",
+     "label": "Line 2 · DIN",
+     "gt": "00115628",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "408054",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "00115628",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.qty_ordered",
+     "label": "Line 2 · Ordered",
+     "gt": "4",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "500",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "4",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.qty_shipped",
+     "label": "Line 2 · Shipped",
+     "gt": "4",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "4",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "4",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.unit_cost",
+     "label": "Line 2 · Unit price",
+     "gt": "202.09",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "202.08",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "202.09",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line2.line_total",
+     "label": "Line 2 · Extension",
+     "gt": "808.36",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "808.36",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "808.36",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line3.din",
+     "label": "Line 3 · DIN",
+     "gt": "00386039",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "202344",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "00386039",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line3.qty_ordered",
+     "label": "Line 3 · Ordered",
+     "gt": "10",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "100",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "10",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line3.qty_shipped",
+     "label": "Line 3 · Shipped",
+     "gt": "10",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "10",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line3.unit_cost",
+     "label": "Line 3 · Unit price",
+     "gt": "97.73",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "8.73",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "97.73",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line3.line_total",
+     "label": "Line 3 · Extension",
+     "gt": "977.30",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "977.30",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "977.30",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line4.din",
+     "label": "Line 4 · DIN",
+     "gt": "08239182",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "93649",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "08239182",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line4.qty_ordered",
+     "label": "Line 4 · Ordered",
+     "gt": "6",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "30",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "6",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line4.qty_shipped",
+     "label": "Line 4 · Shipped",
+     "gt": "6",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "6",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "6",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line4.unit_cost",
+     "label": "Line 4 · Unit price",
+     "gt": "144.13",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "144.13",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line4.line_total",
+     "label": "Line 4 · Extension",
+     "gt": "864.78",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "864.78",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line5.qty_ordered",
+     "label": "Line 5 · Ordered",
+     "gt": "12",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "2",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "12",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line5.qty_shipped",
+     "label": "Line 5 · Shipped",
+     "gt": "0",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line5.unit_cost",
+     "label": "Line 5 · Unit price",
+     "gt": "3.47",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "3.47",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line5.line_total",
+     "label": "Line 5 · Extension",
+     "gt": "0.00",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "000",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0.00",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line6.din",
+     "label": "Line 6 · DIN",
+     "gt": "00136160",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "00136160",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line6.qty_ordered",
+     "label": "Line 6 · Ordered",
+     "gt": "8",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "8",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line6.qty_shipped",
+     "label": "Line 6 · Shipped",
+     "gt": "8",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "8",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line6.unit_cost",
+     "label": "Line 6 · Unit price",
+     "gt": "4.49",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "4.49",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line6.line_total",
+     "label": "Line 6 · Extension",
+     "gt": "35.92",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "35.92",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line7.din",
+     "label": "Line 7 · DIN",
+     "gt": "09769232",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "371216",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "09769232",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line7.qty_ordered",
+     "label": "Line 7 · Ordered",
+     "gt": "5",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "100",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line7.qty_shipped",
+     "label": "Line 7 · Shipped",
+     "gt": "5",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "5",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line7.unit_cost",
+     "label": "Line 7 · Unit price",
+     "gt": "239.87",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "239.87",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "239.87",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line7.line_total",
+     "label": "Line 7 · Extension",
+     "gt": "1199.35",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "1190.35",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "1199.35",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "line5.din",
+     "label": "Line 5 · DIN",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "234189",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line8.din",
+     "label": "Line 8 · DIN",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "876909",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line8.qty_ordered",
+     "label": "Line 8 · Ordered",
+     "gt": "",
+     "critical": false,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "30",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    },
+    {
+     "field": "line8.line_total",
+     "label": "Line 8 · Extension",
+     "gt": "",
+     "critical": true,
+     "cells": {
+      "ocr_reference": null,
+      "ocr_text_llm": {
+       "v": "392",
+       "ok": false,
+       "cat": "hallucinated",
+       "flag": false
+      },
+      "vision_verified": null
+     }
+    }
+   ],
+   "trace": {
+    "ocr": "Cedarline Medical Supply INVOICE\n2250 Meadowpre Bid Masaseuge ON (5N 652\nCustomer Service (647) 555-9759 GST/HST Reg No 93665 8794 RTOOO!\nShip To: invoice No: 4772519\nPraine Lane Pharmacy invoice Date. 19/01/2026\n529 Man St N. Messseuge ON (58 379 Account No: 697-4111\nPO No: PO-54979\nPage: tof!\n\nitems — OIN Description Ord Ship B/O Unit Price Extension\n289934 01220544 PMS-AMLODIPINE 10MG TAB 100 4 ° 4 163.82 000\n408054 00115628 SERTRALINE 100MG CAP 500 4 4 ° 202 08 808 36\n202344 += 00386039 = LISINOPRIL 10MG TAB 100 a) a) ° e773 97730\n§93649 08239182 CLONIDINE 0 2MG TAB 30 6 6 ° “4nd srs\n234189 PILL ORGANIZER 7-DAY 2 ° 2 aa? 000 T\n876909 00136160 CETIRIZINE 10MG TAB 30 a a ° a0 392 T\n371216 = 08768232.» SANDOZ WARFARIN SMG TAB 100 s s ° 23987 1190.35\n‘T= taxable tem Prescnpton drugs are rerovated Rx (zero-rated) 3649.79\n\nTaxable items: 35.92\n\nSubtotal: 3685.71\n\nHST 13%: 4.67\n\nTotal Due: $ 3890.38\nPayment terms Net 30 Returns require RA number wittwn 30 days",
+    "model": "{\n  \"supplier\": \"Cedarline Medical Supply\",\n  \"invoice_number\": \"4772519\",\n  \"invoice_date\": \"2026-01-19\",\n  \"account_number\": \"697-4111\",\n  \"po_number\": \"PO-54979\",\n  \"subtotal\": \"3885.71\",\n  \"hst\": \"4.67\",\n  \"total\": \"3890.38\",\n  \"line_items\": [\n    {\n      \"din\": \"01220544\",\n      \"description\": \"PMS-AMLODIPINE 10MG TAB 100\",\n      \"qty_ordered\": \"4\",\n      \"qty_shipped\": \"0\",\n      \"unit_cost\": \"163.82\",\n      \"line_total\": \"0.00\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"00115628\",\n      \"description\": \"SERTRALINE 100MG CAP 500\",\n      \"qty_ordered\": \"4\",\n      \"qty_shipped\": \"4\",\n      \"unit_cost\": \"202.09\",\n      \"line_total\": \"808.36\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"00386039\",\n      \"description\": \"LISINOPRIL 10MG TAB 100\",\n      \"qty_ordered\": \"10\",\n      \"qty_shipped\": \"10\",\n      \"unit_cost\": \"97.73\",\n      \"line_total\": \"977.30\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"08239182\",\n      \"description\": \"CLONIDINE 0.2MG TAB 30\",\n      \"qty_ordered\": \"6\",\n      \"qty_shipped\": \"6\",\n      \"unit_cost\": \"144.13\",\n      \"line_total\": \"864.78\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"\",\n      \"description\": \"PILL ORGANIZER 7-DAY\",\n      \"qty_ordered\": \"12\",\n      \"qty_shipped\": \"0\",\n      \"unit_cost\": \"3.47\",\n      \"line_total\": \"0.00\",\n      \"taxable\": \"T\"\n    },\n    {\n      \"din\": \"00136160\",\n      \"description\": \"CETIRIZINE 10MG TAB 30\",\n      \"qty_ordered\": \"8\",\n      \"qty_shipped\": \"8\",\n      \"unit_cost\": \"4.49\",\n      \"line_total\": \"35.92\",\n      \"taxable\": \"T\"\n    },\n    {\n      \"din\": \"09769232\",\n      \"description\": \"SANDOZ WARFARIN 5MG TAB 100\",\n      \"qty_ordered\": \"5\",\n      \"qty_shipped\": \"5\",\n      \"unit_cost\": \"239.87\",\n      \"line_total\": \"1199.35\",\n      \"taxable\": \"\"\n    }\n  ]\n}",
+    "checks": [
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": true,
+      "detail": "01220544 found",
+      "where": "Line 1",
+      "read": {
+       "Line 1 · DIN": "01220544"
+      },
+      "truth": {
+       "Line 1 · DIN": "01220544"
+      },
+      "real": false
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "0 × 163.82 = 0.00",
+      "where": "Line 1",
+      "read": {
+       "Line 1 · Ordered": "4",
+       "Line 1 · Shipped": "0",
+       "Line 1 · Unit price": "163.82",
+       "Line 1 · Extension": "0.00"
+      },
+      "truth": {
+       "Line 1 · Ordered": "4",
+       "Line 1 · Shipped": "0",
+       "Line 1 · Unit price": "163.82",
+       "Line 1 · Extension": "0.00"
+      },
+      "real": false
+     },
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": true,
+      "detail": "00115628 found",
+      "where": "Line 2",
+      "read": {
+       "Line 2 · DIN": "00115628"
+      },
+      "truth": {
+       "Line 2 · DIN": "00115628"
+      },
+      "real": false
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "4 × 202.09 = 808.36",
+      "where": "Line 2",
+      "read": {
+       "Line 2 · Ordered": "4",
+       "Line 2 · Shipped": "4",
+       "Line 2 · Unit price": "202.09",
+       "Line 2 · Extension": "808.36"
+      },
+      "truth": {
+       "Line 2 · Ordered": "4",
+       "Line 2 · Shipped": "4",
+       "Line 2 · Unit price": "202.09",
+       "Line 2 · Extension": "808.36"
+      },
+      "real": false
+     },
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": true,
+      "detail": "00386039 found",
+      "where": "Line 3",
+      "read": {
+       "Line 3 · DIN": "00386039"
+      },
+      "truth": {
+       "Line 3 · DIN": "00386039"
+      },
+      "real": false
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "10 × 97.73 = 977.30",
+      "where": "Line 3",
+      "read": {
+       "Line 3 · Ordered": "10",
+       "Line 3 · Shipped": "10",
+       "Line 3 · Unit price": "97.73",
+       "Line 3 · Extension": "977.30"
+      },
+      "truth": {
+       "Line 3 · Ordered": "10",
+       "Line 3 · Shipped": "10",
+       "Line 3 · Unit price": "97.73",
+       "Line 3 · Extension": "977.30"
+      },
+      "real": false
+     },
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": true,
+      "detail": "08239182 found",
+      "where": "Line 4",
+      "read": {
+       "Line 4 · DIN": "08239182"
+      },
+      "truth": {
+       "Line 4 · DIN": "08239182"
+      },
+      "real": false
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "6 × 144.13 = 864.78",
+      "where": "Line 4",
+      "read": {
+       "Line 4 · Ordered": "6",
+       "Line 4 · Shipped": "6",
+       "Line 4 · Unit price": "144.13",
+       "Line 4 · Extension": "864.78"
+      },
+      "truth": {
+       "Line 4 · Ordered": "6",
+       "Line 4 · Shipped": "6",
+       "Line 4 · Unit price": "144.13",
+       "Line 4 · Extension": "864.78"
+      },
+      "real": false
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "0 × 3.47 = 0.00",
+      "where": "Line 5",
+      "read": {
+       "Line 5 · Ordered": "12",
+       "Line 5 · Shipped": "0",
+       "Line 5 · Unit price": "3.47",
+       "Line 5 · Extension": "0.00"
+      },
+      "truth": {
+       "Line 5 · Ordered": "12",
+       "Line 5 · Shipped": "0",
+       "Line 5 · Unit price": "3.47",
+       "Line 5 · Extension": "0.00"
+      },
+      "real": false
+     },
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": true,
+      "detail": "00136160 found",
+      "where": "Line 6",
+      "read": {
+       "Line 6 · DIN": "00136160"
+      },
+      "truth": {
+       "Line 6 · DIN": "00136160"
+      },
+      "real": false
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "8 × 4.49 = 35.92",
+      "where": "Line 6",
+      "read": {
+       "Line 6 · Ordered": "8",
+       "Line 6 · Shipped": "8",
+       "Line 6 · Unit price": "4.49",
+       "Line 6 · Extension": "35.92"
+      },
+      "truth": {
+       "Line 6 · Ordered": "8",
+       "Line 6 · Shipped": "8",
+       "Line 6 · Unit price": "4.49",
+       "Line 6 · Extension": "35.92"
+      },
+      "real": false
+     },
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": true,
+      "detail": "09769232 found",
+      "where": "Line 7",
+      "read": {
+       "Line 7 · DIN": "09769232"
+      },
+      "truth": {
+       "Line 7 · DIN": "09769232"
+      },
+      "real": false
+     },
+     {
+      "rule": "Shipped × unit price = extension",
+      "ok": true,
+      "detail": "5 × 239.87 = 1199.35",
+      "where": "Line 7",
+      "read": {
+       "Line 7 · Ordered": "5",
+       "Line 7 · Shipped": "5",
+       "Line 7 · Unit price": "239.87",
+       "Line 7 · Extension": "1199.35"
+      },
+      "truth": {
+       "Line 7 · Ordered": "5",
+       "Line 7 · Shipped": "5",
+       "Line 7 · Unit price": "239.87",
+       "Line 7 · Extension": "1199.35"
+      },
+      "real": false
+     },
+     {
+      "rule": "Lines add up to the subtotal",
+      "ok": true,
+      "detail": "lines sum to 3885.71, subtotal 3885.71",
+      "where": "",
+      "read": {
+       "Subtotal": "3885.71"
+      },
+      "truth": {
+       "Subtotal": "3885.71"
+      },
+      "real": false
+     },
+     {
+      "rule": "HST is 13% of taxable lines",
+      "ok": true,
+      "detail": "13% of 35.92 = 4.67, HST 4.67",
+      "where": "",
+      "read": {
+       "HST": "4.67"
+      },
+      "truth": {
+       "HST": "4.67"
+      },
+      "real": false
+     },
+     {
+      "rule": "Total = subtotal + HST",
+      "ok": true,
+      "detail": "3885.71 + 4.67 = 3890.38, total 3890.38",
+      "where": "",
+      "read": {
+       "Total": "3890.38"
+      },
+      "truth": {
+       "Total": "3890.38"
+      },
+      "real": false
+     }
+    ]
+   }
+  },
+  {
+   "id": "claim_008",
+   "style": "claim",
+   "degradation": "skew",
+   "note": "A rejected claim. Vision takes the $12.99 fee for the total and swaps who pays: plan $186.00, patient $0.00. A rejected claim pays nothing, so validation flags every amount.",
+   "img": "img/claim_008.jpg",
+   "w": 998,
+   "h": 1300,
+   "acc": {
+    "ocr_reference": 100.0,
+    "ocr_text_llm": 100.0,
+    "vision_verified": 82.4
+   },
+   "rows": [
+    {
+     "field": "carrier",
+     "label": "Carrier",
+     "gt": "Maple Health Benefits",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "Maple Health Benefits",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Maple Health Benefits",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Maple Health Benefits",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "group_number",
+     "label": "Group #",
+     "gt": "77844",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "77844",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "77844",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "77844",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "patient_name",
+     "label": "Patient",
+     "gt": "Wei Ahmed",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "AHMED, Wei",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "AHMED, Wei",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "AHMED, Wei",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "certificate_id",
+     "label": "Cert / ID",
+     "gt": "28130896-02",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "28130896-02",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "28130896-02",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "28130896-02",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "rx_number",
+     "label": "Rx #",
+     "gt": "1110206",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "1110206",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "1110206",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "1110206",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "date_of_service",
+     "label": "Date of service",
+     "gt": "2026-06-03",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "03-Jun-2026",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "2026-06-03",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2026-06-03",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "din",
+     "label": "DIN",
+     "gt": "00986113",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "00986113",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "00986113",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "00986113",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "drug_name",
+     "label": "Drug",
+     "gt": "Catapres",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Clonidine",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "CATAPRES",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "CATAPRES",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "strength",
+     "label": "Strength",
+     "gt": "0.1 mg",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "0.1 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "0.1MG",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0.1MG",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "quantity",
+     "label": "Quantity",
+     "gt": "60",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "60",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "60",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "60",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "days_supply",
+     "label": "Days supply",
+     "gt": "14",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "14",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "14",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "14",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "total_submitted",
+     "label": "Total submitted",
+     "gt": "186.00",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "186.00",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "186.00",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "12.99",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "amount_paid",
+     "label": "Plan pays",
+     "gt": "0.00",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "0.00",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "0.00",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "186.00",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "patient_pays",
+     "label": "Patient pays",
+     "gt": "186.00",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "186.00",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "186.00",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0.00",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "status",
+     "label": "Status",
+     "gt": "REJECTED",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "REJECTED",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "REJECTED",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "REJECTED",
+       "ok": true,
+       "cat": null,
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "response_codes",
+     "label": "Response codes",
+     "gt": "LO",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "LO",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "LO",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "LO",
+       "ok": true,
+       "cat": null,
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "trace_number",
+     "label": "Trace #",
+     "gt": "330664237",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "330664237",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "330664237",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "330664237",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    }
+   ],
+   "trace": {
+    "ocr": "Bloor Street Pharmacy CLAIM ADJUDICATION RESPONSE\n951 Bathurst St, Mississauga, ON L5B 9G3 Printed: 03-Jun-2026 09:02\nCarrier: Maple Health Benefits Group #: 77844\nPatient: AHMED, Wei Cert/ID #: 28130896-02\nRx #: 1110206 Date of Service: 03-Jun-2026\nDIN: 00986113 Drug: CATAPRES 0.1MG TAB\nQty: 60 Days Supply: 14\nSUBMITTED ADJUDICATED\nDrug Cost 173.01 173.01\nProfessional Fee 12.99 12.99\nTotal 186.00 186.00\nPlan Pays 0.00\nPatient Pays 186.00\nStatus: REJECTED Trace #: 330664237\nResponse Codes:\nLO Benefit maximum exceeded\nRetain with Prescription hard Copy. Adjudicated amounts are subject to audit.",
+    "model": "{\n  \"carrier\": \"Maple Health Benefits\",\n  \"group_number\": \"77844\",\n  \"patient_name\": \"AHMED, Wei\",\n  \"certificate_id\": \"28130896-02\",\n  \"rx_number\": \"1110206\",\n  \"date_of_service\": \"2026-06-03\",\n  \"din\": \"00986113\",\n  \"drug_name\": \"CATAPRES\",\n  \"strength\": \"0.1MG\",\n  \"quantity\": \"60\",\n  \"days_supply\": \"14\",\n  \"total_submitted\": \"12.99\",\n  \"amount_paid\": \"186.00\",\n  \"patient_pays\": \"0.00\",\n  \"status\": \"REJECTED\",\n  \"response_codes\": \"LO\",\n  \"trace_number\": \"330664237\"\n}",
+    "checks": [
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": true,
+      "detail": "00986113 found",
+      "where": "",
+      "read": {
+       "DIN": "00986113"
+      },
+      "truth": {
+       "DIN": "00986113"
+      },
+      "real": false
+     },
+     {
+      "rule": "Drug and strength are known",
+      "ok": true,
+      "detail": "“CATAPRES” → Clonidine 0.1 mg",
+      "where": "",
+      "read": {
+       "Drug": "CATAPRES",
+       "Strength": "0.1MG"
+      },
+      "truth": {
+       "Drug": "Catapres",
+       "Strength": "0.1 mg"
+      },
+      "real": false
+     },
+     {
+      "rule": "Plan share + patient share = total",
+      "ok": false,
+      "detail": "186.00 + 0.00 = 186.00, total 12.99",
+      "where": "",
+      "read": {
+       "Total submitted": "12.99",
+       "Plan pays": "186.00",
+       "Patient pays": "0.00"
+      },
+      "truth": {
+       "Total submitted": "186.00",
+       "Plan pays": "0.00",
+       "Patient pays": "186.00"
+      },
+      "real": true
+     },
+     {
+      "rule": "Status, codes and payment agree",
+      "ok": false,
+      "detail": "rejected, yet the plan pays 186.00",
+      "where": "",
+      "read": {
+       "Status": "REJECTED",
+       "Response codes": "LO",
+       "Plan pays": "186.00",
+       "Patient pays": "0.00"
+      },
+      "truth": {
+       "Status": "REJECTED",
+       "Response codes": "LO",
+       "Plan pays": "0.00",
+       "Patient pays": "186.00"
+      },
+      "real": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rx_emr_004",
+   "style": "emr",
+   "degradation": "noise",
+   "note": "Speckle noise. Cleaned-up OCR reads it perfectly, but the raw OCR text confuses the LLM.",
+   "img": "img/rx_emr_004.jpg",
+   "w": 942,
+   "h": 1300,
+   "acc": {
+    "ocr_reference": 100.0,
+    "ocr_text_llm": 31.2,
+    "vision_verified": 100.0
+   },
+   "rows": [
+    {
+     "field": "patient_name",
+     "label": "Patient",
+     "gt": "Ethan Gagnon",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "GAGNON, Ethan:",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "GAGNON Ethan",
+       "ok": false,
+       "cat": "wrong_value",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "GAGNON, Ethan",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "patient_dob",
+     "label": "Date of birth",
+     "gt": "2004-09-28",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "28-Sep-2004",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2004-09-28",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "health_card",
+     "label": "Health card",
+     "gt": "4419-866-524-AE",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "4419-866-524-AE",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "4419-866-524-AE",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "date_written",
+     "label": "Date written",
+     "gt": "2026-02-10",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "10-Feb-2026",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "2026-02-10",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2026-02-10",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "prescriber_name",
+     "label": "Prescriber",
+     "gt": "Dr. Ethan Wilson",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "Dr. Ethan Wilson",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Ethan Wilson, MID",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Dr. Ethan Wilson, MD",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "prescriber_license",
+     "label": "CPSO #",
+     "gt": "100471",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "100471",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "0471",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "100471",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.drug_name",
+     "label": "Drug 1 · Drug",
+     "gt": "Winpred",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Prednisone",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Winprea",
+       "ok": false,
+       "cat": "wrong_value",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Winpred",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.strength",
+     "label": "Drug 1 · Strength",
+     "gt": "5 mg",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "5 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "5 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "5 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.sig",
+     "label": "Drug 1 · Sig",
+     "gt": "Take 1/2 tablet by mouth once daily",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Take 1/2 tablet by mouth once daily",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "by mouth once daddy.",
+       "ok": false,
+       "cat": "wrong_value",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Take 1/2 tablet by mouth once daily",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.quantity",
+     "label": "Drug 1 · Quantity",
+     "gt": "21",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "21",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "21",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "21",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.refills",
+     "label": "Drug 1 · Refills",
+     "gt": "0",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "0",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.drug_name",
+     "label": "Drug 2 · Drug",
+     "gt": "Norvasc",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Amlodipine",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Norvase",
+       "ok": false,
+       "cat": "wrong_value",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Norvasc",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.strength",
+     "label": "Drug 2 · Strength",
+     "gt": "10 mg",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "10 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "10 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "10 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.sig",
+     "label": "Drug 2 · Sig",
+     "gt": "Take 1 tablet by mouth once daily",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Take 1 tablet by mouth once daily :",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Take 1 tablet by mouth’ once daily",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Take 1 tablet by mouth once daily",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.quantity",
+     "label": "Drug 2 · Quantity",
+     "gt": "90",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "90",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "90",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "90",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.refills",
+     "label": "Drug 2 · Refills",
+     "gt": "1",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "1",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "1",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    }
+   ],
+   "trace": {
+    "ocr": "- Riverside Medical Centre’) 2 PRESCRIPTION. = =\n“2 986 Dundas St, Mississauga, ON [5B SHB. OE Date 40-Feb-2026.\noo, Fek (647) 655-4310 Fax (905) 555-5450 a ee ee ee ee\niL Patents\") GAGNON Ethan 00) eR ce ee Ts co\nSP BOBE 5 BB Bepe2004 oe OG se ees ea\nJes Address: 421 Bathurst St, Hamilton, ON LER ABT 88 8 a ree es\n- : 4. Winprea 5.nig tablet a : a7 s a a <a eee : a 2 : & . = a : — oa : 2 8\nog Sige Make. 4/2! tablet. by mouth once daddy. 6 oo oe 8 ee ey\n“Dispense: 21. (twenty-One)' tablets. (Refidia! 0 0 2 et\nsaa 2 Norvase 10 mg tablet oo a ‘a ae Mae 2 o ss a : ! \" ie : ees oe e eo\neee (Sig; Take 1 tablet by mouth’ once daily Ss as oe ee ee ae\n“9 \\ Dispense: 90 “@inéty) tablets’ Refills! 1008000\nOe BE Ethan Wilson, MID CPS #0471 pe ae > Q : ae a one eee Se S\nge : Generale sine: fea banat ch salsienin nes a ae : 2 : oe . ate Lees c",
+    "model": "{\n  \"patient_name\": \"GAGNON, Ethan\",\n  \"patient_dob\": \"2004-09-28\",\n  \"health_card\": \"4419-866-524-AE\",\n  \"date_written\": \"2026-02-10\",\n  \"prescriber_name\": \"Dr. Ethan Wilson, MD\",\n  \"prescriber_license\": \"100471\",\n  \"medications\": [\n    {\n      \"drug_name\": \"Winpred\",\n      \"strength\": \"5 mg\",\n      \"sig\": \"Take 1/2 tablet by mouth once daily\",\n      \"quantity\": \"21\",\n      \"refills\": \"0\"\n    },\n    {\n      \"drug_name\": \"Norvasc\",\n      \"strength\": \"10 mg\",\n      \"sig\": \"Take 1 tablet by mouth once daily\",\n      \"quantity\": \"90\",\n      \"refills\": \"1\"\n    }\n  ]\n}",
+    "checks": [
+     {
+      "rule": "Drug is in the reference list",
+      "ok": true,
+      "detail": "“Winpred” is Prednisone",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Drug": "Winpred"
+      },
+      "truth": {
+       "Drug 1 · Drug": "Winpred"
+      },
+      "real": false
+     },
+     {
+      "rule": "Strength is a marketed one",
+      "ok": true,
+      "detail": "Prednisone 5 mg",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Strength": "5 mg"
+      },
+      "truth": {
+       "Drug 1 · Strength": "5 mg"
+      },
+      "real": false
+     },
+     {
+      "rule": "Quantity and refills are whole numbers",
+      "ok": true,
+      "detail": "quantity 21, refills 0",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Quantity": "21",
+       "Drug 1 · Refills": "0"
+      },
+      "truth": {
+       "Drug 1 · Quantity": "21",
+       "Drug 1 · Refills": "0"
+      },
+      "real": false
+     },
+     {
+      "rule": "Every sig word is a dose or a known direction",
+      "ok": true,
+      "detail": "all words recognised",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Sig": "Take 1/2 tablet by mouth once daily"
+      },
+      "truth": {
+       "Drug 1 · Sig": "Take 1/2 tablet by mouth once daily"
+      },
+      "real": false
+     },
+     {
+      "rule": "Drug is in the reference list",
+      "ok": true,
+      "detail": "“Norvasc” is Amlodipine",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Drug": "Norvasc"
+      },
+      "truth": {
+       "Drug 2 · Drug": "Norvasc"
+      },
+      "real": false
+     },
+     {
+      "rule": "Strength is a marketed one",
+      "ok": true,
+      "detail": "Amlodipine 10 mg",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Strength": "10 mg"
+      },
+      "truth": {
+       "Drug 2 · Strength": "10 mg"
+      },
+      "real": false
+     },
+     {
+      "rule": "Quantity and refills are whole numbers",
+      "ok": true,
+      "detail": "quantity 90, refills 1",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Quantity": "90",
+       "Drug 2 · Refills": "1"
+      },
+      "truth": {
+       "Drug 2 · Quantity": "90",
+       "Drug 2 · Refills": "1"
+      },
+      "real": false
+     },
+     {
+      "rule": "Every sig word is a dose or a known direction",
+      "ok": true,
+      "detail": "all words recognised",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Sig": "Take 1 tablet by mouth once daily"
+      },
+      "truth": {
+       "Drug 2 · Sig": "Take 1 tablet by mouth once daily"
+      },
+      "real": false
+     }
+    ]
+   }
+  },
+  {
+   "id": "claim_017",
+   "style": "claim",
+   "degradation": "fax",
+   "note": "A faxed claim. Vision reads Qty 60 as 30, and nothing on the page contradicts it, so it goes through unflagged. Its misread DIN isn’t in the catalogue, so that one is caught.",
+   "img": "img/claim_017.jpg",
+   "w": 1000,
+   "h": 1247,
+   "acc": {
+    "ocr_reference": 68.8,
+    "ocr_text_llm": 68.8,
+    "vision_verified": 62.5
+   },
+   "rows": [
+    {
+     "field": "carrier",
+     "label": "Carrier",
+     "gt": "Trillium Group Benefits",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "Trallium Group Benefits",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Trillium Group Benefits",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Trillium Group Benefits",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "group_number",
+     "label": "Group #",
+     "gt": "45887",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "458867",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "45387",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "46007",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "patient_name",
+     "label": "Patient",
+     "gt": "Priya Bouchard",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "BOUCHARD, Priya",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "BOUCHARD, Priya",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "BOUCHARD, Priva",
+       "ok": false,
+       "cat": "near_miss",
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "certificate_id",
+     "label": "Cert / ID",
+     "gt": "30395330-01",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "30395330-01",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "30395330-01",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "3039533D-D1",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "rx_number",
+     "label": "Rx #",
+     "gt": "2791327",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "2791327",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "279127",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "date_of_service",
+     "label": "Date of service",
+     "gt": "2026-03-09",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "09-Mar-2026",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "2026-03-09",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2026-03-09",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "din",
+     "label": "DIN",
+     "gt": "01593375",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "01593375",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "01593375",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "01508375",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": true
+      }
+     }
+    },
+    {
+     "field": "drug_name",
+     "label": "Drug",
+     "gt": "Flagyl",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Metronidazole",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "FLAGYL 250MG TAB",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "FLAGYL",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "strength",
+     "label": "Strength",
+     "gt": "250 mg",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "250 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "250MG",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "250MG",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "quantity",
+     "label": "Quantity",
+     "gt": "60",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "30",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "days_supply",
+     "label": "Days supply",
+     "gt": "14",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "14",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "total_submitted",
+     "label": "Total submitted",
+     "gt": "186.24",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "186.24",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "186.24",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "186.24",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "amount_paid",
+     "label": "Plan pays",
+     "gt": "148.99",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "148.99",
+       "ok": true,
+       "cat": null,
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "148.99",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "148.99",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "patient_pays",
+     "label": "Patient pays",
+     "gt": "37.25",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "37.25",
+       "ok": true,
+       "cat": null,
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "37.25",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "37.25",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "status",
+     "label": "Status",
+     "gt": "PAID",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "",
+       "ok": false,
+       "cat": "missing",
+       "flag": true
+      },
+      "ocr_text_llm": {
+       "v": "PAID",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "PAID",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "trace_number",
+     "label": "Trace #",
+     "gt": "128130121",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "128130121",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "129130121",
+       "ok": false,
+       "cat": "numeric_mismatch",
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "128130121",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    }
+   ],
+   "trace": {
+    "ocr": "Prairie Lane Pharmacy CLAIM ADJUDICATION RESPONSE\n\n620 Queen St. Hamilton. GN L8P Hi Printed’ 09-Mar-2028 13-05\n\nCarrier: Trillium Group Benefits Group #: 45387\n\nPatient: BOUCHARD, Priya Cert/ID #2 30395330-01\n\nFa #: 2791327 Date of Service: 09-Mar-2026\n\nDIN: 01593375 Drug: FLAGYL 250MG TAB\n\nRY 82?\n\nSUBMITTED ADJUDICATED\n\nDrug Cost 1?a-25 1?a.25\n\nProfessional Fee 12.99 12.99\n\nTotal 186.24 186.24\n\nPlan Pays 148.99\n\nPatient Pays 37.25\n\nStatus: PAID Trace #: 129130121\n\nResponse Codes: {none}\n\nRates teparcutie cation rtp qiets ae dame Dir st",
+    "model": "{\n  \"carrier\": \"Trillium Group Benefits\",\n  \"group_number\": \"46007\",\n  \"patient_name\": \"BOUCHARD, Priva\",\n  \"certificate_id\": \"3039533D-D1\",\n  \"rx_number\": \"279127\",\n  \"date_of_service\": \"2026-03-09\",\n  \"din\": \"01508375\",\n  \"drug_name\": \"FLAGYL\",\n  \"strength\": \"250MG\",\n  \"quantity\": \"30\",\n  \"days_supply\": \"14\",\n  \"total_submitted\": \"186.24\",\n  \"amount_paid\": \"148.99\",\n  \"patient_pays\": \"37.25\",\n  \"status\": \"PAID\",\n  \"response_codes\": \"\",\n  \"trace_number\": \"128130121\"\n}",
+    "checks": [
+     {
+      "rule": "DIN is in the catalogue",
+      "ok": false,
+      "detail": "01508375 not found",
+      "where": "",
+      "read": {
+       "DIN": "01508375"
+      },
+      "truth": {
+       "DIN": "01593375"
+      },
+      "real": true
+     },
+     {
+      "rule": "Drug and strength are known",
+      "ok": true,
+      "detail": "“FLAGYL” → Metronidazole 250 mg",
+      "where": "",
+      "read": {
+       "Drug": "FLAGYL",
+       "Strength": "250MG"
+      },
+      "truth": {
+       "Drug": "Flagyl",
+       "Strength": "250 mg"
+      },
+      "real": false
+     },
+     {
+      "rule": "Plan share + patient share = total",
+      "ok": true,
+      "detail": "148.99 + 37.25 = 186.24, total 186.24",
+      "where": "",
+      "read": {
+       "Total submitted": "186.24",
+       "Plan pays": "148.99",
+       "Patient pays": "37.25"
+      },
+      "truth": {
+       "Total submitted": "186.24",
+       "Plan pays": "148.99",
+       "Patient pays": "37.25"
+      },
+      "real": false
+     },
+     {
+      "rule": "Status, codes and payment agree",
+      "ok": true,
+      "detail": "PAID",
+      "where": "",
+      "read": {
+       "Status": "PAID",
+       "Response codes": "",
+       "Plan pays": "148.99",
+       "Patient pays": "37.25"
+      },
+      "truth": {
+       "Status": "PAID",
+       "Response codes": "",
+       "Plan pays": "148.99",
+       "Patient pays": "37.25"
+      },
+      "real": false
+     }
+    ]
+   }
+  },
+  {
+   "id": "rx_emr_001",
+   "style": "emr",
+   "degradation": "clean",
+   "note": "A clean EMR printout. Every pipeline gets it right; this is the easy case most demos stop at.",
+   "img": "img/rx_emr_001.jpg",
+   "w": 943,
+   "h": 1300,
+   "acc": {
+    "ocr_reference": 100.0,
+    "ocr_text_llm": 100.0,
+    "vision_verified": 100.0
+   },
+   "rows": [
+    {
+     "field": "patient_name",
+     "label": "Patient",
+     "gt": "Hannah Singh",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "SINGH, Hannah",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "SINGH, Hannah",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "SINGH, Hannah",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "patient_dob",
+     "label": "Date of birth",
+     "gt": "1986-07-21",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "1986-07-21",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "1986-07-21",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "1986-07-21",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "health_card",
+     "label": "Health card",
+     "gt": "4143-842-498-BJ",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "4143-842-498-BJ",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "4143-842-498-BJ",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "4143-842-498-BJ",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "date_written",
+     "label": "Date written",
+     "gt": "2026-03-28",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "2026-03-28",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "2026-03-28",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2026-03-28",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "prescriber_name",
+     "label": "Prescriber",
+     "gt": "Dr. Arjun Leblanc",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "Dr. Arjun Leblanc",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Dr. Arjun Leblanc, MD",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Dr. Arjun Leblanc, MD",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "prescriber_license",
+     "label": "CPSO #",
+     "gt": "49862",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "49862",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "49862",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "49862",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.drug_name",
+     "label": "Drug 1 · Drug",
+     "gt": "Lisinopril",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Lisinopril",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Lisinopril",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Lisinopril",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.strength",
+     "label": "Drug 1 · Strength",
+     "gt": "10 mg",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "10 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "10 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "10 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.sig",
+     "label": "Drug 1 · Sig",
+     "gt": "Take 1/2 tablet by mouth once daily",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Take 1/2 tablet by mouth once daily",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Take 1/2 tablet by mouth once daily",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Take 1/2 tablet by mouth once daily",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.quantity",
+     "label": "Drug 1 · Quantity",
+     "gt": "60",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "60",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "60",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "60",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med1.refills",
+     "label": "Drug 1 · Refills",
+     "gt": "2",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "2",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "2",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "2",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.drug_name",
+     "label": "Drug 2 · Drug",
+     "gt": "Clonidine",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Clonidine",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Clonidine",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Clonidine",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.strength",
+     "label": "Drug 2 · Strength",
+     "gt": "0.2 mg",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "0.2 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "0.2 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "0.2 mg",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.sig",
+     "label": "Drug 2 · Sig",
+     "gt": "Take 1 tablet by mouth at bedtime",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "Take 1 tablet by mouth at bedtime",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "Take 1 tablet by mouth at bedtime",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "Take 1 tablet by mouth at bedtime",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.quantity",
+     "label": "Drug 2 · Quantity",
+     "gt": "21",
+     "critical": true,
+     "cells": {
+      "ocr_reference": {
+       "v": "21",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "21",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "21",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    },
+    {
+     "field": "med2.refills",
+     "label": "Drug 2 · Refills",
+     "gt": "3",
+     "critical": false,
+     "cells": {
+      "ocr_reference": {
+       "v": "3",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "ocr_text_llm": {
+       "v": "3",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      },
+      "vision_verified": {
+       "v": "3",
+       "ok": true,
+       "cat": null,
+       "flag": false
+      }
+     }
+    }
+   ],
+   "trace": {
+    "ocr": "Riverside Medical Centre PRESCRIPTION\n185 Lakeshore Blvd, Hamilton, ON L8P 6J1 Date: 2026-03-28\nTel (416) 555-2330 Fax (416) 555-5336\nPatient: SINGH, Hannah\nDOB: 1986-07-21\nHCN: 4143-842-498-BJ\nAddress: 795 Bathurst St, Hamilton, ON L8P 7G1\n1. Lisinopril 10 mg tablet\nSig: Take 1/2 tablet by mouth once daily\nDispense: 60 (sixty) tablets Refills: 2\n2. Clonidine 0.2 mg tablet\nSig: Take 1 tablet by mouth at bedtime\nDispense: 21 (twenty-one) tablets Refills: 3\nDr. Arjun Leblanc, MD CPSO #49862\nGenerated by clinic EMR. Original retained on patient chart.",
+    "model": "{\n  \"patient_name\": \"SINGH, Hannah\",\n  \"patient_dob\": \"1986-07-21\",\n  \"health_card\": \"4143-842-498-BJ\",\n  \"date_written\": \"2026-03-28\",\n  \"prescriber_name\": \"Dr. Arjun Leblanc, MD\",\n  \"prescriber_license\": \"49862\",\n  \"medications\": [\n    {\n      \"drug_name\": \"Lisinopril\",\n      \"strength\": \"10 mg\",\n      \"sig\": \"Take 1/2 tablet by mouth once daily\",\n      \"quantity\": \"60\",\n      \"refills\": \"2\"\n    },\n    {\n      \"drug_name\": \"Clonidine\",\n      \"strength\": \"0.2 mg\",\n      \"sig\": \"Take 1 tablet by mouth at bedtime\",\n      \"quantity\": \"21\",\n      \"refills\": \"3\"\n    }\n  ]\n}",
+    "checks": [
+     {
+      "rule": "Drug is in the reference list",
+      "ok": true,
+      "detail": "Lisinopril is listed",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Drug": "Lisinopril"
+      },
+      "truth": {
+       "Drug 1 · Drug": "Lisinopril"
+      },
+      "real": false
+     },
+     {
+      "rule": "Strength is a marketed one",
+      "ok": true,
+      "detail": "Lisinopril 10 mg",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Strength": "10 mg"
+      },
+      "truth": {
+       "Drug 1 · Strength": "10 mg"
+      },
+      "real": false
+     },
+     {
+      "rule": "Quantity and refills are whole numbers",
+      "ok": true,
+      "detail": "quantity 60, refills 2",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Quantity": "60",
+       "Drug 1 · Refills": "2"
+      },
+      "truth": {
+       "Drug 1 · Quantity": "60",
+       "Drug 1 · Refills": "2"
+      },
+      "real": false
+     },
+     {
+      "rule": "Every sig word is a dose or a known direction",
+      "ok": true,
+      "detail": "all words recognised",
+      "where": "Drug 1",
+      "read": {
+       "Drug 1 · Sig": "Take 1/2 tablet by mouth once daily"
+      },
+      "truth": {
+       "Drug 1 · Sig": "Take 1/2 tablet by mouth once daily"
+      },
+      "real": false
+     },
+     {
+      "rule": "Drug is in the reference list",
+      "ok": true,
+      "detail": "Clonidine is listed",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Drug": "Clonidine"
+      },
+      "truth": {
+       "Drug 2 · Drug": "Clonidine"
+      },
+      "real": false
+     },
+     {
+      "rule": "Strength is a marketed one",
+      "ok": true,
+      "detail": "Clonidine 0.2 mg",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Strength": "0.2 mg"
+      },
+      "truth": {
+       "Drug 2 · Strength": "0.2 mg"
+      },
+      "real": false
+     },
+     {
+      "rule": "Quantity and refills are whole numbers",
+      "ok": true,
+      "detail": "quantity 21, refills 3",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Quantity": "21",
+       "Drug 2 · Refills": "3"
+      },
+      "truth": {
+       "Drug 2 · Quantity": "21",
+       "Drug 2 · Refills": "3"
+      },
+      "real": false
+     },
+     {
+      "rule": "Every sig word is a dose or a known direction",
+      "ok": true,
+      "detail": "all words recognised",
+      "where": "Drug 2",
+      "read": {
+       "Drug 2 · Sig": "Take 1 tablet by mouth at bedtime"
+      },
+      "truth": {
+       "Drug 2 · Sig": "Take 1 tablet by mouth at bedtime"
+      },
+      "real": false
+     }
+    ]
+   }
+  }
+ ],
+ "queue": [
+  {
+   "doc": "claim_002",
+   "style": "claim",
+   "degradation": "skew",
+   "rule": "Status, codes and payment agree",
+   "ok": false,
+   "detail": "rejected, yet the plan pays 169.27",
+   "where": "",
+   "read": {
+    "Status": "REJECTED",
+    "Response codes": "D4",
+    "Plan pays": "169.27",
+    "Patient pays": "0.00"
+   },
+   "truth": {
+    "Status": "REJECTED",
+    "Response codes": "D4",
+    "Plan pays": "0.00",
+    "Patient pays": "169.27"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_005",
+   "style": "claim",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "03048595 not found",
+   "where": "",
+   "read": {
+    "DIN": "03048595"
+   },
+   "truth": {
+    "DIN": "03048596"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_005",
+   "style": "claim",
+   "degradation": "fax",
+   "rule": "Drug and strength are known",
+   "ok": false,
+   "detail": "“GLICOPHAGE” → GLICOPHAGE 850 mg, not a known product",
+   "where": "",
+   "read": {
+    "Drug": "GLICOPHAGE",
+    "Strength": "850MG"
+   },
+   "truth": {
+    "Drug": "Glucophage",
+    "Strength": "850 mg"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_005",
+   "style": "claim",
+   "degradation": "fax",
+   "rule": "Plan share + patient share = total",
+   "ok": false,
+   "detail": "61.42 + 6.93 = 68.35, total 68.25",
+   "where": "",
+   "read": {
+    "Total submitted": "68.25",
+    "Plan pays": "61.42",
+    "Patient pays": "6.93"
+   },
+   "truth": {
+    "Total submitted": "68.25",
+    "Plan pays": "61.42",
+    "Patient pays": "6.83"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_008",
+   "style": "claim",
+   "degradation": "skew",
+   "rule": "Plan share + patient share = total",
+   "ok": false,
+   "detail": "186.00 + 0.00 = 186.00, total 12.99",
+   "where": "",
+   "read": {
+    "Total submitted": "12.99",
+    "Plan pays": "186.00",
+    "Patient pays": "0.00"
+   },
+   "truth": {
+    "Total submitted": "186.00",
+    "Plan pays": "0.00",
+    "Patient pays": "186.00"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_008",
+   "style": "claim",
+   "degradation": "skew",
+   "rule": "Status, codes and payment agree",
+   "ok": false,
+   "detail": "rejected, yet the plan pays 186.00",
+   "where": "",
+   "read": {
+    "Status": "REJECTED",
+    "Response codes": "LO",
+    "Plan pays": "186.00",
+    "Patient pays": "0.00"
+   },
+   "truth": {
+    "Status": "REJECTED",
+    "Response codes": "LO",
+    "Plan pays": "0.00",
+    "Patient pays": "186.00"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_011",
+   "style": "claim",
+   "degradation": "fax",
+   "rule": "Plan share + patient share = total",
+   "ok": false,
+   "detail": "27.57 + 8.00 = 35.57, total 27.57",
+   "where": "",
+   "read": {
+    "Total submitted": "27.57",
+    "Plan pays": "27.57",
+    "Patient pays": "8.00"
+   },
+   "truth": {
+    "Total submitted": "27.57",
+    "Plan pays": "27.57",
+    "Patient pays": "0.00"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_014",
+   "style": "claim",
+   "degradation": "skew",
+   "rule": "Plan share + patient share = total",
+   "ok": false,
+   "detail": "6.99 + ? = ?, total 56.89",
+   "where": "",
+   "read": {
+    "Total submitted": "56.89",
+    "Plan pays": "6.99",
+    "Patient pays": ""
+   },
+   "truth": {
+    "Total submitted": "69.88",
+    "Plan pays": "62.89",
+    "Patient pays": "6.99"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_017",
+   "style": "claim",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "01508375 not found",
+   "where": "",
+   "read": {
+    "DIN": "01508375"
+   },
+   "truth": {
+    "DIN": "01593375"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_018",
+   "style": "claim",
+   "degradation": "low_res",
+   "rule": "Drug and strength are known",
+   "ok": false,
+   "detail": "“ATORVASTATIN 20MG TAB” → Atorvastatin , not a known product",
+   "where": "",
+   "read": {
+    "Drug": "ATORVASTATIN 20MG TAB",
+    "Strength": ""
+   },
+   "truth": {
+    "Drug": "Atorvastatin",
+    "Strength": "20 mg"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_020",
+   "style": "claim",
+   "degradation": "skew",
+   "rule": "Plan share + patient share = total",
+   "ok": false,
+   "detail": "97.59 + 97.59 = 195.18, total 12.99",
+   "where": "",
+   "read": {
+    "Total submitted": "12.99",
+    "Plan pays": "97.59",
+    "Patient pays": "97.59"
+   },
+   "truth": {
+    "Total submitted": "97.59",
+    "Plan pays": "97.59",
+    "Patient pays": "0.00"
+   },
+   "real": true
+  },
+  {
+   "doc": "claim_023",
+   "style": "claim",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "04249417 not found",
+   "where": "",
+   "read": {
+    "DIN": "04249417"
+   },
+   "truth": {
+    "DIN": "04294817"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_004",
+   "style": "invoice",
+   "degradation": "noise",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "06596333 not found",
+   "where": "Line 1",
+   "read": {
+    "Line 1 · DIN": "06596333"
+   },
+   "truth": {
+    "Line 1 · DIN": "06593633"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_005",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "08579245 not found",
+   "where": "Line 3",
+   "read": {
+    "Line 3 · DIN": "08579245"
+   },
+   "truth": {
+    "Line 3 · DIN": "03579246"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_005",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "Shipped × unit price = extension",
+   "ok": false,
+   "detail": "5 × 84.46 = 422.30, page says 472.30",
+   "where": "Line 3",
+   "read": {
+    "Line 3 · Ordered": "5",
+    "Line 3 · Shipped": "5",
+    "Line 3 · Unit price": "84.46",
+    "Line 3 · Extension": "472.30"
+   },
+   "truth": {
+    "Line 3 · Ordered": "5",
+    "Line 3 · Shipped": "5",
+    "Line 3 · Unit price": "94.46",
+    "Line 3 · Extension": "472.30"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_005",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "01220444 not found",
+   "where": "Line 4",
+   "read": {
+    "Line 4 · DIN": "01220444"
+   },
+   "truth": {
+    "Line 4 · DIN": "01220544"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_009",
+   "style": "invoice",
+   "degradation": "blur",
+   "rule": "Shipped × unit price = extension",
+   "ok": false,
+   "detail": "7 × 4.79 = 33.53, page says 33.46",
+   "where": "Line 8",
+   "read": {
+    "Line 8 · Ordered": "7",
+    "Line 8 · Shipped": "7",
+    "Line 8 · Unit price": "4.79",
+    "Line 8 · Extension": "33.46"
+   },
+   "truth": {
+    "Line 8 · Ordered": "7",
+    "Line 8 · Shipped": "7",
+    "Line 8 · Unit price": "4.78",
+    "Line 8 · Extension": "33.46"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_010",
+   "style": "invoice",
+   "degradation": "noise",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "09890118 not found",
+   "where": "Line 6",
+   "read": {
+    "Line 6 · DIN": "09890118"
+   },
+   "truth": {
+    "Line 6 · DIN": "09890918"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "070686314 not found",
+   "where": "Line 1",
+   "read": {
+    "Line 1 · DIN": "070686314"
+   },
+   "truth": {
+    "Line 1 · DIN": "07866314"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "03298443 not found",
+   "where": "Line 2",
+   "read": {
+    "Line 2 · DIN": "03298443"
+   },
+   "truth": {
+    "Line 2 · DIN": "09238449"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "08172305 not found",
+   "where": "Line 3",
+   "read": {
+    "Line 3 · DIN": "08172305"
+   },
+   "truth": {
+    "Line 3 · DIN": "08172805"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "04978486 not found",
+   "where": "Line 4",
+   "read": {
+    "Line 4 · DIN": "04978486"
+   },
+   "truth": {
+    "Line 4 · DIN": "04378046"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "09809018 not found",
+   "where": "Line 5",
+   "read": {
+    "Line 5 · DIN": "09809018"
+   },
+   "truth": {
+    "Line 5 · DIN": "09890918"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "Shipped × unit price = extension",
+   "ok": false,
+   "detail": "9 × 171.49 = 1543.41, page says 0.00",
+   "where": "Line 5",
+   "read": {
+    "Line 5 · Ordered": "9",
+    "Line 5 · Shipped": "9",
+    "Line 5 · Unit price": "171.49",
+    "Line 5 · Extension": "0.00"
+   },
+   "truth": {
+    "Line 5 · Ordered": "9",
+    "Line 5 · Shipped": "0",
+    "Line 5 · Unit price": "171.49",
+    "Line 5 · Extension": "0.00"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "03488254 not found",
+   "where": "Line 6",
+   "read": {
+    "Line 6 · DIN": "03488254"
+   },
+   "truth": {
+    "Line 6 · DIN": "03468254"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "Lines add up to the subtotal",
+   "ok": false,
+   "detail": "lines sum to 3396.05, subtotal 3329.57",
+   "where": "",
+   "read": {
+    "Subtotal": "3329.57"
+   },
+   "truth": {
+    "Subtotal": "3396.05"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "HST is 13% of taxable lines",
+   "ok": false,
+   "detail": "13% of 66.48 = 8.64, HST 86.64",
+   "where": "",
+   "read": {
+    "HST": "86.64"
+   },
+   "truth": {
+    "HST": "8.64"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_011",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "Total = subtotal + HST",
+   "ok": false,
+   "detail": "3329.57 + 86.64 = 3416.21, total 3400.98",
+   "where": "",
+   "read": {
+    "Total": "3400.98"
+   },
+   "truth": {
+    "Total": "3404.69"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_014",
+   "style": "invoice",
+   "degradation": "skew",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "01939333 not found",
+   "where": "Line 4",
+   "read": {
+    "Line 4 · DIN": "01939333"
+   },
+   "truth": {
+    "Line 4 · DIN": "01993933"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_015",
+   "style": "invoice",
+   "degradation": "blur",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "025655535 not found",
+   "where": "Line 2",
+   "read": {
+    "Line 2 · DIN": "025655535"
+   },
+   "truth": {
+    "Line 2 · DIN": "02565535"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_015",
+   "style": "invoice",
+   "degradation": "blur",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "090681133 not found",
+   "where": "Line 4",
+   "read": {
+    "Line 4 · DIN": "090681133"
+   },
+   "truth": {
+    "Line 4 · DIN": "09088133"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_017",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "07243664 not found",
+   "where": "Line 1",
+   "read": {
+    "Line 1 · DIN": "07243664"
+   },
+   "truth": {
+    "Line 1 · DIN": "07294364"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_017",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "Shipped × unit price = extension",
+   "ok": false,
+   "detail": "8 × 117.79 = 942.30, page says 942.24",
+   "where": "Line 1",
+   "read": {
+    "Line 1 · Ordered": "8",
+    "Line 1 · Shipped": "8",
+    "Line 1 · Unit price": "117.78B",
+    "Line 1 · Extension": "942.24"
+   },
+   "truth": {
+    "Line 1 · Ordered": "8",
+    "Line 1 · Shipped": "8",
+    "Line 1 · Unit price": "117.78",
+    "Line 1 · Extension": "942.24"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_017",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "03238443 not found",
+   "where": "Line 2",
+   "read": {
+    "Line 2 · DIN": "03238443"
+   },
+   "truth": {
+    "Line 2 · DIN": "09238449"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_017",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "04580554 not found",
+   "where": "Line 3",
+   "read": {
+    "Line 3 · DIN": "04580554"
+   },
+   "truth": {
+    "Line 3 · DIN": "03468254"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_021",
+   "style": "invoice",
+   "degradation": "blur",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "090881313 not found",
+   "where": "Line 1",
+   "read": {
+    "Line 1 · DIN": "090881313"
+   },
+   "truth": {
+    "Line 1 · DIN": "09088133"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_021",
+   "style": "invoice",
+   "degradation": "blur",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "072294364 not found",
+   "where": "Line 2",
+   "read": {
+    "Line 2 · DIN": "072294364"
+   },
+   "truth": {
+    "Line 2 · DIN": "07294364"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_021",
+   "style": "invoice",
+   "degradation": "blur",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "045780846 not found",
+   "where": "Line 4",
+   "read": {
+    "Line 4 · DIN": "045780846"
+   },
+   "truth": {
+    "Line 4 · DIN": "04378046"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_021",
+   "style": "invoice",
+   "degradation": "blur",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "003860039 not found",
+   "where": "Line 6",
+   "read": {
+    "Line 6 · DIN": "003860039"
+   },
+   "truth": {
+    "Line 6 · DIN": "00386039"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_021",
+   "style": "invoice",
+   "degradation": "blur",
+   "rule": "Total = subtotal + HST",
+   "ok": false,
+   "detail": "2041.41 + 50.73 = 2092.14, total 5292.14",
+   "where": "",
+   "read": {
+    "Total": "5292.14"
+   },
+   "truth": {
+    "Total": "2092.14"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_022",
+   "style": "invoice",
+   "degradation": "noise",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "01909393 not found",
+   "where": "Line 7",
+   "read": {
+    "Line 7 · DIN": "01909393"
+   },
+   "truth": {
+    "Line 7 · DIN": "01993933"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_023",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "03620855 not found",
+   "where": "Line 1",
+   "read": {
+    "Line 1 · DIN": "03620855"
+   },
+   "truth": {
+    "Line 1 · DIN": "03628355"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_023",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "DIN is in the catalogue",
+   "ok": false,
+   "detail": "03990013 not found",
+   "where": "Line 3",
+   "read": {
+    "Line 3 · DIN": "03990013"
+   },
+   "truth": {
+    "Line 3 · DIN": "09890918"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_023",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "Shipped × unit price = extension",
+   "ok": false,
+   "detail": "9 × 114.26 = 1028.34, page says 911.08",
+   "where": "Line 3",
+   "read": {
+    "Line 3 · Ordered": "9",
+    "Line 3 · Shipped": "9",
+    "Line 3 · Unit price": "114.26",
+    "Line 3 · Extension": "911.08"
+   },
+   "truth": {
+    "Line 3 · Ordered": "8",
+    "Line 3 · Shipped": "8",
+    "Line 3 · Unit price": "114.26",
+    "Line 3 · Extension": "914.08"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_023",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "Lines add up to the subtotal",
+   "ok": false,
+   "detail": "lines sum to 1945.38, subtotal 4520.79",
+   "where": "",
+   "read": {
+    "Subtotal": "4520.79"
+   },
+   "truth": {
+    "Subtotal": "3520.79"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_023",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "HST is 13% of taxable lines",
+   "ok": false,
+   "detail": "13% of 141.66 = 18.42, HST 588.42",
+   "where": "",
+   "read": {
+    "HST": "588.42"
+   },
+   "truth": {
+    "HST": "18.42"
+   },
+   "real": true
+  },
+  {
+   "doc": "inv_023",
+   "style": "invoice",
+   "degradation": "fax",
+   "rule": "Total = subtotal + HST",
+   "ok": false,
+   "detail": "4520.79 + 588.42 = 5109.21, total 5539.21",
+   "where": "",
+   "read": {
+    "Total": "5539.21"
+   },
+   "truth": {
+    "Total": "3539.21"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_emr_005",
+   "style": "emr",
+   "degradation": "fax",
+   "rule": "Drug is in the reference list",
+   "ok": false,
+   "detail": "“” matches no known drug, brand or generic",
+   "where": "Drug 2",
+   "read": {
+    "Drug 2 · Drug": ""
+   },
+   "truth": {
+    "Drug 2 · Drug": "Winpred"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_emr_005",
+   "style": "emr",
+   "degradation": "fax",
+   "rule": "Strength is a marketed one",
+   "ok": false,
+   "detail": " 50 mg can’t be checked",
+   "where": "Drug 2",
+   "read": {
+    "Drug 2 · Strength": "50 mg"
+   },
+   "truth": {
+    "Drug 2 · Strength": "50 mg"
+   },
+   "real": false
+  },
+  {
+   "doc": "rx_emr_017",
+   "style": "emr",
+   "degradation": "fax",
+   "rule": "Drug is in the reference list",
+   "ok": false,
+   "detail": "“Cumadin” matches no known drug, brand or generic",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Drug": "Cumadin"
+   },
+   "truth": {
+    "Drug 1 · Drug": "Coumadin"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_emr_017",
+   "style": "emr",
+   "degradation": "fax",
+   "rule": "Strength is a marketed one",
+   "ok": false,
+   "detail": "Cumadin 1 mg can’t be checked",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Strength": "1 mg"
+   },
+   "truth": {
+    "Drug 1 · Strength": "1 mg"
+   },
+   "real": false
+  },
+  {
+   "doc": "rx_emr_023",
+   "style": "emr",
+   "degradation": "fax",
+   "rule": "Drug is in the reference list",
+   "ok": false,
+   "detail": "“Prednisolone” matches no known drug, brand or generic",
+   "where": "Drug 2",
+   "read": {
+    "Drug 2 · Drug": "Prednisolone"
+   },
+   "truth": {
+    "Drug 2 · Drug": "Prednisone"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_emr_023",
+   "style": "emr",
+   "degradation": "fax",
+   "rule": "Strength is a marketed one",
+   "ok": false,
+   "detail": "Prednisolone 5 mg can’t be checked",
+   "where": "Drug 2",
+   "read": {
+    "Drug 2 · Strength": "5mg"
+   },
+   "truth": {
+    "Drug 2 · Strength": "5 mg"
+   },
+   "real": false
+  },
+  {
+   "doc": "rx_pad_001",
+   "style": "pad",
+   "degradation": "clean",
+   "rule": "Strength is a marketed one",
+   "ok": false,
+   "detail": "Clonidine  isn’t marketed (known: 0.1 mg, 0.2 mg)",
+   "where": "Drug 2",
+   "read": {
+    "Drug 2 · Strength": ""
+   },
+   "truth": {
+    "Drug 2 · Strength": "0.1 mg"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_004",
+   "style": "pad",
+   "degradation": "noise",
+   "rule": "Drug is in the reference list",
+   "ok": false,
+   "detail": "“Clonidine OlmataB” matches no known drug, brand or generic",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Drug": "Clonidine OlmataB"
+   },
+   "truth": {
+    "Drug 1 · Drug": "Clonidine"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_004",
+   "style": "pad",
+   "degradation": "noise",
+   "rule": "Strength is a marketed one",
+   "ok": false,
+   "detail": "Clonidine OlmataB  can’t be checked",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Strength": ""
+   },
+   "truth": {
+    "Drug 1 · Strength": "0.1 mg"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_009",
+   "style": "pad",
+   "degradation": "blur",
+   "rule": "Quantity and refills are whole numbers",
+   "ok": false,
+   "detail": "quantity , refills 0",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Quantity": ""
+   },
+   "truth": {
+    "Drug 1 · Quantity": "100"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_009",
+   "style": "pad",
+   "degradation": "blur",
+   "rule": "Every sig word is a dose or a known direction",
+   "ok": false,
+   "detail": "unknown: “Mitte”, “#100”, “Rpf”, “x0”",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Sig": "Sig: 1 tab po BID\nMitte. #100\nRpf x0"
+   },
+   "truth": {
+    "Drug 1 · Sig": "1 tab PO BID"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_013",
+   "style": "pad",
+   "degradation": "clean",
+   "rule": "Every sig word is a dose or a known direction",
+   "ok": false,
+   "detail": "unknown: “Q4H5”",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Sig": "Sig: 1 tab PO Q4H5"
+   },
+   "truth": {
+    "Drug 1 · Sig": "1 tab PO QHS"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_013",
+   "style": "pad",
+   "degradation": "clean",
+   "rule": "Every sig word is a dose or a known direction",
+   "ok": false,
+   "detail": "unknown: “QH5”",
+   "where": "Drug 2",
+   "read": {
+    "Drug 2 · Sig": "Sig: 1 tab PO QH5"
+   },
+   "truth": {
+    "Drug 2 · Sig": "1 tab PO QHS"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_017",
+   "style": "pad",
+   "degradation": "fax",
+   "rule": "Quantity and refills are whole numbers",
+   "ok": false,
+   "detail": "quantity 100, refills ",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Refills": ""
+   },
+   "truth": {
+    "Drug 1 · Refills": "2"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_018",
+   "style": "pad",
+   "degradation": "low_res",
+   "rule": "Every sig word is a dose or a known direction",
+   "ok": false,
+   "detail": "unknown: “I-2”",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Sig": "I-2 tabs PO Q4-6H PRN pain"
+   },
+   "truth": {
+    "Drug 1 · Sig": "1-2 tabs PO Q4-6H PRN pain"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_021",
+   "style": "pad",
+   "degradation": "blur",
+   "rule": "Every sig word is a dose or a known direction",
+   "ok": false,
+   "detail": "unknown: “fab”",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Sig": "1/2 fab po daily"
+   },
+   "truth": {
+    "Drug 1 · Sig": "1/2 tab PO daily"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_021",
+   "style": "pad",
+   "degradation": "blur",
+   "rule": "Quantity and refills are whole numbers",
+   "ok": false,
+   "detail": "quantity , refills 1",
+   "where": "Drug 2",
+   "read": {
+    "Drug 2 · Quantity": ""
+   },
+   "truth": {
+    "Drug 2 · Quantity": "21"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_023",
+   "style": "pad",
+   "degradation": "fax",
+   "rule": "Strength is a marketed one",
+   "ok": false,
+   "detail": "Clonazepam 2 isn’t marketed (known: 0.5 mg, 2 mg)",
+   "where": "Drug 1",
+   "read": {
+    "Drug 1 · Strength": "2"
+   },
+   "truth": {
+    "Drug 1 · Strength": "2 mg"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_024",
+   "style": "pad",
+   "degradation": "low_res",
+   "rule": "Drug is in the reference list",
+   "ok": false,
+   "detail": "“2oloff” matches no known drug, brand or generic",
+   "where": "Drug 2",
+   "read": {
+    "Drug 2 · Drug": "2oloff"
+   },
+   "truth": {
+    "Drug 2 · Drug": "Zoloft"
+   },
+   "real": true
+  },
+  {
+   "doc": "rx_pad_024",
+   "style": "pad",
+   "degradation": "low_res",
+   "rule": "Strength is a marketed one",
+   "ok": false,
+   "detail": "2oloff 50 mg can’t be checked",
+   "where": "Drug 2",
+   "read": {
+    "Drug 2 · Strength": "50 mg"
+   },
+   "truth": {
+    "Drug 2 · Strength": "50 mg"
+   },
+   "real": false
+  }
+ ],
+ "pages": {
+  "claim_002": {
+   "img": "img/claim_002.jpg",
+   "w": 981,
+   "h": 1300
+  },
+  "claim_005": {
+   "img": "img/claim_005.jpg",
+   "w": 1000,
+   "h": 1247
+  },
+  "claim_008": {
+   "img": "img/claim_008.jpg",
+   "w": 998,
+   "h": 1300
+  },
+  "claim_011": {
+   "img": "img/claim_011.jpg",
+   "w": 1000,
+   "h": 1247
+  },
+  "claim_014": {
+   "img": "img/claim_014.jpg",
+   "w": 933,
+   "h": 1300
+  },
+  "claim_017": {
+   "img": "img/claim_017.jpg",
+   "w": 1000,
+   "h": 1247
+  },
+  "claim_018": {
+   "img": "img/claim_018.jpg",
+   "w": 949,
+   "h": 1300
+  },
+  "claim_020": {
+   "img": "img/claim_020.jpg",
+   "w": 1000,
+   "h": 1288
+  },
+  "claim_023": {
+   "img": "img/claim_023.jpg",
+   "w": 1000,
+   "h": 1247
+  },
+  "inv_003": {
+   "img": "img/inv_003.jpg",
+   "w": 1000,
+   "h": 1275
+  },
+  "inv_004": {
+   "img": "img/inv_004.jpg",
+   "w": 1000,
+   "h": 1287
+  },
+  "inv_005": {
+   "img": "img/inv_005.jpg",
+   "w": 1000,
+   "h": 1278
+  },
+  "inv_009": {
+   "img": "img/inv_009.jpg",
+   "w": 1000,
+   "h": 1275
+  },
+  "inv_010": {
+   "img": "img/inv_010.jpg",
+   "w": 1000,
+   "h": 1277
+  },
+  "inv_011": {
+   "img": "img/inv_011.jpg",
+   "w": 1000,
+   "h": 1278
+  },
+  "inv_014": {
+   "img": "img/inv_014.jpg",
+   "w": 1000,
+   "h": 1229
+  },
+  "inv_015": {
+   "img": "img/inv_015.jpg",
+   "w": 1000,
+   "h": 1275
+  },
+  "inv_017": {
+   "img": "img/inv_017.jpg",
+   "w": 1000,
+   "h": 1278
+  },
+  "inv_021": {
+   "img": "img/inv_021.jpg",
+   "w": 1000,
+   "h": 1275
+  },
+  "inv_022": {
+   "img": "img/inv_022.jpg",
+   "w": 1000,
+   "h": 1299
+  },
+  "inv_023": {
+   "img": "img/inv_023.jpg",
+   "w": 1000,
+   "h": 1278
+  },
+  "rx_emr_001": {
+   "img": "img/rx_emr_001.jpg",
+   "w": 943,
+   "h": 1300
+  },
+  "rx_emr_004": {
+   "img": "img/rx_emr_004.jpg",
+   "w": 942,
+   "h": 1300
+  },
+  "rx_emr_005": {
+   "img": "img/rx_emr_005.jpg",
+   "w": 1000,
+   "h": 1266
+  },
+  "rx_emr_017": {
+   "img": "img/rx_emr_017.jpg",
+   "w": 994,
+   "h": 1300
+  },
+  "rx_emr_023": {
+   "img": "img/rx_emr_023.jpg",
+   "w": 1000,
+   "h": 1294
+  },
+  "rx_pad_001": {
+   "img": "img/rx_pad_001.jpg",
+   "w": 775,
+   "h": 1086
+  },
+  "rx_pad_004": {
+   "img": "img/rx_pad_004.jpg",
+   "w": 799,
+   "h": 1089
+  },
+  "rx_pad_007": {
+   "img": "img/rx_pad_007.jpg",
+   "w": 775,
+   "h": 1086
+  },
+  "rx_pad_009": {
+   "img": "img/rx_pad_009.jpg",
+   "w": 775,
+   "h": 1028
+  },
+  "rx_pad_013": {
+   "img": "img/rx_pad_013.jpg",
+   "w": 775,
+   "h": 1086
+  },
+  "rx_pad_017": {
+   "img": "img/rx_pad_017.jpg",
+   "w": 850,
+   "h": 1034
+  },
+  "rx_pad_018": {
+   "img": "img/rx_pad_018.jpg",
+   "w": 776,
+   "h": 1027
+  },
+  "rx_pad_021": {
+   "img": "img/rx_pad_021.jpg",
+   "w": 775,
+   "h": 1028
+  },
+  "rx_pad_023": {
+   "img": "img/rx_pad_023.jpg",
+   "w": 850,
+   "h": 1034
+  },
+  "rx_pad_024": {
+   "img": "img/rx_pad_024.jpg",
+   "w": 776,
+   "h": 1027
+  }
+ }
+}
