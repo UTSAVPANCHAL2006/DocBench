@@ -1,0 +1,5 @@
+pillow>=10.4
+pytesseract>=0.3.13
+anthropic>=0.70
+openai>=1.50
+pytest>=8.3
