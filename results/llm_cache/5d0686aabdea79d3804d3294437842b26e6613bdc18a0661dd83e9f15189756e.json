@@ -1,0 +1,1 @@
+[{"patient_name": "Noel Chen", "patient_dob": "", "health_card": "", "date_written": "2026-02-01", "prescriber_name": "Or. Mel Fraser, MD CCFP", "prescriber_license": "", "medications": [{"drug_name": "Clonazepam", "strength": "", "sig": "M:30 Rpt x0 2D not supshtute", "quantity": "", "refills": ""}]}, 4022.947875, 0.00073375, {"input_tokens": 675, "output_tokens": 479}]

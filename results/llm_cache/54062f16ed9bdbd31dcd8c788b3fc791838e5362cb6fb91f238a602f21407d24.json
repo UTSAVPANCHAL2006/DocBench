@@ -1,0 +1,1 @@
+[{"patient_name": "Noah Armen", "patient_dob": "", "health_card": "", "date_written": "", "prescriber_name": "Dr Ravi Roy MD CCFP", "prescriber_license": "", "medications": [{"drug_name": "Clonazepam", "strength": "2", "sig": "1 tab PO QHS", "quantity": "30", "refills": "5"}]}, 4290.689624999914, 0.0009158500000000001, {"input_tokens": 1598, "output_tokens": 477}]

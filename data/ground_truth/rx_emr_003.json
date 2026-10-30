@@ -1,0 +1,31 @@
+{
+  "doc_id": "rx_emr_003",
+  "doc_type": "prescription",
+  "style": "emr",
+  "degradation": "blur",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "patient_name": "Sofia Das",
+    "patient_dob": "1966-11-23",
+    "health_card": "7055-169-409-HE",
+    "date_written": "2026-04-27",
+    "prescriber_name": "Dr. Sofia Roy",
+    "prescriber_license": "90805",
+    "medications": [
+      {
+        "drug_name": "Ramipril",
+        "strength": "5 mg",
+        "sig": "Take 1/2 capsule by mouth once daily",
+        "quantity": "21",
+        "refills": "3"
+      },
+      {
+        "drug_name": "Prednisone",
+        "strength": "50 mg",
+        "sig": "Take 2 tablets by mouth twice daily with food",
+        "quantity": "100",
+        "refills": "0"
+      }
+    ]
+  }
+}

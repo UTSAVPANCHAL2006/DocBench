@@ -1,0 +1,1 @@
+[{"patient_name": "Lucas Khat", "patient_dob": "", "health_card": "", "date_written": "", "prescriber_name": "Dr. Aisha Patel, MD CCFP", "prescriber_license": "", "medications": [{"drug_name": "Celecoxib", "strength": "100 mg", "sig": "1 cap po bid", "quantity": "28", "refills": "0"}]}, 3621.03558299998, 0.0008496, {"input_tokens": 1598, "output_tokens": 424}]

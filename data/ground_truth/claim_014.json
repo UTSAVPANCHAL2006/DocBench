@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_014",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "skew",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "carrier": "Maple Health Benefits",
+    "group_number": "59899",
+    "patient_name": "Wei MacDonald",
+    "certificate_id": "78255127-03",
+    "rx_number": "2671072",
+    "date_of_service": "2026-06-11",
+    "din": "07294364",
+    "drug_name": "Amoxil",
+    "strength": "250 mg",
+    "quantity": "14",
+    "days_supply": "90",
+    "total_submitted": "69.88",
+    "amount_paid": "62.89",
+    "patient_pays": "6.99",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "741138124"
+  }
+}

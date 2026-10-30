@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_007",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "clean",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Maple Health Benefits",
+    "group_number": "33644",
+    "patient_name": "Isabelle Kaur",
+    "certificate_id": "83815115-02",
+    "rx_number": "9467339",
+    "date_of_service": "2026-06-22",
+    "din": "07866314",
+    "drug_name": "Hydralazine",
+    "strength": "25 mg",
+    "quantity": "100",
+    "days_supply": "14",
+    "total_submitted": "98.81",
+    "amount_paid": "98.81",
+    "patient_pays": "0.00",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "673271266"
+  }
+}

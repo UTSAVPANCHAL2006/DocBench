@@ -1,0 +1,1 @@
+[{"patient_name": "Noah Martin", "patient_dob": "", "health_card": "", "date_written": "2026-02-25", "prescriber_name": "Dr. Priya Roy, MD CCFP", "prescriber_license": "112548", "medications": [{"drug_name": "Apresoline", "strength": "25 mg", "sig": "1/2 tab PO daily", "quantity": "", "refills": "3"}]}, 2633.8113339998017, 0.00054125, {"input_tokens": 650, "output_tokens": 329}]

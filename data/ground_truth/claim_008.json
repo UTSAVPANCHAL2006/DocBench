@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_008",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "skew",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Maple Health Benefits",
+    "group_number": "77844",
+    "patient_name": "Wei Ahmed",
+    "certificate_id": "28130896-02",
+    "rx_number": "1110206",
+    "date_of_service": "2026-06-03",
+    "din": "00986113",
+    "drug_name": "Catapres",
+    "strength": "0.1 mg",
+    "quantity": "60",
+    "days_supply": "14",
+    "total_submitted": "186.00",
+    "amount_paid": "0.00",
+    "patient_pays": "186.00",
+    "status": "REJECTED",
+    "response_codes": "LO",
+    "trace_number": "330664237"
+  }
+}

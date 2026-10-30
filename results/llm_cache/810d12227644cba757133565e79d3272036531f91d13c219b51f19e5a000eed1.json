@@ -1,0 +1,1 @@
+[{"patient_name": "eaeel Sigh _ Sg", "patient_dob": "", "health_card": "", "date_written": "", "prescriber_name": "Dr. Sofia Fraser, MD CCFP", "prescriber_license": "60604", "medications": [{"drug_name": "Atorvastatin", "strength": "40 mg", "sig": "1 tab PO QHS", "quantity": "28", "refills": "5"}]}, 3241.8506249996426, 0.000701, {"input_tokens": 655, "output_tokens": 456}]

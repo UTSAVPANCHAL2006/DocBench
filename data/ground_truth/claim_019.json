@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_019",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "clean",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Maple Health Benefits",
+    "group_number": "77987",
+    "patient_name": "Liam Leblanc",
+    "certificate_id": "82191574-02",
+    "rx_number": "1658532",
+    "date_of_service": "2026-07-18",
+    "din": "03468254",
+    "drug_name": "Ramipril",
+    "strength": "10 mg",
+    "quantity": "14",
+    "days_supply": "7",
+    "total_submitted": "97.57",
+    "amount_paid": "97.57",
+    "patient_pays": "0.00",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "303850254"
+  }
+}

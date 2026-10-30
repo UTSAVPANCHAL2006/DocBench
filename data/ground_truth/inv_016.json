@@ -1,0 +1,73 @@
+{
+  "doc_id": "inv_016",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "noise",
+  "date_format": "%d/%m/%Y",
+  "fields": {
+    "supplier": "Northbridge Pharma Distribution",
+    "invoice_number": "4113844",
+    "invoice_date": "2026-01-09",
+    "account_number": "307-9564",
+    "po_number": "PO-76107",
+    "subtotal": "3730.45",
+    "hst": "48.29",
+    "total": "3778.74",
+    "line_items": [
+      {
+        "din": "03353679",
+        "description": "RAMIPRIL 2.5MG CAP 100",
+        "qty_ordered": "10",
+        "qty_shipped": "10",
+        "unit_cost": "154.48",
+        "line_total": "1544.80",
+        "taxable": false
+      },
+      {
+        "din": "01946823",
+        "description": "PMS-CELECOXIB 100MG CAP 30",
+        "qty_ordered": "3",
+        "qty_shipped": "3",
+        "unit_cost": "221.70",
+        "line_total": "665.10",
+        "taxable": false
+      },
+      {
+        "din": "06931661",
+        "description": "IBUPROFEN 200MG TAB 100",
+        "qty_ordered": "9",
+        "qty_shipped": "9",
+        "unit_cost": "24.83",
+        "line_total": "223.47",
+        "taxable": true
+      },
+      {
+        "din": "08172805",
+        "description": "ACETAMINOPHEN 500MG CAPLET 100",
+        "qty_ordered": "12",
+        "qty_shipped": "12",
+        "unit_cost": "12.33",
+        "line_total": "147.96",
+        "taxable": true
+      },
+      {
+        "din": "08581372",
+        "description": "ATORVASTATIN 10MG TAB 500",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "99.69",
+        "line_total": "797.52",
+        "taxable": false
+      },
+      {
+        "din": "05572253",
+        "description": "HYDROXYZINE 10MG TAB 500",
+        "qty_ordered": "2",
+        "qty_shipped": "2",
+        "unit_cost": "175.80",
+        "line_total": "351.60",
+        "taxable": false
+      }
+    ]
+  }
+}

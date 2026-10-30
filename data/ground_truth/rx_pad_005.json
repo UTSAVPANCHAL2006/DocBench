@@ -1,0 +1,24 @@
+{
+  "doc_id": "rx_pad_005",
+  "doc_type": "prescription",
+  "style": "pad",
+  "degradation": "fax",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "patient_name": "Lucas Khan",
+    "patient_dob": "1995-09-23",
+    "health_card": "",
+    "date_written": "2026-02-21",
+    "prescriber_name": "Dr. Aisha Patel",
+    "prescriber_license": "69929",
+    "medications": [
+      {
+        "drug_name": "Celecoxib",
+        "strength": "100 mg",
+        "sig": "1 cap PO BID",
+        "quantity": "28",
+        "refills": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "doc_id": "rx_pad_024",
+  "doc_type": "prescription",
+  "style": "pad",
+  "degradation": "low_res",
+  "date_format": "%d/%m/%Y",
+  "fields": {
+    "patient_name": "Isabelle Singh",
+    "patient_dob": "1965-01-01",
+    "health_card": "",
+    "date_written": "2026-05-08",
+    "prescriber_name": "Dr. Jun Patel",
+    "prescriber_license": "58623",
+    "medications": [
+      {
+        "drug_name": "Amlodipine",
+        "strength": "10 mg",
+        "sig": "1 tab PO daily",
+        "quantity": "100",
+        "refills": "5"
+      },
+      {
+        "drug_name": "Zoloft",
+        "strength": "50 mg",
+        "sig": "2 caps PO BID with food",
+        "quantity": "28",
+        "refills": "3"
+      }
+    ]
+  }
+}

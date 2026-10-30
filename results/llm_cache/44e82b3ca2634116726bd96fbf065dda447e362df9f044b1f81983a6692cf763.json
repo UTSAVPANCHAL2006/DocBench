@@ -1,0 +1,1 @@
+[{"patient_name": "Fatima Roy", "patient_dob": "", "health_card": "", "date_written": "2026-01-27", "prescriber_name": "Dr. Arjun Tremblay, MD CCFP", "prescriber_license": "", "medications": [{"drug_name": "Hydralazine", "strength": "10mg", "sig": "1 tab PO QHS", "quantity": "100", "refills": ""}]}, 3935.6565420000607, 0.0008746, {"input_tokens": 1598, "output_tokens": 444}]

@@ -1,0 +1,82 @@
+{
+  "doc_id": "inv_015",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "blur",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "supplier": "Northbridge Pharma Distribution",
+    "invoice_number": "4165001",
+    "invoice_date": "2026-07-05",
+    "account_number": "716-2938",
+    "po_number": "PO-96652",
+    "subtotal": "4255.20",
+    "hst": "2.21",
+    "total": "4257.41",
+    "line_items": [
+      {
+        "din": "08923991",
+        "description": "PMS-CITALOPRAM 20MG TAB 100",
+        "qty_ordered": "9",
+        "qty_shipped": "9",
+        "unit_cost": "28.36",
+        "line_total": "255.24",
+        "taxable": false
+      },
+      {
+        "din": "02565535",
+        "description": "PMS-ATORVASTATIN 40MG TAB 100",
+        "qty_ordered": "6",
+        "qty_shipped": "6",
+        "unit_cost": "140.56",
+        "line_total": "843.36",
+        "taxable": false
+      },
+      {
+        "din": "08581372",
+        "description": "PMS-ATORVASTATIN 10MG TAB 500",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "95.59",
+        "line_total": "764.72",
+        "taxable": false
+      },
+      {
+        "din": "09088133",
+        "description": "LORATADINE 10MG TAB 24",
+        "qty_ordered": "1",
+        "qty_shipped": "1",
+        "unit_cost": "17.03",
+        "line_total": "17.03",
+        "taxable": true
+      },
+      {
+        "din": "09769232",
+        "description": "TEVA-WARFARIN 5MG TAB 100",
+        "qty_ordered": "3",
+        "qty_shipped": "3",
+        "unit_cost": "14.10",
+        "line_total": "42.30",
+        "taxable": false
+      },
+      {
+        "din": "03353679",
+        "description": "RAMIPRIL 2.5MG CAP 100",
+        "qty_ordered": "4",
+        "qty_shipped": "0",
+        "unit_cost": "153.52",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "03628355",
+        "description": "CLONAZEPAM 2MG TAB 500",
+        "qty_ordered": "11",
+        "qty_shipped": "11",
+        "unit_cost": "212.05",
+        "line_total": "2332.55",
+        "taxable": false
+      }
+    ]
+  }
+}

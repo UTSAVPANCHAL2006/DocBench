@@ -1,0 +1,82 @@
+{
+  "doc_id": "inv_019",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "clean",
+  "date_format": "%d/%m/%Y",
+  "fields": {
+    "supplier": "Northbridge Pharma Distribution",
+    "invoice_number": "4270343",
+    "invoice_date": "2026-02-04",
+    "account_number": "491-4610",
+    "po_number": "PO-98724",
+    "subtotal": "4864.22",
+    "hst": "30.38",
+    "total": "4894.60",
+    "line_items": [
+      {
+        "din": "06593633",
+        "description": "METFORMIN 500MG TAB 30",
+        "qty_ordered": "9",
+        "qty_shipped": "9",
+        "unit_cost": "111.32",
+        "line_total": "1001.88",
+        "taxable": false
+      },
+      {
+        "din": "07294364",
+        "description": "AMOXICILLIN 250MG CAP 500",
+        "qty_ordered": "10",
+        "qty_shipped": "10",
+        "unit_cost": "141.57",
+        "line_total": "1415.70",
+        "taxable": false
+      },
+      {
+        "din": "00136160",
+        "description": "CETIRIZINE 10MG TAB 30",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "14.85",
+        "line_total": "118.80",
+        "taxable": true
+      },
+      {
+        "din": "08136896",
+        "description": "CELECOXIB 200MG CAP 100",
+        "qty_ordered": "10",
+        "qty_shipped": "10",
+        "unit_cost": "175.37",
+        "line_total": "1753.70",
+        "taxable": false
+      },
+      {
+        "din": "08172805",
+        "description": "ACETAMINOPHEN 500MG CAPLET 100",
+        "qty_ordered": "4",
+        "qty_shipped": "4",
+        "unit_cost": "13.64",
+        "line_total": "54.56",
+        "taxable": true
+      },
+      {
+        "din": "02565535",
+        "description": "PMS-ATORVASTATIN 40MG TAB 100",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "57.41",
+        "line_total": "459.28",
+        "taxable": false
+      },
+      {
+        "din": "",
+        "description": "ADHESIVE BANDAGES ASSORTED 30",
+        "qty_ordered": "10",
+        "qty_shipped": "10",
+        "unit_cost": "6.03",
+        "line_total": "60.30",
+        "taxable": true
+      }
+    ]
+  }
+}

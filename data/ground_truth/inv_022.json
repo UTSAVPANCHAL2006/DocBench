@@ -1,0 +1,82 @@
+{
+  "doc_id": "inv_022",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "noise",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "supplier": "Great Lakes Rx Wholesale",
+    "invoice_number": "4263871",
+    "invoice_date": "2026-02-10",
+    "account_number": "315-3734",
+    "po_number": "PO-62041",
+    "subtotal": "5500.37",
+    "hst": "45.98",
+    "total": "5546.35",
+    "line_items": [
+      {
+        "din": "09890918",
+        "description": "MYLAN-LEVOTHYROXINE 100MCG TAB 30",
+        "qty_ordered": "12",
+        "qty_shipped": "12",
+        "unit_cost": "213.95",
+        "line_total": "2567.40",
+        "taxable": false
+      },
+      {
+        "din": "",
+        "description": "ADHESIVE BANDAGES ASSORTED 30",
+        "qty_ordered": "11",
+        "qty_shipped": "11",
+        "unit_cost": "22.86",
+        "line_total": "251.46",
+        "taxable": true
+      },
+      {
+        "din": "01946823",
+        "description": "CELECOXIB 100MG CAP 30",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "223.14",
+        "line_total": "1785.12",
+        "taxable": false
+      },
+      {
+        "din": "",
+        "description": "PILL ORGANIZER 7-DAY",
+        "qty_ordered": "6",
+        "qty_shipped": "6",
+        "unit_cost": "11.31",
+        "line_total": "67.86",
+        "taxable": true
+      },
+      {
+        "din": "",
+        "description": "DIGITAL THERMOMETER",
+        "qty_ordered": "9",
+        "qty_shipped": "9",
+        "unit_cost": "3.82",
+        "line_total": "34.38",
+        "taxable": true
+      },
+      {
+        "din": "09769232",
+        "description": "PMS-WARFARIN 5MG TAB 100",
+        "qty_ordered": "7",
+        "qty_shipped": "7",
+        "unit_cost": "113.45",
+        "line_total": "794.15",
+        "taxable": false
+      },
+      {
+        "din": "01993933",
+        "description": "WARFARIN 1MG TAB 100",
+        "qty_ordered": "1",
+        "qty_shipped": "0",
+        "unit_cost": "208.91",
+        "line_total": "0.00",
+        "taxable": false
+      }
+    ]
+  }
+}

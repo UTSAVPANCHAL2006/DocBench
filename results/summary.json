@@ -1,0 +1,106 @@
+{
+  "run": {
+    "timestamp": "2026-10-30 20:58",
+    "dataset": "1c772e8262",
+    "model": "gpt-5.4-nano",
+    "effort": "low"
+  },
+  "pipelines": {
+    "ocr_regex": {
+      "docs": 96,
+      "failed_calls": 0,
+      "field_acc": 0.5086912065439673,
+      "critical_acc": 0.46875,
+      "doc_exact": 0.2604166666666667,
+      "wrong": 961,
+      "silent_wrong": 91,
+      "p50_ms": 405.40770799998427,
+      "p90_ms": 844.5665410001766,
+      "cost_per_1k": 0.0,
+      "categories": {
+        "wrong_value": 20,
+        "missing": 870,
+        "numeric_mismatch": 41,
+        "near_miss": 26,
+        "date_mismatch": 2,
+        "hallucinated": 2
+      }
+    },
+    "ocr_reference": {
+      "docs": 96,
+      "failed_calls": 0,
+      "field_acc": 0.6581371545547595,
+      "critical_acc": 0.6178637200736649,
+      "doc_exact": 0.3125,
+      "wrong": 668,
+      "silent_wrong": 50,
+      "p50_ms": 800.1326659999677,
+      "p90_ms": 1340.3698739999754,
+      "cost_per_1k": 0.0,
+      "categories": {
+        "wrong_value": 18,
+        "missing": 601,
+        "numeric_mismatch": 28,
+        "near_miss": 21
+      }
+    },
+    "ocr_text_llm": {
+      "docs": 96,
+      "failed_calls": 0,
+      "field_acc": 0.6280336800396236,
+      "critical_acc": 0.6504854368932039,
+      "doc_exact": 0.19791666666666666,
+      "wrong": 751,
+      "silent_wrong": 380,
+      "p50_ms": 3722.2120420001374,
+      "p90_ms": 9608.3067080001,
+      "cost_per_1k": 0.7914526041666666,
+      "categories": {
+        "near_miss": 37,
+        "missing": 371,
+        "date_mismatch": 12,
+        "numeric_mismatch": 236,
+        "wrong_value": 30,
+        "hallucinated": 65
+      }
+    },
+    "vision_llm": {
+      "docs": 96,
+      "failed_calls": 0,
+      "field_acc": 0.9186284544524054,
+      "critical_acc": 0.929097605893186,
+      "doc_exact": 0.4270833333333333,
+      "wrong": 159,
+      "silent_wrong": 129,
+      "p50_ms": 4066.03908300076,
+      "p90_ms": 8068.721292000191,
+      "cost_per_1k": 1.1624432291666666,
+      "categories": {
+        "missing": 30,
+        "numeric_mismatch": 91,
+        "near_miss": 24,
+        "wrong_value": 8,
+        "date_mismatch": 6
+      }
+    },
+    "vision_verified": {
+      "docs": 96,
+      "failed_calls": 0,
+      "field_acc": 0.9186284544524054,
+      "critical_acc": 0.929097605893186,
+      "doc_exact": 0.4270833333333333,
+      "wrong": 159,
+      "silent_wrong": 67,
+      "p50_ms": 4066.076583000722,
+      "p90_ms": 8068.805251000299,
+      "cost_per_1k": 1.1624432291666666,
+      "categories": {
+        "missing": 30,
+        "numeric_mismatch": 91,
+        "near_miss": 24,
+        "wrong_value": 8,
+        "date_mismatch": 6
+      }
+    }
+  }
+}

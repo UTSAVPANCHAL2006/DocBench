@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_002",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "skew",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "carrier": "Northern Shield Insurance",
+    "group_number": "52534",
+    "patient_name": "Mei Kaur",
+    "certificate_id": "12022353-01",
+    "rx_number": "5632190",
+    "date_of_service": "2026-03-03",
+    "din": "03353679",
+    "drug_name": "Altace",
+    "strength": "2.5 mg",
+    "quantity": "14",
+    "days_supply": "90",
+    "total_submitted": "169.27",
+    "amount_paid": "0.00",
+    "patient_pays": "169.27",
+    "status": "REJECTED",
+    "response_codes": "D4",
+    "trace_number": "947336680"
+  }
+}

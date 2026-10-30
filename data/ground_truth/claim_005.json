@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_005",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "fax",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "carrier": "Maple Health Benefits",
+    "group_number": "22616",
+    "patient_name": "Omar Patel",
+    "certificate_id": "80222787-03",
+    "rx_number": "2118702",
+    "date_of_service": "2026-01-23",
+    "din": "03048596",
+    "drug_name": "Glucophage",
+    "strength": "850 mg",
+    "quantity": "90",
+    "days_supply": "14",
+    "total_submitted": "68.25",
+    "amount_paid": "61.42",
+    "patient_pays": "6.83",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "291811951"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_012",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "low_res",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Trillium Group Benefits",
+    "group_number": "67961",
+    "patient_name": "Wei Das",
+    "certificate_id": "93642093-01",
+    "rx_number": "8389750",
+    "date_of_service": "2026-01-23",
+    "din": "08923991",
+    "drug_name": "Celexa",
+    "strength": "20 mg",
+    "quantity": "100",
+    "days_supply": "14",
+    "total_submitted": "23.20",
+    "amount_paid": "20.88",
+    "patient_pays": "2.32",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "314410364"
+  }
+}

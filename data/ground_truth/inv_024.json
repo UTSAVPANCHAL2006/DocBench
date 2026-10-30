@@ -1,0 +1,46 @@
+{
+  "doc_id": "inv_024",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "low_res",
+  "date_format": "%d/%m/%Y",
+  "fields": {
+    "supplier": "Northbridge Pharma Distribution",
+    "invoice_number": "4358521",
+    "invoice_date": "2026-08-04",
+    "account_number": "419-9165",
+    "po_number": "PO-58679",
+    "subtotal": "391.75",
+    "hst": "0.00",
+    "total": "391.75",
+    "line_items": [
+      {
+        "din": "00115628",
+        "description": "SERTRALINE 100MG CAP 500",
+        "qty_ordered": "3",
+        "qty_shipped": "3",
+        "unit_cost": "120.11",
+        "line_total": "360.33",
+        "taxable": false
+      },
+      {
+        "din": "07922129",
+        "description": "LEVOTHYROXINE 50MCG TAB 30",
+        "qty_ordered": "12",
+        "qty_shipped": "0",
+        "unit_cost": "47.88",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "02576795",
+        "description": "TEVA-SERTRALINE 50MG CAP 30",
+        "qty_ordered": "2",
+        "qty_shipped": "2",
+        "unit_cost": "15.71",
+        "line_total": "31.42",
+        "taxable": false
+      }
+    ]
+  }
+}

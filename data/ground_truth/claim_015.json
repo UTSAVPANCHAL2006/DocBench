@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_015",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "blur",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Trillium Group Benefits",
+    "group_number": "46159",
+    "patient_name": "Priya Kaur",
+    "certificate_id": "18322800-03",
+    "rx_number": "5323142",
+    "date_of_service": "2026-07-18",
+    "din": "00386039",
+    "drug_name": "Zestril",
+    "strength": "10 mg",
+    "quantity": "100",
+    "days_supply": "7",
+    "total_submitted": "80.22",
+    "amount_paid": "80.22",
+    "patient_pays": "0.00",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "695861587"
+  }
+}

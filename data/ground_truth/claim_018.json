@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_018",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "low_res",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Maple Health Benefits",
+    "group_number": "18668",
+    "patient_name": "Priya Khan",
+    "certificate_id": "33767033-02",
+    "rx_number": "9219877",
+    "date_of_service": "2026-06-16",
+    "din": "03605671",
+    "drug_name": "Atorvastatin",
+    "strength": "20 mg",
+    "quantity": "60",
+    "days_supply": "90",
+    "total_submitted": "57.71",
+    "amount_paid": "57.71",
+    "patient_pays": "0.00",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "364982130"
+  }
+}

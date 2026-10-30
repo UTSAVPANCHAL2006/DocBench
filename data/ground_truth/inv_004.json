@@ -1,0 +1,55 @@
+{
+  "doc_id": "inv_004",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "noise",
+  "date_format": "%b %d, %Y",
+  "fields": {
+    "supplier": "Cedarline Medical Supply",
+    "invoice_number": "4150181",
+    "invoice_date": "2026-06-11",
+    "account_number": "983-3954",
+    "po_number": "PO-20592",
+    "subtotal": "2410.05",
+    "hst": "0.00",
+    "total": "2410.05",
+    "line_items": [
+      {
+        "din": "06593633",
+        "description": "METFORMIN 500MG TAB 30",
+        "qty_ordered": "11",
+        "qty_shipped": "11",
+        "unit_cost": "91.72",
+        "line_total": "1008.92",
+        "taxable": false
+      },
+      {
+        "din": "03628355",
+        "description": "CLONAZEPAM 2MG TAB 500",
+        "qty_ordered": "5",
+        "qty_shipped": "5",
+        "unit_cost": "113.45",
+        "line_total": "567.25",
+        "taxable": false
+      },
+      {
+        "din": "02754773",
+        "description": "PMS-WARFARIN 2.5MG TAB 100",
+        "qty_ordered": "3",
+        "qty_shipped": "0",
+        "unit_cost": "103.23",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "09769232",
+        "description": "APO-WARFARIN 5MG TAB 100",
+        "qty_ordered": "4",
+        "qty_shipped": "4",
+        "unit_cost": "208.47",
+        "line_total": "833.88",
+        "taxable": false
+      }
+    ]
+  }
+}

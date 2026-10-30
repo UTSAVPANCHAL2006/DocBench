@@ -1,0 +1,1 @@
+[{"patient_name": "Noah Abmad", "patient_dob": "", "health_card": "", "date_written": "2026-08-11", "prescriber_name": "RaviRoy MDCCEP", "prescriber_license": "18270", "medications": [{"drug_name": "Clonazepam", "strength": "7 mg", "sig": "I tab PO QHE", "quantity": "30", "refills": "5"}]}, 2945.936250000045, 0.00052525, {"input_tokens": 670, "output_tokens": 313}]

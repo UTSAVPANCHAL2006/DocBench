@@ -1,0 +1,82 @@
+{
+  "doc_id": "inv_003",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "blur",
+  "date_format": "%d/%m/%Y",
+  "fields": {
+    "supplier": "Cedarline Medical Supply",
+    "invoice_number": "4772519",
+    "invoice_date": "2026-01-19",
+    "account_number": "697-4111",
+    "po_number": "PO-54979",
+    "subtotal": "3885.71",
+    "hst": "4.67",
+    "total": "3890.38",
+    "line_items": [
+      {
+        "din": "01220544",
+        "description": "PMS-AMLODIPINE 10MG TAB 100",
+        "qty_ordered": "4",
+        "qty_shipped": "0",
+        "unit_cost": "163.82",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "00115628",
+        "description": "SERTRALINE 100MG CAP 500",
+        "qty_ordered": "4",
+        "qty_shipped": "4",
+        "unit_cost": "202.09",
+        "line_total": "808.36",
+        "taxable": false
+      },
+      {
+        "din": "00386039",
+        "description": "LISINOPRIL 10MG TAB 100",
+        "qty_ordered": "10",
+        "qty_shipped": "10",
+        "unit_cost": "97.73",
+        "line_total": "977.30",
+        "taxable": false
+      },
+      {
+        "din": "08239182",
+        "description": "CLONIDINE 0.2MG TAB 30",
+        "qty_ordered": "6",
+        "qty_shipped": "6",
+        "unit_cost": "144.13",
+        "line_total": "864.78",
+        "taxable": false
+      },
+      {
+        "din": "",
+        "description": "PILL ORGANIZER 7-DAY",
+        "qty_ordered": "12",
+        "qty_shipped": "0",
+        "unit_cost": "3.47",
+        "line_total": "0.00",
+        "taxable": true
+      },
+      {
+        "din": "00136160",
+        "description": "CETIRIZINE 10MG TAB 30",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "4.49",
+        "line_total": "35.92",
+        "taxable": true
+      },
+      {
+        "din": "09769232",
+        "description": "SANDOZ WARFARIN 5MG TAB 100",
+        "qty_ordered": "5",
+        "qty_shipped": "5",
+        "unit_cost": "239.87",
+        "line_total": "1199.35",
+        "taxable": false
+      }
+    ]
+  }
+}

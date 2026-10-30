@@ -1,0 +1,24 @@
+{
+  "doc_id": "rx_pad_002",
+  "doc_type": "prescription",
+  "style": "pad",
+  "degradation": "skew",
+  "date_format": "%b %d, %Y",
+  "fields": {
+    "patient_name": "Liam Bouchard",
+    "patient_dob": "",
+    "health_card": "",
+    "date_written": "2026-07-22",
+    "prescriber_name": "Dr. Aisha Khan",
+    "prescriber_license": "37653",
+    "medications": [
+      {
+        "drug_name": "Prednisone",
+        "strength": "50 mg",
+        "sig": "1-2 tabs PO Q4-6H PRN pain",
+        "quantity": "14",
+        "refills": "2"
+      }
+    ]
+  }
+}

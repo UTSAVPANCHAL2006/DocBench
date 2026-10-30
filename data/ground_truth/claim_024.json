@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_024",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "low_res",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Trillium Group Benefits",
+    "group_number": "89269",
+    "patient_name": "Hannah Chen",
+    "certificate_id": "48545627-02",
+    "rx_number": "6309796",
+    "date_of_service": "2026-05-13",
+    "din": "09890918",
+    "drug_name": "Levothyroxine",
+    "strength": "100 mcg",
+    "quantity": "100",
+    "days_supply": "30",
+    "total_submitted": "55.36",
+    "amount_paid": "0.00",
+    "patient_pays": "55.36",
+    "status": "REJECTED",
+    "response_codes": "D4,D7",
+    "trace_number": "239278422"
+  }
+}

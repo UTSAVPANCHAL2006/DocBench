@@ -1,0 +1,38 @@
+{
+  "doc_id": "rx_emr_014",
+  "doc_type": "prescription",
+  "style": "emr",
+  "degradation": "skew",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "patient_name": "Arjun Roy",
+    "patient_dob": "2002-03-18",
+    "health_card": "2827-422-579-AF",
+    "date_written": "2026-01-05",
+    "prescriber_name": "Dr. Wei Patel",
+    "prescriber_license": "64819",
+    "medications": [
+      {
+        "drug_name": "Citalopram",
+        "strength": "10 mg",
+        "sig": "Take 1 tablet by mouth three times daily for 7 days",
+        "quantity": "14",
+        "refills": "2"
+      },
+      {
+        "drug_name": "Hydralazine",
+        "strength": "25 mg",
+        "sig": "Take 1 tablet by mouth twice daily",
+        "quantity": "100",
+        "refills": "3"
+      },
+      {
+        "drug_name": "Clonidine",
+        "strength": "0.2 mg",
+        "sig": "Take 1 to 2 tablets by mouth every 4 to 6 hours as needed for pain",
+        "quantity": "60",
+        "refills": "0"
+      }
+    ]
+  }
+}

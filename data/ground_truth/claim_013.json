@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_013",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "clean",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "carrier": "Trillium Group Benefits",
+    "group_number": "43902",
+    "patient_name": "Ethan Ahmed",
+    "certificate_id": "83658696-02",
+    "rx_number": "3371416",
+    "date_of_service": "2026-01-10",
+    "din": "08780650",
+    "drug_name": "Lisinopril",
+    "strength": "20 mg",
+    "quantity": "60",
+    "days_supply": "90",
+    "total_submitted": "22.95",
+    "amount_paid": "0.00",
+    "patient_pays": "22.95",
+    "status": "REJECTED",
+    "response_codes": "D4,D7",
+    "trace_number": "725996789"
+  }
+}

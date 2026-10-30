@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_020",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "skew",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "carrier": "Maple Health Benefits",
+    "group_number": "86735",
+    "patient_name": "Emma Ahmed",
+    "certificate_id": "83337520-01",
+    "rx_number": "7594565",
+    "date_of_service": "2026-07-31",
+    "din": "02565535",
+    "drug_name": "Atorvastatin",
+    "strength": "40 mg",
+    "quantity": "100",
+    "days_supply": "30",
+    "total_submitted": "97.59",
+    "amount_paid": "97.59",
+    "patient_pays": "0.00",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "584135007"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_022",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "noise",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Northern Shield Insurance",
+    "group_number": "75225",
+    "patient_name": "Arjun Patel",
+    "certificate_id": "76926628-03",
+    "rx_number": "1096478",
+    "date_of_service": "2026-09-10",
+    "din": "08136896",
+    "drug_name": "Celecoxib",
+    "strength": "200 mg",
+    "quantity": "28",
+    "days_supply": "14",
+    "total_submitted": "19.60",
+    "amount_paid": "19.60",
+    "patient_pays": "0.00",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "332866519"
+  }
+}

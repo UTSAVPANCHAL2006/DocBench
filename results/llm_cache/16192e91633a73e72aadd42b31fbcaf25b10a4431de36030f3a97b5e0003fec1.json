@@ -1,0 +1,1 @@
+[{"patient_name": "", "patient_dob": "", "health_card": "", "date_written": "2000-10-15", "prescriber_name": "", "prescriber_license": "", "medications": [{"drug_name": "Warfarin", "strength": "5 mg", "sig": "Sig: 1 tab PO TID x 7 days", "quantity": "90", "refills": "5"}]}, 2379.8269580001943, 0.00046745000000000006, {"input_tokens": 656, "output_tokens": 269}]

@@ -1,0 +1,73 @@
+{
+  "doc_id": "inv_023",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "fax",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "supplier": "Cedarline Medical Supply",
+    "invoice_number": "4300692",
+    "invoice_date": "2026-08-29",
+    "account_number": "647-1136",
+    "po_number": "PO-74478",
+    "subtotal": "3520.79",
+    "hst": "18.42",
+    "total": "3539.21",
+    "line_items": [
+      {
+        "din": "03628355",
+        "description": "TEVA-CLONAZEPAM 2MG TAB 500",
+        "qty_ordered": "6",
+        "qty_shipped": "6",
+        "unit_cost": "10.74",
+        "line_total": "64.44",
+        "taxable": false
+      },
+      {
+        "din": "00986113",
+        "description": "CLONIDINE 0.1MG TAB 30",
+        "qty_ordered": "4",
+        "qty_shipped": "4",
+        "unit_cost": "207.05",
+        "line_total": "828.20",
+        "taxable": false
+      },
+      {
+        "din": "09890918",
+        "description": "MYLAN-LEVOTHYROXINE 100MCG TAB 30",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "114.26",
+        "line_total": "914.08",
+        "taxable": false
+      },
+      {
+        "din": "02576795",
+        "description": "SERTRALINE 50MG CAP 30",
+        "qty_ordered": "7",
+        "qty_shipped": "7",
+        "unit_cost": "224.63",
+        "line_total": "1572.41",
+        "taxable": false
+      },
+      {
+        "din": "03579246",
+        "description": "METRONIDAZOLE 500MG TAB 500",
+        "qty_ordered": "5",
+        "qty_shipped": "0",
+        "unit_cost": "35.89",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "",
+        "description": "ADHESIVE BANDAGES ASSORTED 30",
+        "qty_ordered": "9",
+        "qty_shipped": "9",
+        "unit_cost": "15.74",
+        "line_total": "141.66",
+        "taxable": true
+      }
+    ]
+  }
+}

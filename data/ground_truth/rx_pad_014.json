@@ -1,0 +1,24 @@
+{
+  "doc_id": "rx_pad_014",
+  "doc_type": "prescription",
+  "style": "pad",
+  "degradation": "skew",
+  "date_format": "%d/%m/%Y",
+  "fields": {
+    "patient_name": "Gabriel Singh",
+    "patient_dob": "",
+    "health_card": "",
+    "date_written": "2026-03-06",
+    "prescriber_name": "Dr. Sofia Fraser",
+    "prescriber_license": "60604",
+    "medications": [
+      {
+        "drug_name": "Atorvastatin",
+        "strength": "40 mg",
+        "sig": "1 tab PO QHS",
+        "quantity": "28",
+        "refills": "5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_003",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "blur",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Maple Health Benefits",
+    "group_number": "51515",
+    "patient_name": "Sofia Singh",
+    "certificate_id": "84940527-03",
+    "rx_number": "6827024",
+    "date_of_service": "2026-08-13",
+    "din": "09238449",
+    "drug_name": "Prednisone",
+    "strength": "5 mg",
+    "quantity": "14",
+    "days_supply": "14",
+    "total_submitted": "80.85",
+    "amount_paid": "0.00",
+    "patient_pays": "80.85",
+    "status": "REJECTED",
+    "response_codes": "57,D7",
+    "trace_number": "122927426"
+  }
+}

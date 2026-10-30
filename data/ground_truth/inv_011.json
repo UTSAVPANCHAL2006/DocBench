@@ -1,0 +1,73 @@
+{
+  "doc_id": "inv_011",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "fax",
+  "date_format": "%b %d, %Y",
+  "fields": {
+    "supplier": "Great Lakes Rx Wholesale",
+    "invoice_number": "4423013",
+    "invoice_date": "2026-02-17",
+    "account_number": "457-4624",
+    "po_number": "PO-37964",
+    "subtotal": "3396.05",
+    "hst": "8.64",
+    "total": "3404.69",
+    "line_items": [
+      {
+        "din": "07866314",
+        "description": "SANDOZ HYDRALAZINE 25MG TAB 100",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "203.66",
+        "line_total": "1629.28",
+        "taxable": false
+      },
+      {
+        "din": "09238449",
+        "description": "SANDOZ PREDNISONE 5MG TAB 100",
+        "qty_ordered": "9",
+        "qty_shipped": "9",
+        "unit_cost": "32.17",
+        "line_total": "289.53",
+        "taxable": false
+      },
+      {
+        "din": "08172805",
+        "description": "ACETAMINOPHEN 500MG CAPLET 100",
+        "qty_ordered": "12",
+        "qty_shipped": "12",
+        "unit_cost": "5.54",
+        "line_total": "66.48",
+        "taxable": true
+      },
+      {
+        "din": "04378046",
+        "description": "APO-RAMIPRIL 5MG CAP 500",
+        "qty_ordered": "4",
+        "qty_shipped": "4",
+        "unit_cost": "48.13",
+        "line_total": "192.52",
+        "taxable": false
+      },
+      {
+        "din": "09890918",
+        "description": "MYLAN-LEVOTHYROXINE 100MCG TAB 30",
+        "qty_ordered": "9",
+        "qty_shipped": "0",
+        "unit_cost": "171.49",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "03468254",
+        "description": "PMS-RAMIPRIL 10MG CAP 500",
+        "qty_ordered": "9",
+        "qty_shipped": "9",
+        "unit_cost": "135.36",
+        "line_total": "1218.24",
+        "taxable": false
+      }
+    ]
+  }
+}

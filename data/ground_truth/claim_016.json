@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_016",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "noise",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "carrier": "Trillium Group Benefits",
+    "group_number": "28163",
+    "patient_name": "Gabriel Wilson",
+    "certificate_id": "87984620-03",
+    "rx_number": "4394202",
+    "date_of_service": "2026-03-12",
+    "din": "08239182",
+    "drug_name": "Catapres",
+    "strength": "0.2 mg",
+    "quantity": "90",
+    "days_supply": "30",
+    "total_submitted": "76.29",
+    "amount_paid": "76.29",
+    "patient_pays": "0.00",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "839305702"
+  }
+}

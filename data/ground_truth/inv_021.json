@@ -1,0 +1,91 @@
+{
+  "doc_id": "inv_021",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "blur",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "supplier": "Cedarline Medical Supply",
+    "invoice_number": "4103782",
+    "invoice_date": "2026-03-25",
+    "account_number": "161-4530",
+    "po_number": "PO-43330",
+    "subtotal": "2041.41",
+    "hst": "50.73",
+    "total": "2092.14",
+    "line_items": [
+      {
+        "din": "09088133",
+        "description": "LORATADINE 10MG TAB 24",
+        "qty_ordered": "3",
+        "qty_shipped": "3",
+        "unit_cost": "24.52",
+        "line_total": "73.56",
+        "taxable": true
+      },
+      {
+        "din": "07294364",
+        "description": "SANDOZ AMOXICILLIN 250MG CAP 500",
+        "qty_ordered": "12",
+        "qty_shipped": "0",
+        "unit_cost": "207.39",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "03048596",
+        "description": "METFORMIN 850MG TAB 500",
+        "qty_ordered": "1",
+        "qty_shipped": "1",
+        "unit_cost": "91.87",
+        "line_total": "91.87",
+        "taxable": false
+      },
+      {
+        "din": "04378046",
+        "description": "MYLAN-RAMIPRIL 5MG CAP 500",
+        "qty_ordered": "8",
+        "qty_shipped": "0",
+        "unit_cost": "53.69",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "06931661",
+        "description": "IBUPROFEN 200MG TAB 100",
+        "qty_ordered": "11",
+        "qty_shipped": "11",
+        "unit_cost": "17.78",
+        "line_total": "195.58",
+        "taxable": true
+      },
+      {
+        "din": "00386039",
+        "description": "SANDOZ LISINOPRIL 10MG TAB 100",
+        "qty_ordered": "12",
+        "qty_shipped": "12",
+        "unit_cost": "84.97",
+        "line_total": "1019.64",
+        "taxable": false
+      },
+      {
+        "din": "00136160",
+        "description": "CETIRIZINE 10MG TAB 30",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "15.14",
+        "line_total": "121.12",
+        "taxable": true
+      },
+      {
+        "din": "04294817",
+        "description": "PMS-CLONAZEPAM 0.5MG TAB 30",
+        "qty_ordered": "9",
+        "qty_shipped": "9",
+        "unit_cost": "59.96",
+        "line_total": "539.64",
+        "taxable": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_021",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "blur",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "carrier": "Trillium Group Benefits",
+    "group_number": "30958",
+    "patient_name": "Wei Nguyen",
+    "certificate_id": "60825385-03",
+    "rx_number": "7385526",
+    "date_of_service": "2026-01-23",
+    "din": "01593375",
+    "drug_name": "Flagyl",
+    "strength": "250 mg",
+    "quantity": "90",
+    "days_supply": "14",
+    "total_submitted": "142.06",
+    "amount_paid": "113.65",
+    "patient_pays": "28.41",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "459910894"
+  }
+}

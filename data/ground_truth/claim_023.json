@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_023",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "fax",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Northern Shield Insurance",
+    "group_number": "53399",
+    "patient_name": "Wei Singh",
+    "certificate_id": "21771255-01",
+    "rx_number": "2826831",
+    "date_of_service": "2026-08-02",
+    "din": "04294817",
+    "drug_name": "Rivotril",
+    "strength": "0.5 mg",
+    "quantity": "28",
+    "days_supply": "14",
+    "total_submitted": "167.56",
+    "amount_paid": "134.05",
+    "patient_pays": "33.51",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "273232379"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "doc_id": "rx_pad_013",
+  "doc_type": "prescription",
+  "style": "pad",
+  "degradation": "clean",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "patient_name": "Liam Ahmed",
+    "patient_dob": "1995-11-10",
+    "health_card": "",
+    "date_written": "2026-09-13",
+    "prescriber_name": "Dr. Olivia Bouchard",
+    "prescriber_license": "52372",
+    "medications": [
+      {
+        "drug_name": "Metformin",
+        "strength": "500 mg",
+        "sig": "1 tab PO QHS",
+        "quantity": "14",
+        "refills": "5"
+      },
+      {
+        "drug_name": "Metronidazole",
+        "strength": "250 mg",
+        "sig": "1 tab PO QHS",
+        "quantity": "60",
+        "refills": "0"
+      }
+    ]
+  }
+}

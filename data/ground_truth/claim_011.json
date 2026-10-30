@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_011",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "fax",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "carrier": "Northern Shield Insurance",
+    "group_number": "75774",
+    "patient_name": "Ravi Campbell",
+    "certificate_id": "68316409-03",
+    "rx_number": "3187332",
+    "date_of_service": "2026-03-11",
+    "din": "02576795",
+    "drug_name": "Zoloft",
+    "strength": "50 mg",
+    "quantity": "100",
+    "days_supply": "90",
+    "total_submitted": "27.57",
+    "amount_paid": "27.57",
+    "patient_pays": "0.00",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "700539700"
+  }
+}

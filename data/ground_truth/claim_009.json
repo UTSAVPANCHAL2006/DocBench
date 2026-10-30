@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_009",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "blur",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Trillium Group Benefits",
+    "group_number": "20118",
+    "patient_name": "Lucas Khan",
+    "certificate_id": "53579429-02",
+    "rx_number": "3900822",
+    "date_of_service": "2026-09-07",
+    "din": "01120273",
+    "drug_name": "Atarax",
+    "strength": "25 mg",
+    "quantity": "30",
+    "days_supply": "7",
+    "total_submitted": "34.98",
+    "amount_paid": "34.98",
+    "patient_pays": "0.00",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "739124632"
+  }
+}

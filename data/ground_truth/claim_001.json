@@ -1,0 +1,26 @@
+{
+  "doc_id": "claim_001",
+  "doc_type": "claim",
+  "style": "claim",
+  "degradation": "clean",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "carrier": "Maple Health Benefits",
+    "group_number": "36106",
+    "patient_name": "Arjun Gagnon",
+    "certificate_id": "71852177-03",
+    "rx_number": "2576392",
+    "date_of_service": "2026-09-24",
+    "din": "09890918",
+    "drug_name": "Levothyroxine",
+    "strength": "100 mcg",
+    "quantity": "60",
+    "days_supply": "14",
+    "total_submitted": "153.18",
+    "amount_paid": "122.54",
+    "patient_pays": "30.64",
+    "status": "PAID",
+    "response_codes": "",
+    "trace_number": "607692567"
+  }
+}

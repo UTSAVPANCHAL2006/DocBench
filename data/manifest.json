@@ -1,0 +1,674 @@
+[
+  {
+    "doc_id": "rx_pad_001",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "clean",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_002",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "skew",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "rx_pad_003",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "blur",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_004",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "noise",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_005",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "fax",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_006",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "low_res",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "rx_pad_007",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "clean",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "rx_pad_008",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "skew",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "rx_pad_009",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "blur",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "rx_pad_010",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "noise",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_pad_011",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "fax",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "rx_pad_012",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "low_res",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "rx_pad_013",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "clean",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_014",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "skew",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "rx_pad_015",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "blur",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_016",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "noise",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "rx_pad_017",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "fax",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "rx_pad_018",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "low_res",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_019",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "clean",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_020",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "skew",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "rx_pad_021",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "blur",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_022",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "noise",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "rx_pad_023",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "fax",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_pad_024",
+    "doc_type": "prescription",
+    "style": "pad",
+    "degradation": "low_res",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "rx_emr_001",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "clean",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_emr_002",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "skew",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_003",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "blur",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_004",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "noise",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_005",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "fax",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_006",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "low_res",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_007",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "clean",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_008",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "skew",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_009",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "blur",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_010",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "noise",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_emr_011",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "fax",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_012",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "low_res",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_emr_013",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "clean",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_emr_014",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "skew",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_emr_015",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "blur",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_016",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "noise",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_emr_017",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "fax",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_emr_018",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "low_res",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_emr_019",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "clean",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_020",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "skew",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_021",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "blur",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_022",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "noise",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "rx_emr_023",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "fax",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "rx_emr_024",
+    "doc_type": "prescription",
+    "style": "emr",
+    "degradation": "low_res",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "inv_001",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "clean",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_002",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "skew",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_003",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "blur",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "inv_004",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "noise",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "inv_005",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "fax",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "inv_006",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "low_res",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_007",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "clean",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_008",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "skew",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "inv_009",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "blur",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_010",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "noise",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_011",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "fax",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "inv_012",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "low_res",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "inv_013",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "clean",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "inv_014",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "skew",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "inv_015",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "blur",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_016",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "noise",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "inv_017",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "fax",
+    "date_format": "%b %d, %Y"
+  },
+  {
+    "doc_id": "inv_018",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "low_res",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "inv_019",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "clean",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "inv_020",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "skew",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "inv_021",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "blur",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_022",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "noise",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_023",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "fax",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "inv_024",
+    "doc_type": "invoice",
+    "style": "invoice",
+    "degradation": "low_res",
+    "date_format": "%d/%m/%Y"
+  },
+  {
+    "doc_id": "claim_001",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "clean",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_002",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "skew",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_003",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "blur",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_004",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "noise",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_005",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "fax",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_006",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "low_res",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_007",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "clean",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_008",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "skew",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_009",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "blur",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_010",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "noise",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_011",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "fax",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_012",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "low_res",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_013",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "clean",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_014",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "skew",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_015",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "blur",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_016",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "noise",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_017",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "fax",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_018",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "low_res",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_019",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "clean",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_020",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "skew",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_021",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "blur",
+    "date_format": "%Y-%m-%d"
+  },
+  {
+    "doc_id": "claim_022",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "noise",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_023",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "fax",
+    "date_format": "%d-%b-%Y"
+  },
+  {
+    "doc_id": "claim_024",
+    "doc_type": "claim",
+    "style": "claim",
+    "degradation": "low_res",
+    "date_format": "%d-%b-%Y"
+  }
+]

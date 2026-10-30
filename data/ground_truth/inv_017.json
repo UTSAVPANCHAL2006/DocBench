@@ -1,0 +1,55 @@
+{
+  "doc_id": "inv_017",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "fax",
+  "date_format": "%b %d, %Y",
+  "fields": {
+    "supplier": "Northbridge Pharma Distribution",
+    "invoice_number": "4606063",
+    "invoice_date": "2026-09-25",
+    "account_number": "220-9515",
+    "po_number": "PO-10942",
+    "subtotal": "1975.39",
+    "hst": "0.00",
+    "total": "1975.39",
+    "line_items": [
+      {
+        "din": "07294364",
+        "description": "AMOXICILLIN 250MG CAP 500",
+        "qty_ordered": "8",
+        "qty_shipped": "8",
+        "unit_cost": "117.78",
+        "line_total": "942.24",
+        "taxable": false
+      },
+      {
+        "din": "09238449",
+        "description": "SANDOZ PREDNISONE 5MG TAB 100",
+        "qty_ordered": "2",
+        "qty_shipped": "2",
+        "unit_cost": "105.23",
+        "line_total": "210.46",
+        "taxable": false
+      },
+      {
+        "din": "03468254",
+        "description": "RAMIPRIL 10MG CAP 500",
+        "qty_ordered": "9",
+        "qty_shipped": "9",
+        "unit_cost": "91.41",
+        "line_total": "822.69",
+        "taxable": false
+      },
+      {
+        "din": "01220544",
+        "description": "AMLODIPINE 10MG TAB 100",
+        "qty_ordered": "4",
+        "qty_shipped": "0",
+        "unit_cost": "86.72",
+        "line_total": "0.00",
+        "taxable": false
+      }
+    ]
+  }
+}

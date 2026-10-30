@@ -1,0 +1,91 @@
+{
+  "doc_id": "inv_010",
+  "doc_type": "invoice",
+  "style": "invoice",
+  "degradation": "noise",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "supplier": "Great Lakes Rx Wholesale",
+    "invoice_number": "4678553",
+    "invoice_date": "2026-07-19",
+    "account_number": "343-9370",
+    "po_number": "PO-47701",
+    "subtotal": "5138.34",
+    "hst": "19.52",
+    "total": "5157.86",
+    "line_items": [
+      {
+        "din": "09769232",
+        "description": "WARFARIN 5MG TAB 100",
+        "qty_ordered": "4",
+        "qty_shipped": "4",
+        "unit_cost": "141.54",
+        "line_total": "566.16",
+        "taxable": false
+      },
+      {
+        "din": "",
+        "description": "PILL ORGANIZER 7-DAY",
+        "qty_ordered": "3",
+        "qty_shipped": "3",
+        "unit_cost": "8.58",
+        "line_total": "25.74",
+        "taxable": true
+      },
+      {
+        "din": "07866314",
+        "description": "SANDOZ HYDRALAZINE 25MG TAB 100",
+        "qty_ordered": "11",
+        "qty_shipped": "11",
+        "unit_cost": "167.86",
+        "line_total": "1846.46",
+        "taxable": false
+      },
+      {
+        "din": "",
+        "description": "DIGITAL THERMOMETER",
+        "qty_ordered": "1",
+        "qty_shipped": "1",
+        "unit_cost": "21.49",
+        "line_total": "21.49",
+        "taxable": true
+      },
+      {
+        "din": "",
+        "description": "ADHESIVE BANDAGES ASSORTED 30",
+        "qty_ordered": "5",
+        "qty_shipped": "5",
+        "unit_cost": "20.59",
+        "line_total": "102.95",
+        "taxable": true
+      },
+      {
+        "din": "09890918",
+        "description": "APO-LEVOTHYROXINE 100MCG TAB 30",
+        "qty_ordered": "9",
+        "qty_shipped": "0",
+        "unit_cost": "183.54",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "07166458",
+        "description": "PREDNISONE 50MG TAB 500",
+        "qty_ordered": "8",
+        "qty_shipped": "0",
+        "unit_cost": "35.31",
+        "line_total": "0.00",
+        "taxable": false
+      },
+      {
+        "din": "04294817",
+        "description": "CLONAZEPAM 0.5MG TAB 30",
+        "qty_ordered": "11",
+        "qty_shipped": "11",
+        "unit_cost": "234.14",
+        "line_total": "2575.54",
+        "taxable": false
+      }
+    ]
+  }
+}

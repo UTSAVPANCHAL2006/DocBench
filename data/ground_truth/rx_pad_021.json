@@ -1,0 +1,31 @@
+{
+  "doc_id": "rx_pad_021",
+  "doc_type": "prescription",
+  "style": "pad",
+  "degradation": "blur",
+  "date_format": "%Y-%m-%d",
+  "fields": {
+    "patient_name": "Emma Das",
+    "patient_dob": "",
+    "health_card": "",
+    "date_written": "2026-04-03",
+    "prescriber_name": "Dr. Olivia Wilson",
+    "prescriber_license": "94343",
+    "medications": [
+      {
+        "drug_name": "Metformin",
+        "strength": "500 mg",
+        "sig": "1/2 tab PO daily",
+        "quantity": "30",
+        "refills": "0"
+      },
+      {
+        "drug_name": "Metronidazole",
+        "strength": "500 mg",
+        "sig": "2 tabs PO BID with food",
+        "quantity": "21",
+        "refills": "1"
+      }
+    ]
+  }
+}

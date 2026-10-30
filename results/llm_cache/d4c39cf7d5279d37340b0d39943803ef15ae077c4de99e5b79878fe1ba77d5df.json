@@ -1,0 +1,1 @@
+[{"patient_name": "ES", "patient_dob": "", "health_card": "", "date_written": "", "prescriber_name": "Dr. Arjun Ahmed, MD CcFp", "prescriber_license": "115043", "medications": [{"drug_name": "Altace", "strength": "10 mg", "sig": "1 cap PO BID", "quantity": "90", "refills": "0"}]}, 4935.003250000591, 0.0007133500000000001, {"input_tokens": 648, "output_tokens": 467}]

@@ -1,0 +1,31 @@
+{
+  "doc_id": "rx_emr_015",
+  "doc_type": "prescription",
+  "style": "emr",
+  "degradation": "blur",
+  "date_format": "%d-%b-%Y",
+  "fields": {
+    "patient_name": "Jun Patel",
+    "patient_dob": "1966-04-03",
+    "health_card": "4948-126-042-CD",
+    "date_written": "2026-03-16",
+    "prescriber_name": "Dr. Mei Chen",
+    "prescriber_license": "84720",
+    "medications": [
+      {
+        "drug_name": "Hydralazine",
+        "strength": "25 mg",
+        "sig": "Take 1 tablet by mouth at bedtime",
+        "quantity": "30",
+        "refills": "2"
+      },
+      {
+        "drug_name": "Lisinopril",
+        "strength": "20 mg",
+        "sig": "Take 1 tablet by mouth once daily",
+        "quantity": "90",
+        "refills": "3"
+      }
+    ]
+  }
+}
