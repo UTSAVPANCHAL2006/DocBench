@@ -20,7 +20,7 @@ export function Scatter({ headline }: { headline: Headline[] }) {
   const yTicks = Array.from({ length: Ymax / 40 + 1 }, (_, i) => i * 40);
 
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Scatter plot of critical-field accuracy against silent critical errors for five pipelines">
+    <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Scatter plot of critical-field accuracy against unflagged critical errors for five methods">
       <defs>
         <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
           <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)" />
@@ -39,11 +39,11 @@ export function Scatter({ headline }: { headline: Headline[] }) {
         </g>
       ))}
       <text className="axis-title" x={(m.l + W - m.r) / 2} y={H - 8} textAnchor="middle">Critical-field accuracy</text>
-      <text className="axis-title" x={16} y={yMid} textAnchor="middle" transform={`rotate(-90 16 ${yMid})`}>Silent critical errors</text>
+      <text className="axis-title" x={16} y={yMid} textAnchor="middle" transform={`rotate(-90 16 ${yMid})`}>Unflagged critical errors</text>
       <path className="drop" markerEnd="url(#arr)"
         d={`M${x(v1.critical_acc)},${y(v1.critical_silent) + 10} L${x(v2.critical_acc)},${y(v2.critical_silent) - 12}`} />
       <text className="drop-label" x={x(v1.critical_acc) - 12} y={y(v1.critical_silent) + 36} textAnchor="end">
-        −{v1.critical_silent - v2.critical_silent} with validation
+        −{v1.critical_silent - v2.critical_silent} with checks
       </text>
       {headline.map(h => {
         const px = x(h.critical_acc), py = y(h.critical_silent), hi = h.pipeline === "vision_verified";
@@ -62,7 +62,7 @@ export function Scatter({ headline }: { headline: Headline[] }) {
   );
 }
 
-/** Pipelines (rows) by condition or document type (columns), shaded by accuracy. */
+/** Methods (rows) by page condition or document type (columns), shaded by share of fields read correctly. */
 export function Heat({ headline, cols, labels, matrix }: {
   headline: Headline[]; cols: string[]; labels: Record<string, string>; matrix: Record<Pipeline, number[]>;
 }) {

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { asset, DEG, STYLE, type Page, type QueueItem } from "@/lib/data";
 
-/** The scanned page next to every alert raised on it: what the model read, what the page says. */
+/** The scanned page next to every alert raised on it: what the AI read, what the page says. */
 export default function PageViewer({ doc, page, alerts, onClose }: {
   doc: string; page: Page; alerts: QueueItem[]; onClose: () => void;
 }) {
@@ -44,7 +44,7 @@ export default function PageViewer({ doc, page, alerts, onClose }: {
                 </div>
                 <p className="qwhy">{a.detail}</p>
                 <table className="cmp">
-                  <thead><tr><th>Field</th><th>Model read</th><th>On the page</th></tr></thead>
+                  <thead><tr><th>Field</th><th>AI read</th><th>On the page</th></tr></thead>
                   <tbody>
                     {Object.entries(a.read).map(([k, v]) => {
                       const truth = a.truth[k] ?? "";

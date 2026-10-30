@@ -1,6 +1,6 @@
 import type { Specimen } from "@/lib/data";
 
-/** One document's path through the vision + validation pipeline, using the run's real intermediate outputs. */
+/** One document's path through the AI + checks method, using the run's real intermediate outputs. */
 export default function Trace({ s, model }: { s: Specimen; model: string | null }) {
   const { ocr, checks } = s.trace;
   const failed = checks.filter(c => !c.ok);
@@ -8,15 +8,15 @@ export default function Trace({ s, model }: { s: Specimen; model: string | null 
   return (
     <ol className="trace">
       <li>
-        <div className="step-head"><span className="step-n">1</span><b>OCR text</b><span className="step-sub">Tesseract, what the text-only pipelines receive</span></div>
+        <div className="step-head"><span className="step-n">1</span><b>Scanned text (OCR)</b><span className="step-sub">what free text-scanning software pulls off the page</span></div>
         <pre className="raw">{ocr || "(nothing recognised)"}</pre>
       </li>
       <li>
-        <div className="step-head"><span className="step-n">2</span><b>Model output</b><span className="step-sub">{model ?? "LLM"} reading the page image, schema-constrained JSON</span></div>
+        <div className="step-head"><span className="step-n">2</span><b>What the AI read</b><span className="step-sub">{model ?? "AI model"} reading the page image, returned as named fields</span></div>
         <pre className="raw">{s.trace.model}</pre>
       </li>
       <li>
-        <div className="step-head"><span className="step-n">3</span><b>Validation</b><span className="step-sub">{checks.length - failed.length} of {checks.length} checks passed</span></div>
+        <div className="step-head"><span className="step-n">3</span><b>Pharmacy and billing checks</b><span className="step-sub">{checks.length - failed.length} of {checks.length} passed</span></div>
         <ul className="checks">
           {checks.map((c, i) => (
             <li key={i} className={c.ok ? "pass" : "fail"}>
@@ -32,7 +32,7 @@ export default function Trace({ s, model }: { s: Specimen; model: string | null 
         <p className="result">
           {failed.length === 0
             ? "Every check passed, so the record goes straight through."
-            : `${failed.length} ${failed.length === 1 ? "check failed" : "checks failed"}, so this document goes to a pharmacist. ${real} of ${failed.length} ${failed.length === 1 ? "points" : "point"} at a value the model really misread.`}
+            : `${failed.length} ${failed.length === 1 ? "check failed" : "checks failed"}, so this document goes to a pharmacist for review. ${real} of ${failed.length} ${failed.length === 1 ? "points" : "point"} at a value the AI really misread.`}
         </p>
       </li>
     </ol>

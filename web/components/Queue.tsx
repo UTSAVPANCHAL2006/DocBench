@@ -6,7 +6,7 @@ import PageViewer from "./PageViewer";
 
 type Show = "all" | "real" | "false";
 
-/** Every alert validation raised on the vision model's output, as a pharmacist's review inbox. */
+/** Every alert the checks raised on the AI's readings, as a pharmacist's review inbox. */
 export default function Queue({ items, docs, pages }: { items: QueueItem[]; docs: number; pages: Record<string, Page> }) {
   const [show, setShow] = useState<Show>("all");
   const [expanded, setExpanded] = useState(false);
@@ -22,7 +22,7 @@ export default function Queue({ items, docs, pages }: { items: QueueItem[]; docs
       <div className="queue-sum">
         <div><b>{items.length}</b><span>alerts</span></div>
         <div><b>{flaggedDocs} of {docs}</b><span>documents need a look</span></div>
-        <div><b>{real} of {items.length}</b><span>alerts were real misreads</span></div>
+        <div><b>{real} of {items.length}</b><span>alerts caught a real misread</span></div>
       </div>
       <div className="chips" role="group" aria-label="Filter alerts">
         {chips.map(([k, label, n]) => (
@@ -34,7 +34,7 @@ export default function Queue({ items, docs, pages }: { items: QueueItem[]; docs
       <div className="scroll">
         <table className="qtable">
           <thead>
-            <tr><th>Document</th><th>Check that failed</th><th>What the model read</th><th>Why it was flagged</th><th>Turned out</th><th><span className="sr-only">Page</span></th></tr>
+            <tr><th>Document</th><th>Check that failed</th><th>What the AI read</th><th>Why it was flagged</th><th>Turned out</th><th><span className="sr-only">Page</span></th></tr>
           </thead>
           <tbody>
             {visible.map((q, i) => (

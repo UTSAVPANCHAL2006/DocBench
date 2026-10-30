@@ -34,20 +34,23 @@ STYLES = ["pad", "emr", "invoice", "claim"]
 # Specimens and the one-line note for each. Notes describe what the run actually produced;
 # build() fails if a note's claim no longer matches the data (see CHECKS).
 SPECIMENS = [
-    ("rx_pad_007", "Vision reads “1-2 caps” as “12 caps”. Both are valid sig syntax, so no rule can catch it. "
-                   "This is one of the 6 critical errors that still get through."),
-    ("rx_pad_013", "Vision misreads QHS (at bedtime) on a clean page. “Q4H5” isn’t a word in any sig, "
-                   "so validation flags it for review."),
-    ("inv_005", "A faxed invoice. The OCR-text LLM invents two lines that aren’t on the page. Vision reads most of it, "
-                "and validation flags line 3 (doesn’t add up) and line 4 (unknown DIN). It misses line 1’s unit price: "
-                "the line is backordered, and 0 × any price is still $0.00."),
-    ("inv_003", "A blurred invoice. OCR recovers almost nothing; vision reads every field correctly."),
-    ("claim_008", "A rejected claim. Vision takes the $12.99 fee for the total and swaps who pays: plan $186.00, "
-                  "patient $0.00. A rejected claim pays nothing, so validation flags every amount."),
-    ("rx_emr_004", "Speckle noise. Cleaned-up OCR reads it perfectly, but the raw OCR text confuses the LLM."),
-    ("claim_017", "A faxed claim. Vision reads Qty 60 as 30, and nothing on the page contradicts it, so it goes "
-                  "through unflagged. Its misread DIN isn’t in the catalogue, so that one is caught."),
-    ("rx_emr_001", "A clean EMR printout. Every pipeline gets it right; this is the easy case most demos stop at."),
+    ("rx_pad_007", "The AI reads “1-2 caps” as “12 caps”. Both are plausible directions, so no check can catch it. "
+                   "This is one of the 6 critical errors that still get through unflagged."),
+    ("rx_pad_013", "The AI misreads QHS (at bedtime) on a clean page. “Q4H5” isn’t a sig term, "
+                   "so the checks flag it for a pharmacist."),
+    ("inv_005", "A faxed invoice. Given only the scanned text, the AI invents two lines that aren’t on the page. "
+                "Reading the page itself, it gets most of it right, and the checks flag line 3 (doesn’t add up) and "
+                "line 4 (DIN not on the list). They miss line 1’s unit price: the line is backordered, and 0 × any "
+                "price is still $0.00."),
+    ("inv_003", "A blurry photo of an invoice. OCR recovers almost nothing; the AI reads every field correctly."),
+    ("claim_008", "A rejected claim. The AI takes the $12.99 professional fee for the total and swaps who pays: "
+                  "plan $186.00, patient $0.00. A rejected claim pays nothing, so the checks flag every amount."),
+    ("rx_emr_004", "A speckled scan. OCR with a clean-up step reads it perfectly, but the AI, given only the "
+                   "messy scanned text, gets much of it wrong."),
+    ("claim_017", "A faxed claim. The AI reads Qty 60 as 30, and nothing on the page contradicts it, so it goes "
+                  "through unflagged. Its misread DIN isn’t on the reference list, so that one is caught."),
+    ("rx_emr_001", "A clean prescription printed from a clinic EMR. Every method gets it right; this is the easy "
+                   "case most demos stop at."),
 ]
 
 LABELS = {

@@ -52,16 +52,17 @@ export const data = raw as unknown as Showcase;
 export const byPipeline = Object.fromEntries(data.headline.map(h => [h.pipeline, h])) as Record<Pipeline, Headline>;
 export const runDate = data.run.timestamp.replace(" (rescored)", "").split(" ")[0];
 
+// Plain names for the five methods, used everywhere on the site.
 export const NAMES: Record<Pipeline, [string, string]> = {
-  ocr_regex: ["OCR", "Tesseract + regex"],
-  ocr_reference: ["OCR + reference", "Repair with drug list, DINs, sig words"],
-  ocr_text_llm: ["OCR text → LLM", "Model sees OCR text, not the page"],
-  vision_llm: ["Vision LLM", "Model sees the page image"],
-  vision_verified: ["Vision + validation", "Vision, then rule checks flag errors"],
+  ocr_regex: ["OCR only", "Free text-scanning software reads the page; simple rules pick out each field"],
+  ocr_reference: ["OCR + pharmacy data", "The same scan, corrected against a drug list, DINs and sig terms"],
+  ocr_text_llm: ["AI on scanned text", "An AI model reads the OCR text, without seeing the page"],
+  vision_llm: ["AI reads the page", "An AI model reads the page image directly"],
+  vision_verified: ["AI + checks", "The AI’s answer, plus pharmacy and billing checks that flag suspect values"],
 };
-export const STYLE: Record<Style, string> = { pad: "Handwritten Rx", emr: "EMR Rx", invoice: "Invoice", claim: "Claim" };
+export const STYLE: Record<Style, string> = { pad: "Handwritten Rx", emr: "Printed Rx (EMR)", invoice: "Wholesaler invoice", claim: "Claim response" };
 export const DEG: Record<string, string> = {
-  clean: "clean", skew: "skewed", blur: "blurred", noise: "speckled", fax: "faxed", low_res: "75 dpi",
+  clean: "clean scan", skew: "crooked scan", blur: "blurry photo", noise: "speckled scan", fax: "fax", low_res: "low-res scan",
 };
 
 export const REPO = "https://github.com/UTSAVPANCHAL2006/DocBench";

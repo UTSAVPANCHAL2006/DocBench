@@ -99,13 +99,13 @@ def checks(doc_type: str, f: dict) -> list:
             name = str(med.get("drug_name", ""))
             drug = ref.canonical_drug(name)
             known = drug.lower() in ref.DRUG_BY_NAME
-            add("Drug is in the reference list", known,
+            add("Drug name is on the reference list", known,
                 (f"“{name}” is {drug}" if drug.lower() != name.lower() else f"{drug} is listed") if known
-                else f"“{name}” matches no known drug, brand or generic", ["drug_name"], *g)
+                else f"“{name}” matches no listed drug, brand or generic", ["drug_name"], *g)
             strength = ref.normalize_strength(str(med.get("strength", "")))
-            add("Strength is a marketed one", ref.strength_is_known(drug, strength),
+            add("Strength is listed for this drug", ref.strength_is_known(drug, strength),
                 f"{drug} {strength}" + ("" if ref.strength_is_known(drug, strength)
-                                        else f" isn’t marketed (known: {', '.join(ref.DRUG_BY_NAME[drug.lower()]['strengths'])})" if known
+                                        else f" isn’t listed (listed: {', '.join(ref.DRUG_BY_NAME[drug.lower()]['strengths'])})" if known
                                         else " can’t be checked"), ["strength"], *g)
             bad = [k for k in ("quantity", "refills") if not str(med.get(k, "")).isdigit()]
             add("Quantity and refills are whole numbers", not bad,
@@ -115,8 +115,8 @@ def checks(doc_type: str, f: dict) -> list:
             vocab = {v.lower() for v in ref.SIG_VOCAB}
             unknown = [w.strip(",.;:") for w in re.sub(r"^\s*(sig|directions)\s*[:;.]?\s*", "", sig, flags=re.I).split()
                        if not re.fullmatch(r"[\d/\-.]+", w.strip(",.;:")) and w.strip(",.;:").lower() not in vocab]
-            add("Every sig word is a dose or a known direction", ok,
-                "all words recognised" if ok else ("unknown: " + ", ".join(f"“{w}”" for w in unknown) if unknown else "sig is empty"),
+            add("Directions (sig) use only known terms", ok,
+                "all terms recognised" if ok else ("not a sig term: " + ", ".join(f"“{w}”" for w in unknown) if unknown else "sig is empty"),
                 ["sig"], *g)
     elif doc_type == "invoice":
         rx_sum = taxable_sum = 0.0
@@ -124,7 +124,7 @@ def checks(doc_type: str, f: dict) -> list:
             g = ("line_items", i)
             if line.get("din"):
                 din = ref.fix_digits(str(line["din"]))
-                add("DIN is in the catalogue", din in ref.DIN_SET,
+                add("DIN is on the reference list", din in ref.DIN_SET,
                     f"{din} {'found' if din in ref.DIN_SET else 'not found'}", ["din"], *g)
             o, sh, u, t = (_money(str(line.get(k, ""))) for k in ("qty_ordered", "qty_shipped", "unit_cost", "line_total"))
             ok = None not in (o, sh, u, t) and abs(sh * u - t) <= 0.011 and sh <= o
@@ -150,17 +150,17 @@ def checks(doc_type: str, f: dict) -> list:
             f"{_fmt(sub)} + {_fmt(hst)} = {_fmt(None if None in (sub, hst) else sub + hst)}, total {_fmt(total)}", ["total"])
     else:  # claim response
         din = ref.fix_digits(str(f.get("din", "")))
-        add("DIN is in the catalogue", bool(f.get("din")) and din in ref.DIN_SET,
+        add("DIN is on the reference list", bool(f.get("din")) and din in ref.DIN_SET,
             f"{din or 'no DIN'} {'found' if din in ref.DIN_SET else 'not found'}", ["din"])
         name = str(f.get("drug_name", ""))
         drug = ref.canonical_drug(name)
         strength = ref.normalize_strength(str(f.get("strength", "")))
         ok = drug.lower() in ref.DRUG_BY_NAME and ref.strength_is_known(drug, strength)
-        add("Drug and strength are known", ok, f"“{name}” → {drug} {strength}" + ("" if ok else ", not a known product"),
+        add("Drug and strength are on the reference list", ok, f"“{name}” → {drug} {strength}" + ("" if ok else ", not on the list"),
             ["drug_name", "strength"])
         total, paid, patient = (_money(str(f.get(k, ""))) for k in ("total_submitted", "amount_paid", "patient_pays"))
         ok = None not in (total, paid, patient) and abs(paid + patient - total) <= 0.011
-        add("Plan share + patient share = total", ok,
+        add("Plan pays + patient pays = total", ok,
             f"{_fmt(paid)} + {_fmt(patient)} = {_fmt(None if None in (paid, patient) else paid + patient)}, total {_fmt(total)}",
             ["total_submitted", "amount_paid", "patient_pays"])
         status = str(f.get("status", "")).upper()
@@ -179,7 +179,7 @@ def checks(doc_type: str, f: dict) -> list:
         else:
             ok, detail = True, f"{status}" + (f" with {', '.join(codes)}" if codes else "")
         # Who pays what hinges on status, so a failure flags the amounts too.
-        add("Status, codes and payment agree", ok, detail, ["status", "response_codes", "amount_paid", "patient_pays"])
+        add("Claim status, reason codes and payment agree", ok, detail, ["status", "response_codes", "amount_paid", "patient_pays"])
     return out
 
 

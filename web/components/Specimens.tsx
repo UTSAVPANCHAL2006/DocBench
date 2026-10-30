@@ -79,7 +79,7 @@ export default function Specimens({ specimens, styles, model }: { specimens: Spe
               </div>
               <div className="minibars">
                 <MiniBar name="OCR" value={s.acc.ocr_reference} />
-                <MiniBar name="Vision" value={s.acc.vision_verified} accent />
+                <MiniBar name="AI" value={s.acc.vision_verified} accent />
               </div>
             </div>
           </button>
@@ -99,8 +99,8 @@ export default function Specimens({ specimens, styles, model }: { specimens: Spe
           </div>
           <p className="note">{current.note}</p>
           <div className="tabs" role="tablist" aria-label="View">
-            <button type="button" role="tab" aria-selected={tab === "readings"} onClick={() => setTab("readings")}>What each pipeline read</button>
-            <button type="button" role="tab" aria-selected={tab === "trace"} onClick={() => setTab("trace")}>Trace: vision + validation</button>
+            <button type="button" role="tab" aria-selected={tab === "readings"} onClick={() => setTab("readings")}>What each method read</button>
+            <button type="button" role="tab" aria-selected={tab === "trace"} onClick={() => setTab("trace")}>Step by step: AI + checks</button>
           </div>
           {tab === "trace" ? <Trace s={current} model={model} /> : <>
           <div className="legend">
@@ -108,7 +108,7 @@ export default function Specimens({ specimens, styles, model }: { specimens: Spe
             <span><i className="sw bad" />Wrong</span>
             <span><i className="sw flag" />Flagged for review</span>
             <span><i className="sw blank" />Left blank</span>
-            <span><b style={{ fontWeight: 600, color: "var(--ink)" }}>Bold</b>&nbsp;field = critical</span>
+            <span><b style={{ fontWeight: 600, color: "var(--ink)" }}>Bold</b>&nbsp;= critical field</span>
           </div>
           <div className="table-wrap">
             <table className="read">
@@ -116,9 +116,9 @@ export default function Specimens({ specimens, styles, model }: { specimens: Spe
                 <tr>
                   <th scope="col">Field</th>
                   <th scope="col">On the page</th>
-                  <th scope="col">OCR + reference<small>free</small></th>
-                  <th scope="col">OCR text → LLM<small>no image</small></th>
-                  <th scope="col">Vision + validation<small>recommended</small></th>
+                  <th scope="col">OCR + pharmacy data<small>free</small></th>
+                  <th scope="col">AI on scanned text<small>never sees the page</small></th>
+                  <th scope="col">AI + checks<small>reads the page</small></th>
                 </tr>
               </thead>
               <tbody>

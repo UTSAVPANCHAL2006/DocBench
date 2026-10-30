@@ -176,7 +176,7 @@
    "id": "rx_pad_007",
    "style": "pad",
    "degradation": "clean",
-   "note": "Vision reads “1-2 caps” as “12 caps”. Both are valid sig syntax, so no rule can catch it. This is one of the 6 critical errors that still get through.",
+   "note": "The AI reads “1-2 caps” as “12 caps”. Both are plausible directions, so no check can catch it. This is one of the 6 critical errors that still get through unflagged.",
    "img": "img/rx_pad_007.jpg",
    "w": 775,
    "h": 1086,
@@ -426,7 +426,7 @@
     "model": "{\n  \"patient_name\": \"Ethan Leblanc\",\n  \"patient_dob\": \"\",\n  \"health_card\": \"\",\n  \"date_written\": \"2026-03-31\",\n  \"prescriber_name\": \"Dr. Ethan Martin, MD CCFP\",\n  \"prescriber_license\": \"\",\n  \"medications\": [\n    {\n      \"drug_name\": \"Sertraline cap\",\n      \"strength\": \"100mg\",\n      \"sig\": \"Sig: 12 caps PO Q4-6H PRN pain\",\n      \"quantity\": \"90\",\n      \"refills\": \"5\"\n    }\n  ]\n}",
     "checks": [
      {
-      "rule": "Drug is in the reference list",
+      "rule": "Drug name is on the reference list",
       "ok": true,
       "detail": "“Sertraline cap” is Sertraline",
       "where": "Drug 1",
@@ -439,7 +439,7 @@
       "real": false
      },
      {
-      "rule": "Strength is a marketed one",
+      "rule": "Strength is listed for this drug",
       "ok": true,
       "detail": "Sertraline 100 mg",
       "where": "Drug 1",
@@ -467,9 +467,9 @@
       "real": false
      },
      {
-      "rule": "Every sig word is a dose or a known direction",
+      "rule": "Directions (sig) use only known terms",
       "ok": true,
-      "detail": "all words recognised",
+      "detail": "all terms recognised",
       "where": "Drug 1",
       "read": {
        "Drug 1 · Sig": "Sig: 12 caps PO Q4-6H PRN pain"
@@ -486,7 +486,7 @@
    "id": "rx_pad_013",
    "style": "pad",
    "degradation": "clean",
-   "note": "Vision misreads QHS (at bedtime) on a clean page. “Q4H5” isn’t a word in any sig, so validation flags it for review.",
+   "note": "The AI misreads QHS (at bedtime) on a clean page. “Q4H5” isn’t a sig term, so the checks flag it for a pharmacist.",
    "img": "img/rx_pad_013.jpg",
    "w": 775,
    "h": 1086,
@@ -892,7 +892,7 @@
     "model": "{\n  \"patient_name\": \"Liam Ahmed\",\n  \"patient_dob\": \"1995-11-10\",\n  \"health_card\": \"\",\n  \"date_written\": \"2026-09-13\",\n  \"prescriber_name\": \"Dr. Olivia Bouchard, MD CCFP\",\n  \"prescriber_license\": \"523372\",\n  \"medications\": [\n    {\n      \"drug_name\": \"Metformin\",\n      \"strength\": \"500mg\",\n      \"sig\": \"Sig: 1 tab PO Q4H5\",\n      \"quantity\": \"14\",\n      \"refills\": \"5\"\n    },\n    {\n      \"drug_name\": \"Metronidazole\",\n      \"strength\": \"250 mg tab\",\n      \"sig\": \"Sig: 1 tab PO QH5\",\n      \"quantity\": \"60\",\n      \"refills\": \"0\"\n    }\n  ]\n}",
     "checks": [
      {
-      "rule": "Drug is in the reference list",
+      "rule": "Drug name is on the reference list",
       "ok": true,
       "detail": "Metformin is listed",
       "where": "Drug 1",
@@ -905,7 +905,7 @@
       "real": false
      },
      {
-      "rule": "Strength is a marketed one",
+      "rule": "Strength is listed for this drug",
       "ok": true,
       "detail": "Metformin 500 mg",
       "where": "Drug 1",
@@ -933,9 +933,9 @@
       "real": false
      },
      {
-      "rule": "Every sig word is a dose or a known direction",
+      "rule": "Directions (sig) use only known terms",
       "ok": false,
-      "detail": "unknown: “Q4H5”",
+      "detail": "not a sig term: “Q4H5”",
       "where": "Drug 1",
       "read": {
        "Drug 1 · Sig": "Sig: 1 tab PO Q4H5"
@@ -946,7 +946,7 @@
       "real": true
      },
      {
-      "rule": "Drug is in the reference list",
+      "rule": "Drug name is on the reference list",
       "ok": true,
       "detail": "Metronidazole is listed",
       "where": "Drug 2",
@@ -959,7 +959,7 @@
       "real": false
      },
      {
-      "rule": "Strength is a marketed one",
+      "rule": "Strength is listed for this drug",
       "ok": true,
       "detail": "Metronidazole 250 mg",
       "where": "Drug 2",
@@ -987,9 +987,9 @@
       "real": false
      },
      {
-      "rule": "Every sig word is a dose or a known direction",
+      "rule": "Directions (sig) use only known terms",
       "ok": false,
-      "detail": "unknown: “QH5”",
+      "detail": "not a sig term: “QH5”",
       "where": "Drug 2",
       "read": {
        "Drug 2 · Sig": "Sig: 1 tab PO QH5"
@@ -1006,7 +1006,7 @@
    "id": "inv_005",
    "style": "invoice",
    "degradation": "fax",
-   "note": "A faxed invoice. The OCR-text LLM invents two lines that aren’t on the page. Vision reads most of it, and validation flags line 3 (doesn’t add up) and line 4 (unknown DIN). It misses line 1’s unit price: the line is backordered, and 0 × any price is still $0.00.",
+   "note": "A faxed invoice. Given only the scanned text, the AI invents two lines that aren’t on the page. Reading the page itself, it gets most of it right, and the checks flag line 3 (doesn’t add up) and line 4 (DIN not on the list). They miss line 1’s unit price: the line is backordered, and 0 × any price is still $0.00.",
    "img": "img/inv_005.jpg",
    "w": 1000,
    "h": 1278,
@@ -1894,7 +1894,7 @@
     "model": "{\n  \"supplier\": \"Cedarline Medical Supply\",\n  \"invoice_number\": \"4763187\",\n  \"invoice_date\": \"2026-09-24\",\n  \"account_number\": \"710-9587\",\n  \"po_number\": \"PO-54280\",\n  \"subtotal\": \"771.73\",\n  \"hst\": \"15.99\",\n  \"total\": \"787.72\",\n  \"line_items\": [\n    {\n      \"din\": \"08780650\",\n      \"description\": \"LISINOPRIL 20MG TAB 500\",\n      \"qty_ordered\": \"5\",\n      \"qty_shipped\": \"0\",\n      \"unit_cost\": \"21.51\",\n      \"line_total\": \"0.00\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"08172805\",\n      \"description\": \"ACETAMINOPHEN 500MG CAPLET 100\",\n      \"qty_ordered\": \"7\",\n      \"qty_shipped\": \"7\",\n      \"unit_cost\": \"17.57\",\n      \"line_total\": \"122.99\",\n      \"taxable\": \"T\"\n    },\n    {\n      \"din\": \"08579245\",\n      \"description\": \"MY LAN-METRONIDAZOLE 500MG TAB 500\",\n      \"qty_ordered\": \"5\",\n      \"qty_shipped\": \"5\",\n      \"unit_cost\": \"84.46\",\n      \"line_total\": \"472.30\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"01220444\",\n      \"description\": \"TEVA-AMILLOUPINE 10MG TAB 100\",\n      \"qty_ordered\": \"1\",\n      \"qty_shipped\": \"1\",\n      \"unit_cost\": \"176.44\",\n      \"line_total\": \"176.44\",\n      \"taxable\": \"\"\n    }\n  ]\n}",
     "checks": [
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": true,
       "detail": "08780650 found",
       "where": "Line 1",
@@ -1926,7 +1926,7 @@
       "real": true
      },
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": true,
       "detail": "08172805 found",
       "where": "Line 2",
@@ -1958,7 +1958,7 @@
       "real": false
      },
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": false,
       "detail": "08579245 not found",
       "where": "Line 3",
@@ -1990,7 +1990,7 @@
       "real": true
      },
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": false,
       "detail": "01220444 not found",
       "where": "Line 4",
@@ -2067,7 +2067,7 @@
    "id": "inv_003",
    "style": "invoice",
    "degradation": "blur",
-   "note": "A blurred invoice. OCR recovers almost nothing; vision reads every field correctly.",
+   "note": "A blurry photo of an invoice. OCR recovers almost nothing; the AI reads every field correctly.",
    "img": "img/inv_003.jpg",
    "w": 1000,
    "h": 1275,
@@ -3239,7 +3239,7 @@
     "model": "{\n  \"supplier\": \"Cedarline Medical Supply\",\n  \"invoice_number\": \"4772519\",\n  \"invoice_date\": \"2026-01-19\",\n  \"account_number\": \"697-4111\",\n  \"po_number\": \"PO-54979\",\n  \"subtotal\": \"3885.71\",\n  \"hst\": \"4.67\",\n  \"total\": \"3890.38\",\n  \"line_items\": [\n    {\n      \"din\": \"01220544\",\n      \"description\": \"PMS-AMLODIPINE 10MG TAB 100\",\n      \"qty_ordered\": \"4\",\n      \"qty_shipped\": \"0\",\n      \"unit_cost\": \"163.82\",\n      \"line_total\": \"0.00\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"00115628\",\n      \"description\": \"SERTRALINE 100MG CAP 500\",\n      \"qty_ordered\": \"4\",\n      \"qty_shipped\": \"4\",\n      \"unit_cost\": \"202.09\",\n      \"line_total\": \"808.36\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"00386039\",\n      \"description\": \"LISINOPRIL 10MG TAB 100\",\n      \"qty_ordered\": \"10\",\n      \"qty_shipped\": \"10\",\n      \"unit_cost\": \"97.73\",\n      \"line_total\": \"977.30\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"08239182\",\n      \"description\": \"CLONIDINE 0.2MG TAB 30\",\n      \"qty_ordered\": \"6\",\n      \"qty_shipped\": \"6\",\n      \"unit_cost\": \"144.13\",\n      \"line_total\": \"864.78\",\n      \"taxable\": \"\"\n    },\n    {\n      \"din\": \"\",\n      \"description\": \"PILL ORGANIZER 7-DAY\",\n      \"qty_ordered\": \"12\",\n      \"qty_shipped\": \"0\",\n      \"unit_cost\": \"3.47\",\n      \"line_total\": \"0.00\",\n      \"taxable\": \"T\"\n    },\n    {\n      \"din\": \"00136160\",\n      \"description\": \"CETIRIZINE 10MG TAB 30\",\n      \"qty_ordered\": \"8\",\n      \"qty_shipped\": \"8\",\n      \"unit_cost\": \"4.49\",\n      \"line_total\": \"35.92\",\n      \"taxable\": \"T\"\n    },\n    {\n      \"din\": \"09769232\",\n      \"description\": \"SANDOZ WARFARIN 5MG TAB 100\",\n      \"qty_ordered\": \"5\",\n      \"qty_shipped\": \"5\",\n      \"unit_cost\": \"239.87\",\n      \"line_total\": \"1199.35\",\n      \"taxable\": \"\"\n    }\n  ]\n}",
     "checks": [
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": true,
       "detail": "01220544 found",
       "where": "Line 1",
@@ -3271,7 +3271,7 @@
       "real": false
      },
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": true,
       "detail": "00115628 found",
       "where": "Line 2",
@@ -3303,7 +3303,7 @@
       "real": false
      },
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": true,
       "detail": "00386039 found",
       "where": "Line 3",
@@ -3335,7 +3335,7 @@
       "real": false
      },
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": true,
       "detail": "08239182 found",
       "where": "Line 4",
@@ -3386,7 +3386,7 @@
       "real": false
      },
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": true,
       "detail": "00136160 found",
       "where": "Line 6",
@@ -3418,7 +3418,7 @@
       "real": false
      },
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": true,
       "detail": "09769232 found",
       "where": "Line 7",
@@ -3495,7 +3495,7 @@
    "id": "claim_008",
    "style": "claim",
    "degradation": "skew",
-   "note": "A rejected claim. Vision takes the $12.99 fee for the total and swaps who pays: plan $186.00, patient $0.00. A rejected claim pays nothing, so validation flags every amount.",
+   "note": "A rejected claim. The AI takes the $12.99 professional fee for the total and swaps who pays: plan $186.00, patient $0.00. A rejected claim pays nothing, so the checks flag every amount.",
    "img": "img/claim_008.jpg",
    "w": 998,
    "h": 1300,
@@ -3953,7 +3953,7 @@
     "model": "{\n  \"carrier\": \"Maple Health Benefits\",\n  \"group_number\": \"77844\",\n  \"patient_name\": \"AHMED, Wei\",\n  \"certificate_id\": \"28130896-02\",\n  \"rx_number\": \"1110206\",\n  \"date_of_service\": \"2026-06-03\",\n  \"din\": \"00986113\",\n  \"drug_name\": \"CATAPRES\",\n  \"strength\": \"0.1MG\",\n  \"quantity\": \"60\",\n  \"days_supply\": \"14\",\n  \"total_submitted\": \"12.99\",\n  \"amount_paid\": \"186.00\",\n  \"patient_pays\": \"0.00\",\n  \"status\": \"REJECTED\",\n  \"response_codes\": \"LO\",\n  \"trace_number\": \"330664237\"\n}",
     "checks": [
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": true,
       "detail": "00986113 found",
       "where": "",
@@ -3966,7 +3966,7 @@
       "real": false
      },
      {
-      "rule": "Drug and strength are known",
+      "rule": "Drug and strength are on the reference list",
       "ok": true,
       "detail": "“CATAPRES” → Clonidine 0.1 mg",
       "where": "",
@@ -3981,7 +3981,7 @@
       "real": false
      },
      {
-      "rule": "Plan share + patient share = total",
+      "rule": "Plan pays + patient pays = total",
       "ok": false,
       "detail": "186.00 + 0.00 = 186.00, total 12.99",
       "where": "",
@@ -3998,7 +3998,7 @@
       "real": true
      },
      {
-      "rule": "Status, codes and payment agree",
+      "rule": "Claim status, reason codes and payment agree",
       "ok": false,
       "detail": "rejected, yet the plan pays 186.00",
       "where": "",
@@ -4023,7 +4023,7 @@
    "id": "rx_emr_004",
    "style": "emr",
    "degradation": "noise",
-   "note": "Speckle noise. Cleaned-up OCR reads it perfectly, but the raw OCR text confuses the LLM.",
+   "note": "A speckled scan. OCR with a clean-up step reads it perfectly, but the AI, given only the messy scanned text, gets much of it wrong.",
    "img": "img/rx_emr_004.jpg",
    "w": 942,
    "h": 1300,
@@ -4455,7 +4455,7 @@
     "model": "{\n  \"patient_name\": \"GAGNON, Ethan\",\n  \"patient_dob\": \"2004-09-28\",\n  \"health_card\": \"4419-866-524-AE\",\n  \"date_written\": \"2026-02-10\",\n  \"prescriber_name\": \"Dr. Ethan Wilson, MD\",\n  \"prescriber_license\": \"100471\",\n  \"medications\": [\n    {\n      \"drug_name\": \"Winpred\",\n      \"strength\": \"5 mg\",\n      \"sig\": \"Take 1/2 tablet by mouth once daily\",\n      \"quantity\": \"21\",\n      \"refills\": \"0\"\n    },\n    {\n      \"drug_name\": \"Norvasc\",\n      \"strength\": \"10 mg\",\n      \"sig\": \"Take 1 tablet by mouth once daily\",\n      \"quantity\": \"90\",\n      \"refills\": \"1\"\n    }\n  ]\n}",
     "checks": [
      {
-      "rule": "Drug is in the reference list",
+      "rule": "Drug name is on the reference list",
       "ok": true,
       "detail": "“Winpred” is Prednisone",
       "where": "Drug 1",
@@ -4468,7 +4468,7 @@
       "real": false
      },
      {
-      "rule": "Strength is a marketed one",
+      "rule": "Strength is listed for this drug",
       "ok": true,
       "detail": "Prednisone 5 mg",
       "where": "Drug 1",
@@ -4496,9 +4496,9 @@
       "real": false
      },
      {
-      "rule": "Every sig word is a dose or a known direction",
+      "rule": "Directions (sig) use only known terms",
       "ok": true,
-      "detail": "all words recognised",
+      "detail": "all terms recognised",
       "where": "Drug 1",
       "read": {
        "Drug 1 · Sig": "Take 1/2 tablet by mouth once daily"
@@ -4509,7 +4509,7 @@
       "real": false
      },
      {
-      "rule": "Drug is in the reference list",
+      "rule": "Drug name is on the reference list",
       "ok": true,
       "detail": "“Norvasc” is Amlodipine",
       "where": "Drug 2",
@@ -4522,7 +4522,7 @@
       "real": false
      },
      {
-      "rule": "Strength is a marketed one",
+      "rule": "Strength is listed for this drug",
       "ok": true,
       "detail": "Amlodipine 10 mg",
       "where": "Drug 2",
@@ -4550,9 +4550,9 @@
       "real": false
      },
      {
-      "rule": "Every sig word is a dose or a known direction",
+      "rule": "Directions (sig) use only known terms",
       "ok": true,
-      "detail": "all words recognised",
+      "detail": "all terms recognised",
       "where": "Drug 2",
       "read": {
        "Drug 2 · Sig": "Take 1 tablet by mouth once daily"
@@ -4569,7 +4569,7 @@
    "id": "claim_017",
    "style": "claim",
    "degradation": "fax",
-   "note": "A faxed claim. Vision reads Qty 60 as 30, and nothing on the page contradicts it, so it goes through unflagged. Its misread DIN isn’t in the catalogue, so that one is caught.",
+   "note": "A faxed claim. The AI reads Qty 60 as 30, and nothing on the page contradicts it, so it goes through unflagged. Its misread DIN isn’t on the reference list, so that one is caught.",
    "img": "img/claim_017.jpg",
    "w": 1000,
    "h": 1247,
@@ -5001,7 +5001,7 @@
     "model": "{\n  \"carrier\": \"Trillium Group Benefits\",\n  \"group_number\": \"46007\",\n  \"patient_name\": \"BOUCHARD, Priva\",\n  \"certificate_id\": \"3039533D-D1\",\n  \"rx_number\": \"279127\",\n  \"date_of_service\": \"2026-03-09\",\n  \"din\": \"01508375\",\n  \"drug_name\": \"FLAGYL\",\n  \"strength\": \"250MG\",\n  \"quantity\": \"30\",\n  \"days_supply\": \"14\",\n  \"total_submitted\": \"186.24\",\n  \"amount_paid\": \"148.99\",\n  \"patient_pays\": \"37.25\",\n  \"status\": \"PAID\",\n  \"response_codes\": \"\",\n  \"trace_number\": \"128130121\"\n}",
     "checks": [
      {
-      "rule": "DIN is in the catalogue",
+      "rule": "DIN is on the reference list",
       "ok": false,
       "detail": "01508375 not found",
       "where": "",
@@ -5014,7 +5014,7 @@
       "real": true
      },
      {
-      "rule": "Drug and strength are known",
+      "rule": "Drug and strength are on the reference list",
       "ok": true,
       "detail": "“FLAGYL” → Metronidazole 250 mg",
       "where": "",
@@ -5029,7 +5029,7 @@
       "real": false
      },
      {
-      "rule": "Plan share + patient share = total",
+      "rule": "Plan pays + patient pays = total",
       "ok": true,
       "detail": "148.99 + 37.25 = 186.24, total 186.24",
       "where": "",
@@ -5046,7 +5046,7 @@
       "real": false
      },
      {
-      "rule": "Status, codes and payment agree",
+      "rule": "Claim status, reason codes and payment agree",
       "ok": true,
       "detail": "PAID",
       "where": "",
@@ -5071,7 +5071,7 @@
    "id": "rx_emr_001",
    "style": "emr",
    "degradation": "clean",
-   "note": "A clean EMR printout. Every pipeline gets it right; this is the easy case most demos stop at.",
+   "note": "A clean prescription printed from a clinic EMR. Every method gets it right; this is the easy case most demos stop at.",
    "img": "img/rx_emr_001.jpg",
    "w": 943,
    "h": 1300,
@@ -5503,7 +5503,7 @@
     "model": "{\n  \"patient_name\": \"SINGH, Hannah\",\n  \"patient_dob\": \"1986-07-21\",\n  \"health_card\": \"4143-842-498-BJ\",\n  \"date_written\": \"2026-03-28\",\n  \"prescriber_name\": \"Dr. Arjun Leblanc, MD\",\n  \"prescriber_license\": \"49862\",\n  \"medications\": [\n    {\n      \"drug_name\": \"Lisinopril\",\n      \"strength\": \"10 mg\",\n      \"sig\": \"Take 1/2 tablet by mouth once daily\",\n      \"quantity\": \"60\",\n      \"refills\": \"2\"\n    },\n    {\n      \"drug_name\": \"Clonidine\",\n      \"strength\": \"0.2 mg\",\n      \"sig\": \"Take 1 tablet by mouth at bedtime\",\n      \"quantity\": \"21\",\n      \"refills\": \"3\"\n    }\n  ]\n}",
     "checks": [
      {
-      "rule": "Drug is in the reference list",
+      "rule": "Drug name is on the reference list",
       "ok": true,
       "detail": "Lisinopril is listed",
       "where": "Drug 1",
@@ -5516,7 +5516,7 @@
       "real": false
      },
      {
-      "rule": "Strength is a marketed one",
+      "rule": "Strength is listed for this drug",
       "ok": true,
       "detail": "Lisinopril 10 mg",
       "where": "Drug 1",
@@ -5544,9 +5544,9 @@
       "real": false
      },
      {
-      "rule": "Every sig word is a dose or a known direction",
+      "rule": "Directions (sig) use only known terms",
       "ok": true,
-      "detail": "all words recognised",
+      "detail": "all terms recognised",
       "where": "Drug 1",
       "read": {
        "Drug 1 · Sig": "Take 1/2 tablet by mouth once daily"
@@ -5557,7 +5557,7 @@
       "real": false
      },
      {
-      "rule": "Drug is in the reference list",
+      "rule": "Drug name is on the reference list",
       "ok": true,
       "detail": "Clonidine is listed",
       "where": "Drug 2",
@@ -5570,7 +5570,7 @@
       "real": false
      },
      {
-      "rule": "Strength is a marketed one",
+      "rule": "Strength is listed for this drug",
       "ok": true,
       "detail": "Clonidine 0.2 mg",
       "where": "Drug 2",
@@ -5598,9 +5598,9 @@
       "real": false
      },
      {
-      "rule": "Every sig word is a dose or a known direction",
+      "rule": "Directions (sig) use only known terms",
       "ok": true,
-      "detail": "all words recognised",
+      "detail": "all terms recognised",
       "where": "Drug 2",
       "read": {
        "Drug 2 · Sig": "Take 1 tablet by mouth at bedtime"
@@ -5619,7 +5619,7 @@
    "doc": "claim_002",
    "style": "claim",
    "degradation": "skew",
-   "rule": "Status, codes and payment agree",
+   "rule": "Claim status, reason codes and payment agree",
    "ok": false,
    "detail": "rejected, yet the plan pays 169.27",
    "where": "",
@@ -5641,7 +5641,7 @@
    "doc": "claim_005",
    "style": "claim",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "03048595 not found",
    "where": "",
@@ -5657,9 +5657,9 @@
    "doc": "claim_005",
    "style": "claim",
    "degradation": "fax",
-   "rule": "Drug and strength are known",
+   "rule": "Drug and strength are on the reference list",
    "ok": false,
-   "detail": "“GLICOPHAGE” → GLICOPHAGE 850 mg, not a known product",
+   "detail": "“GLICOPHAGE” → GLICOPHAGE 850 mg, not on the list",
    "where": "",
    "read": {
     "Drug": "GLICOPHAGE",
@@ -5675,7 +5675,7 @@
    "doc": "claim_005",
    "style": "claim",
    "degradation": "fax",
-   "rule": "Plan share + patient share = total",
+   "rule": "Plan pays + patient pays = total",
    "ok": false,
    "detail": "61.42 + 6.93 = 68.35, total 68.25",
    "where": "",
@@ -5695,7 +5695,7 @@
    "doc": "claim_008",
    "style": "claim",
    "degradation": "skew",
-   "rule": "Plan share + patient share = total",
+   "rule": "Plan pays + patient pays = total",
    "ok": false,
    "detail": "186.00 + 0.00 = 186.00, total 12.99",
    "where": "",
@@ -5715,7 +5715,7 @@
    "doc": "claim_008",
    "style": "claim",
    "degradation": "skew",
-   "rule": "Status, codes and payment agree",
+   "rule": "Claim status, reason codes and payment agree",
    "ok": false,
    "detail": "rejected, yet the plan pays 186.00",
    "where": "",
@@ -5737,7 +5737,7 @@
    "doc": "claim_011",
    "style": "claim",
    "degradation": "fax",
-   "rule": "Plan share + patient share = total",
+   "rule": "Plan pays + patient pays = total",
    "ok": false,
    "detail": "27.57 + 8.00 = 35.57, total 27.57",
    "where": "",
@@ -5757,7 +5757,7 @@
    "doc": "claim_014",
    "style": "claim",
    "degradation": "skew",
-   "rule": "Plan share + patient share = total",
+   "rule": "Plan pays + patient pays = total",
    "ok": false,
    "detail": "6.99 + ? = ?, total 56.89",
    "where": "",
@@ -5777,7 +5777,7 @@
    "doc": "claim_017",
    "style": "claim",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "01508375 not found",
    "where": "",
@@ -5793,9 +5793,9 @@
    "doc": "claim_018",
    "style": "claim",
    "degradation": "low_res",
-   "rule": "Drug and strength are known",
+   "rule": "Drug and strength are on the reference list",
    "ok": false,
-   "detail": "“ATORVASTATIN 20MG TAB” → Atorvastatin , not a known product",
+   "detail": "“ATORVASTATIN 20MG TAB” → Atorvastatin , not on the list",
    "where": "",
    "read": {
     "Drug": "ATORVASTATIN 20MG TAB",
@@ -5811,7 +5811,7 @@
    "doc": "claim_020",
    "style": "claim",
    "degradation": "skew",
-   "rule": "Plan share + patient share = total",
+   "rule": "Plan pays + patient pays = total",
    "ok": false,
    "detail": "97.59 + 97.59 = 195.18, total 12.99",
    "where": "",
@@ -5831,7 +5831,7 @@
    "doc": "claim_023",
    "style": "claim",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "04249417 not found",
    "where": "",
@@ -5847,7 +5847,7 @@
    "doc": "inv_004",
    "style": "invoice",
    "degradation": "noise",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "06596333 not found",
    "where": "Line 1",
@@ -5863,7 +5863,7 @@
    "doc": "inv_005",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "08579245 not found",
    "where": "Line 3",
@@ -5901,7 +5901,7 @@
    "doc": "inv_005",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "01220444 not found",
    "where": "Line 4",
@@ -5939,7 +5939,7 @@
    "doc": "inv_010",
    "style": "invoice",
    "degradation": "noise",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "09890118 not found",
    "where": "Line 6",
@@ -5955,7 +5955,7 @@
    "doc": "inv_011",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "070686314 not found",
    "where": "Line 1",
@@ -5971,7 +5971,7 @@
    "doc": "inv_011",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "03298443 not found",
    "where": "Line 2",
@@ -5987,7 +5987,7 @@
    "doc": "inv_011",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "08172305 not found",
    "where": "Line 3",
@@ -6003,7 +6003,7 @@
    "doc": "inv_011",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "04978486 not found",
    "where": "Line 4",
@@ -6019,7 +6019,7 @@
    "doc": "inv_011",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "09809018 not found",
    "where": "Line 5",
@@ -6057,7 +6057,7 @@
    "doc": "inv_011",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "03488254 not found",
    "where": "Line 6",
@@ -6121,7 +6121,7 @@
    "doc": "inv_014",
    "style": "invoice",
    "degradation": "skew",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "01939333 not found",
    "where": "Line 4",
@@ -6137,7 +6137,7 @@
    "doc": "inv_015",
    "style": "invoice",
    "degradation": "blur",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "025655535 not found",
    "where": "Line 2",
@@ -6153,7 +6153,7 @@
    "doc": "inv_015",
    "style": "invoice",
    "degradation": "blur",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "090681133 not found",
    "where": "Line 4",
@@ -6169,7 +6169,7 @@
    "doc": "inv_017",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "07243664 not found",
    "where": "Line 1",
@@ -6207,7 +6207,7 @@
    "doc": "inv_017",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "03238443 not found",
    "where": "Line 2",
@@ -6223,7 +6223,7 @@
    "doc": "inv_017",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "04580554 not found",
    "where": "Line 3",
@@ -6239,7 +6239,7 @@
    "doc": "inv_021",
    "style": "invoice",
    "degradation": "blur",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "090881313 not found",
    "where": "Line 1",
@@ -6255,7 +6255,7 @@
    "doc": "inv_021",
    "style": "invoice",
    "degradation": "blur",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "072294364 not found",
    "where": "Line 2",
@@ -6271,7 +6271,7 @@
    "doc": "inv_021",
    "style": "invoice",
    "degradation": "blur",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "045780846 not found",
    "where": "Line 4",
@@ -6287,7 +6287,7 @@
    "doc": "inv_021",
    "style": "invoice",
    "degradation": "blur",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "003860039 not found",
    "where": "Line 6",
@@ -6319,7 +6319,7 @@
    "doc": "inv_022",
    "style": "invoice",
    "degradation": "noise",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "01909393 not found",
    "where": "Line 7",
@@ -6335,7 +6335,7 @@
    "doc": "inv_023",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "03620855 not found",
    "where": "Line 1",
@@ -6351,7 +6351,7 @@
    "doc": "inv_023",
    "style": "invoice",
    "degradation": "fax",
-   "rule": "DIN is in the catalogue",
+   "rule": "DIN is on the reference list",
    "ok": false,
    "detail": "03990013 not found",
    "where": "Line 3",
@@ -6437,9 +6437,9 @@
    "doc": "rx_emr_005",
    "style": "emr",
    "degradation": "fax",
-   "rule": "Drug is in the reference list",
+   "rule": "Drug name is on the reference list",
    "ok": false,
-   "detail": "“” matches no known drug, brand or generic",
+   "detail": "“” matches no listed drug, brand or generic",
    "where": "Drug 2",
    "read": {
     "Drug 2 · Drug": ""
@@ -6453,7 +6453,7 @@
    "doc": "rx_emr_005",
    "style": "emr",
    "degradation": "fax",
-   "rule": "Strength is a marketed one",
+   "rule": "Strength is listed for this drug",
    "ok": false,
    "detail": " 50 mg can’t be checked",
    "where": "Drug 2",
@@ -6469,9 +6469,9 @@
    "doc": "rx_emr_017",
    "style": "emr",
    "degradation": "fax",
-   "rule": "Drug is in the reference list",
+   "rule": "Drug name is on the reference list",
    "ok": false,
-   "detail": "“Cumadin” matches no known drug, brand or generic",
+   "detail": "“Cumadin” matches no listed drug, brand or generic",
    "where": "Drug 1",
    "read": {
     "Drug 1 · Drug": "Cumadin"
@@ -6485,7 +6485,7 @@
    "doc": "rx_emr_017",
    "style": "emr",
    "degradation": "fax",
-   "rule": "Strength is a marketed one",
+   "rule": "Strength is listed for this drug",
    "ok": false,
    "detail": "Cumadin 1 mg can’t be checked",
    "where": "Drug 1",
@@ -6501,9 +6501,9 @@
    "doc": "rx_emr_023",
    "style": "emr",
    "degradation": "fax",
-   "rule": "Drug is in the reference list",
+   "rule": "Drug name is on the reference list",
    "ok": false,
-   "detail": "“Prednisolone” matches no known drug, brand or generic",
+   "detail": "“Prednisolone” matches no listed drug, brand or generic",
    "where": "Drug 2",
    "read": {
     "Drug 2 · Drug": "Prednisolone"
@@ -6517,7 +6517,7 @@
    "doc": "rx_emr_023",
    "style": "emr",
    "degradation": "fax",
-   "rule": "Strength is a marketed one",
+   "rule": "Strength is listed for this drug",
    "ok": false,
    "detail": "Prednisolone 5 mg can’t be checked",
    "where": "Drug 2",
@@ -6533,9 +6533,9 @@
    "doc": "rx_pad_001",
    "style": "pad",
    "degradation": "clean",
-   "rule": "Strength is a marketed one",
+   "rule": "Strength is listed for this drug",
    "ok": false,
-   "detail": "Clonidine  isn’t marketed (known: 0.1 mg, 0.2 mg)",
+   "detail": "Clonidine  isn’t listed (listed: 0.1 mg, 0.2 mg)",
    "where": "Drug 2",
    "read": {
     "Drug 2 · Strength": ""
@@ -6549,9 +6549,9 @@
    "doc": "rx_pad_004",
    "style": "pad",
    "degradation": "noise",
-   "rule": "Drug is in the reference list",
+   "rule": "Drug name is on the reference list",
    "ok": false,
-   "detail": "“Clonidine OlmataB” matches no known drug, brand or generic",
+   "detail": "“Clonidine OlmataB” matches no listed drug, brand or generic",
    "where": "Drug 1",
    "read": {
     "Drug 1 · Drug": "Clonidine OlmataB"
@@ -6565,7 +6565,7 @@
    "doc": "rx_pad_004",
    "style": "pad",
    "degradation": "noise",
-   "rule": "Strength is a marketed one",
+   "rule": "Strength is listed for this drug",
    "ok": false,
    "detail": "Clonidine OlmataB  can’t be checked",
    "where": "Drug 1",
@@ -6597,9 +6597,9 @@
    "doc": "rx_pad_009",
    "style": "pad",
    "degradation": "blur",
-   "rule": "Every sig word is a dose or a known direction",
+   "rule": "Directions (sig) use only known terms",
    "ok": false,
-   "detail": "unknown: “Mitte”, “#100”, “Rpf”, “x0”",
+   "detail": "not a sig term: “Mitte”, “#100”, “Rpf”, “x0”",
    "where": "Drug 1",
    "read": {
     "Drug 1 · Sig": "Sig: 1 tab po BID\nMitte. #100\nRpf x0"
@@ -6613,9 +6613,9 @@
    "doc": "rx_pad_013",
    "style": "pad",
    "degradation": "clean",
-   "rule": "Every sig word is a dose or a known direction",
+   "rule": "Directions (sig) use only known terms",
    "ok": false,
-   "detail": "unknown: “Q4H5”",
+   "detail": "not a sig term: “Q4H5”",
    "where": "Drug 1",
    "read": {
     "Drug 1 · Sig": "Sig: 1 tab PO Q4H5"
@@ -6629,9 +6629,9 @@
    "doc": "rx_pad_013",
    "style": "pad",
    "degradation": "clean",
-   "rule": "Every sig word is a dose or a known direction",
+   "rule": "Directions (sig) use only known terms",
    "ok": false,
-   "detail": "unknown: “QH5”",
+   "detail": "not a sig term: “QH5”",
    "where": "Drug 2",
    "read": {
     "Drug 2 · Sig": "Sig: 1 tab PO QH5"
@@ -6661,9 +6661,9 @@
    "doc": "rx_pad_018",
    "style": "pad",
    "degradation": "low_res",
-   "rule": "Every sig word is a dose or a known direction",
+   "rule": "Directions (sig) use only known terms",
    "ok": false,
-   "detail": "unknown: “I-2”",
+   "detail": "not a sig term: “I-2”",
    "where": "Drug 1",
    "read": {
     "Drug 1 · Sig": "I-2 tabs PO Q4-6H PRN pain"
@@ -6677,9 +6677,9 @@
    "doc": "rx_pad_021",
    "style": "pad",
    "degradation": "blur",
-   "rule": "Every sig word is a dose or a known direction",
+   "rule": "Directions (sig) use only known terms",
    "ok": false,
-   "detail": "unknown: “fab”",
+   "detail": "not a sig term: “fab”",
    "where": "Drug 1",
    "read": {
     "Drug 1 · Sig": "1/2 fab po daily"
@@ -6709,9 +6709,9 @@
    "doc": "rx_pad_023",
    "style": "pad",
    "degradation": "fax",
-   "rule": "Strength is a marketed one",
+   "rule": "Strength is listed for this drug",
    "ok": false,
-   "detail": "Clonazepam 2 isn’t marketed (known: 0.5 mg, 2 mg)",
+   "detail": "Clonazepam 2 isn’t listed (listed: 0.5 mg, 2 mg)",
    "where": "Drug 1",
    "read": {
     "Drug 1 · Strength": "2"
@@ -6725,9 +6725,9 @@
    "doc": "rx_pad_024",
    "style": "pad",
    "degradation": "low_res",
-   "rule": "Drug is in the reference list",
+   "rule": "Drug name is on the reference list",
    "ok": false,
-   "detail": "“2oloff” matches no known drug, brand or generic",
+   "detail": "“2oloff” matches no listed drug, brand or generic",
    "where": "Drug 2",
    "read": {
     "Drug 2 · Drug": "2oloff"
@@ -6741,7 +6741,7 @@
    "doc": "rx_pad_024",
    "style": "pad",
    "degradation": "low_res",
-   "rule": "Strength is a marketed one",
+   "rule": "Strength is listed for this drug",
    "ok": false,
    "detail": "2oloff 50 mg can’t be checked",
    "where": "Drug 2",

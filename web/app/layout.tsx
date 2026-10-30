@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Pharmacy Docbench",
-  description: "Benchmark of OCR and LLM pipelines reading Ontario pharmacy documents: real specimens, measured accuracy, silent errors and cost.",
+  description: "A test bench comparing OCR and AI for reading Ontario pharmacy documents: sample pages, a review queue, accuracy, unflagged errors and cost.",
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover" };
